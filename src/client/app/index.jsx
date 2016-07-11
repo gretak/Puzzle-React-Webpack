@@ -10,9 +10,9 @@ class App extends React.Component {
   render () {
     return (
       <div>
+        <HeaderComponent />
         <p> Hello React test test!</p>
         <AwesomeComponent />
-        <HeaderComponent />
       </div>
     );
   }
