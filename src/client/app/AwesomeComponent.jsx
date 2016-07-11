@@ -1,5 +1,8 @@
 import React from 'react';
 
+require('../sass/counter-component.scss');
+
+
 class AwesomeComponent extends React.Component {
 
   constructor(props) {
@@ -15,9 +18,14 @@ class AwesomeComponent extends React.Component {
 
   render() {
     return (
-      <div>
-        Likes : <span>{this.state.likesCount}</span>
-        <div><button onClick={this.onLike}>Like Me</button></div>
+      <div className="clickCounter">
+        <div className="clickCounter__numberOfLikes">
+          <img src="http://www.louiseoneillauthor.com/wp-content/uploads/2014/05/Facebook_like_thumb.png"/>
+          <span>{this.state.likesCount}</span>
+        </div>
+        <div className="clickCounter__button">
+          <button className="clickCounter__button--inner" onClick={this.onLike}>Like Me</button>
+        </div>
       </div>
     );
   }

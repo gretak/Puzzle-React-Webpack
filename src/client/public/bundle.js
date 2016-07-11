@@ -73,7 +73,7 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	__webpack_require__(/*! ../sass/style.scss */ 174);
+	__webpack_require__(/*! ../sass/base-style.scss */ 173);
 	
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
@@ -91,12 +91,7 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_HeaderComponent2.default, null),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          ' Hello React test test!'
-	        ),
-	        _react2.default.createElement(_AwesomeComponent2.default, null)
+	        _react2.default.createElement(_AwesomeComponent2.default, { defaultProperty: 'Likes' })
 	      );
 	    }
 	  }]);
@@ -21555,6 +21550,8 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	__webpack_require__(/*! ../sass/counter-component.scss */ 179);
+	
 	var AwesomeComponent = function (_React$Component) {
 	  _inherits(AwesomeComponent, _React$Component);
 	
@@ -21579,19 +21576,23 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
-	        'Likes : ',
+	        { className: 'clickCounter' },
 	        _react2.default.createElement(
-	          'span',
-	          null,
-	          this.state.likesCount
+	          'div',
+	          { className: 'clickCounter__numberOfLikes' },
+	          _react2.default.createElement('img', { src: 'http://www.louiseoneillauthor.com/wp-content/uploads/2014/05/Facebook_like_thumb.png' }),
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            this.state.likesCount
+	          )
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          null,
+	          { className: 'clickCounter__button' },
 	          _react2.default.createElement(
 	            'button',
-	            { onClick: this.onLike },
+	            { className: 'clickCounter__button--inner', onClick: this.onLike },
 	            'Like Me'
 	          )
 	        )
@@ -21632,7 +21633,9 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var img = document.createElement('img');
-	img.src = __webpack_require__(/*! ../assets/image.gif */ 172);
+	img.src = __webpack_require__(/*! ../assets/img/image.gif */ 172);
+	
+	__webpack_require__(/*! ../sass/header-component.scss */ 177);
 	
 	var HeaderComponent = function (_React$Component) {
 	  _inherits(HeaderComponent, _React$Component);
@@ -21661,35 +21664,34 @@
 
 /***/ },
 /* 172 */
-/*!*************************************!*\
-  !*** ./src/client/assets/image.gif ***!
-  \*************************************/
+/*!*****************************************!*\
+  !*** ./src/client/assets/img/image.gif ***!
+  \*****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "/img/image.gif";
 
 /***/ },
-/* 173 */,
-/* 174 */
-/*!************************************!*\
-  !*** ./src/client/sass/style.scss ***!
-  \************************************/
+/* 173 */
+/*!*****************************************!*\
+  !*** ./src/client/sass/base-style.scss ***!
+  \*****************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./style.scss */ 175);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./base-style.scss */ 174);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 177)(content, {});
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 176)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./style.scss", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./style.scss");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./base-style.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./base-style.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -21699,24 +21701,24 @@
 	}
 
 /***/ },
-/* 175 */
-/*!*******************************************************************!*\
-  !*** ./~/css-loader!./~/sass-loader!./src/client/sass/style.scss ***!
-  \*******************************************************************/
+/* 174 */
+/*!************************************************************************!*\
+  !*** ./~/css-loader!./~/sass-loader!./src/client/sass/base-style.scss ***!
+  \************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 176)();
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 175)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "body,\nhtml {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  display: block; }\n\n.header {\n  background-color: #000;\n  color: #fff;\n  font-size: 60px; }\n  .header-img {\n    width: 30%;\n    height: auto;\n    text-align: center; }\n", ""]);
+	exports.push([module.id, "body,\nhtml {\n  margin: 0;\n  padding: 0;\n  border: 0;\n  display: block; }\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 176 */
+/* 175 */
 /*!**************************************!*\
   !*** ./~/css-loader/lib/css-base.js ***!
   \**************************************/
@@ -21775,7 +21777,7 @@
 
 
 /***/ },
-/* 177 */
+/* 176 */
 /*!*************************************!*\
   !*** ./~/style-loader/addStyles.js ***!
   \*************************************/
@@ -22027,6 +22029,98 @@
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
+
+
+/***/ },
+/* 177 */
+/*!***********************************************!*\
+  !*** ./src/client/sass/header-component.scss ***!
+  \***********************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./header-component.scss */ 178);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 176)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./header-component.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./header-component.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 178 */
+/*!******************************************************************************!*\
+  !*** ./~/css-loader!./~/sass-loader!./src/client/sass/header-component.scss ***!
+  \******************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 175)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".header {\n  background-color: #000;\n  color: #fff;\n  font-size: 60px; }\n  .header-img {\n    width: 30%;\n    height: auto;\n    text-align: center; }\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 179 */
+/*!************************************************!*\
+  !*** ./src/client/sass/counter-component.scss ***!
+  \************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./counter-component.scss */ 180);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 176)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./counter-component.scss", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/sass-loader/index.js!./counter-component.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 180 */
+/*!*******************************************************************************!*\
+  !*** ./~/css-loader!./~/sass-loader!./src/client/sass/counter-component.scss ***!
+  \*******************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 175)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".clickCounter {\n  color: #fff;\n  height: 150px;\n  width: 100%;\n  padding: 5%;\n  background-color: #808080;\n  text-align: center; }\n  .clickCounter__numberOfLikes {\n    font-size: 60px;\n    width: 50%;\n    float: left;\n    text-align: right; }\n    .clickCounter__numberOfLikes img {\n      width: 20%; }\n    .clickCounter__numberOfLikes span {\n      margin-left: 20px;\n      vertical-align: top; }\n  .clickCounter__button {\n    width: 50%;\n    float: right; }\n    .clickCounter__button--inner {\n      transition-duration: 0.4s;\n      background-color: white;\n      color: black;\n      border: 4px solid #000;\n      padding: 20px 40px;\n      font-size: 24px; }\n      .clickCounter__button--inner:hover {\n        background-color: #000;\n        /* Green */\n        color: white; }\n", ""]);
+	
+	// exports
 
 
 /***/ }

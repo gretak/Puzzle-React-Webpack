@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import AwesomeComponent from './AwesomeComponent.jsx';
 import HeaderComponent from './HeaderComponent.jsx';
 
-require('../sass/style.scss');
+require('../sass/base-style.scss');
 
 
 class App extends React.Component {
@@ -11,8 +11,7 @@ class App extends React.Component {
     return (
       <div>
         <HeaderComponent />
-        <p> Hello React test test!</p>
-        <AwesomeComponent />
+        <AwesomeComponent defaultProperty="Likes"/>
       </div>
     );
   }
