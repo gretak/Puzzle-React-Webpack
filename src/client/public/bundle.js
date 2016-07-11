@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/assets";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -73,7 +73,7 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	__webpack_require__(/*! ./style.scss */ 172);
+	__webpack_require__(/*! ../sass/style.scss */ 174);
 	
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
@@ -21611,7 +21611,7 @@
   \********************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -21631,6 +21631,9 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	var img = document.createElement('img');
+	img.src = __webpack_require__(/*! ../assets/image.gif */ 172);
+	
 	var HeaderComponent = function (_React$Component) {
 	  _inherits(HeaderComponent, _React$Component);
 	
@@ -21641,19 +21644,12 @@
 	  }
 	
 	  _createClass(HeaderComponent, [{
-	    key: "render",
-	
-	
-	    // onLike () {
-	    //   let newLikesCount = this.state.likesCount + 1;
-	    //   this.setState({likesCount: newLikesCount});
-	    // }
-	
+	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "div",
-	        { className: "header" },
-	        _react2.default.createElement("img", { className: "header-img", src: "http://grfx.cstv.com/schools/conn/graphics/conn-09-btm-logo-img.gif" })
+	        'div',
+	        { className: 'header' },
+	        _react2.default.createElement('img', { className: 'header-img', src: './public/img/image.gif' })
 	      );
 	    }
 	  }]);
@@ -21665,18 +21661,28 @@
 
 /***/ },
 /* 172 */
-/*!***********************************!*\
-  !*** ./src/client/app/style.scss ***!
-  \***********************************/
+/*!*************************************!*\
+  !*** ./src/client/assets/image.gif ***!
+  \*************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/img/image.gif";
+
+/***/ },
+/* 173 */,
+/* 174 */
+/*!************************************!*\
+  !*** ./src/client/sass/style.scss ***!
+  \************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./style.scss */ 173);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./style.scss */ 175);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 175)(content, {});
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 177)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -21693,13 +21699,13 @@
 	}
 
 /***/ },
-/* 173 */
-/*!******************************************************************!*\
-  !*** ./~/css-loader!./~/sass-loader!./src/client/app/style.scss ***!
-  \******************************************************************/
+/* 175 */
+/*!*******************************************************************!*\
+  !*** ./~/css-loader!./~/sass-loader!./src/client/sass/style.scss ***!
+  \*******************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 174)();
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 176)();
 	// imports
 	
 	
@@ -21710,7 +21716,7 @@
 
 
 /***/ },
-/* 174 */
+/* 176 */
 /*!**************************************!*\
   !*** ./~/css-loader/lib/css-base.js ***!
   \**************************************/
@@ -21769,7 +21775,7 @@
 
 
 /***/ },
-/* 175 */
+/* 177 */
 /*!*************************************!*\
   !*** ./~/style-loader/addStyles.js ***!
   \*************************************/

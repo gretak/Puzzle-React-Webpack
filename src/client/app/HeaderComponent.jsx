@@ -1,16 +1,15 @@
 import React from 'react';
 
-class HeaderComponent extends React.Component {
+var img = document.createElement('img');
+img.src = require('../assets/image.gif');
 
-  // onLike () {
-  //   let newLikesCount = this.state.likesCount + 1;
-  //   this.setState({likesCount: newLikesCount});
-  // }
+
+class HeaderComponent extends React.Component {
 
   render() {
     return (
       <div className="header">
-        <img className="header-img" src="http://grfx.cstv.com/schools/conn/graphics/conn-09-btm-logo-img.gif" />
+        <img className="header-img" src="./public/img/image.gif" />
       </div>
     );
   }

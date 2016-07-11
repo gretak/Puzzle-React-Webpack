@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import AwesomeComponent from './AwesomeComponent.jsx';
 import HeaderComponent from './HeaderComponent.jsx';
 
-require('./style.scss');
+require('../sass/style.scss');
 
 
 class App extends React.Component {
