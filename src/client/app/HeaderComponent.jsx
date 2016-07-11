@@ -3,6 +3,8 @@ import React from 'react';
 var img = document.createElement('img');
 img.src = require('../assets/img/image.gif');
 
+require('../sass/header-component.scss');
+
 
 
 class HeaderComponent extends React.Component {
