@@ -4,6 +4,8 @@ import AwesomeComponent from './AwesomeComponent.jsx';
 import HeaderComponent from './HeaderComponent.jsx';
 
 require('../sass/base-style.scss');
+require('../sass/header-component.scss');
+require('../sass/counter-component.scss');
 
 
 class App extends React.Component {
