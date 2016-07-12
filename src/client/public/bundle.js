@@ -57,11 +57,11 @@
 	
 	var _reactDom = __webpack_require__(/*! react-dom */ 33);
 	
-	var _CounterComponent = __webpack_require__(/*! ./CounterComponent.jsx */ 178);
+	var _CounterComponent = __webpack_require__(/*! ./CounterComponent.jsx */ 170);
 	
 	var _CounterComponent2 = _interopRequireDefault(_CounterComponent);
 	
-	var _HeaderComponent = __webpack_require__(/*! ./HeaderComponent.jsx */ 170);
+	var _HeaderComponent = __webpack_require__(/*! ./HeaderComponent.jsx */ 175);
 	
 	var _HeaderComponent2 = _interopRequireDefault(_HeaderComponent);
 	
@@ -73,7 +73,7 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	__webpack_require__(/*! ../sass/base-style.scss */ 176);
+	__webpack_require__(/*! ../sass/base-style.scss */ 179);
 	
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
@@ -21525,94 +21525,6 @@
 
 /***/ },
 /* 170 */
-/*!********************************************!*\
-  !*** ./src/client/app/HeaderComponent.jsx ***!
-  \********************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(/*! react */ 1);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var img = document.createElement('img');
-	img.src = __webpack_require__(/*! ../assets/img/image.gif */ 171);
-	
-	__webpack_require__(/*! ../sass/header-component.scss */ 172);
-	
-	var HeaderComponent = function (_React$Component) {
-	  _inherits(HeaderComponent, _React$Component);
-	
-	  function HeaderComponent() {
-	    _classCallCheck(this, HeaderComponent);
-	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(HeaderComponent).apply(this, arguments));
-	  }
-	
-	  _createClass(HeaderComponent, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'header' },
-	        _react2.default.createElement('img', { className: 'header-img', src: './public/img/image.gif' })
-	      );
-	    }
-	  }]);
-	
-	  return HeaderComponent;
-	}(_react2.default.Component);
-	
-	exports.default = HeaderComponent;
-
-/***/ },
-/* 171 */
-/*!*****************************************!*\
-  !*** ./src/client/assets/img/image.gif ***!
-  \*****************************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "/img/image.gif";
-
-/***/ },
-/* 172 */
-/*!***********************************************!*\
-  !*** ./src/client/sass/header-component.scss ***!
-  \***********************************************/
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */
-/*!*****************************************!*\
-  !*** ./src/client/sass/base-style.scss ***!
-  \*****************************************/
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 177 */,
-/* 178 */
 /*!*********************************************!*\
   !*** ./src/client/app/CounterComponent.jsx ***!
   \*********************************************/
@@ -21638,7 +21550,7 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	__webpack_require__(/*! ../sass/counter-component.scss */ 179);
+	__webpack_require__(/*! ../sass/counter-component.scss */ 171);
 	
 	var AwesomeComponent = function (_React$Component) {
 	  _inherits(AwesomeComponent, _React$Component);
@@ -21694,10 +21606,98 @@
 	exports.default = AwesomeComponent;
 
 /***/ },
-/* 179 */
+/* 171 */
 /*!************************************************!*\
   !*** ./src/client/sass/counter-component.scss ***!
   \************************************************/
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */
+/*!********************************************!*\
+  !*** ./src/client/app/HeaderComponent.jsx ***!
+  \********************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var img = document.createElement('img');
+	img.src = __webpack_require__(/*! ../assets/img/image.gif */ 176);
+	
+	__webpack_require__(/*! ../sass/header-component.scss */ 177);
+	
+	var HeaderComponent = function (_React$Component) {
+	  _inherits(HeaderComponent, _React$Component);
+	
+	  function HeaderComponent() {
+	    _classCallCheck(this, HeaderComponent);
+	
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(HeaderComponent).apply(this, arguments));
+	  }
+	
+	  _createClass(HeaderComponent, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'header' },
+	        _react2.default.createElement('img', { className: 'header-img', src: './public/img/image.gif' })
+	      );
+	    }
+	  }]);
+	
+	  return HeaderComponent;
+	}(_react2.default.Component);
+	
+	exports.default = HeaderComponent;
+
+/***/ },
+/* 176 */
+/*!*****************************************!*\
+  !*** ./src/client/assets/img/image.gif ***!
+  \*****************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/img/image.gif";
+
+/***/ },
+/* 177 */
+/*!***********************************************!*\
+  !*** ./src/client/sass/header-component.scss ***!
+  \***********************************************/
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 178 */,
+/* 179 */
+/*!*****************************************!*\
+  !*** ./src/client/sass/base-style.scss ***!
+  \*****************************************/
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
