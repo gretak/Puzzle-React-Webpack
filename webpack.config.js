@@ -12,9 +12,10 @@ var config = {
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js',
-    publicPath: '/assets'
+    publicPath: '/assets',
   },
-   module : {
+  watch: true,
+  module : {
     loaders : [
       {
         test : /\.jsx?/,
@@ -24,7 +25,7 @@ var config = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loader: ExtractTextPlugin.extract("style", "css!sass") 
+        loader: ExtractTextPlugin.extract("style", "css!sass")
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,

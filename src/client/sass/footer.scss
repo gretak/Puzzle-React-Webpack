@@ -7,21 +7,20 @@
 	text-align: center;
 	
 	&__left {
-		width: 50%;
+		width: 45%;
 		float: left;
 		font-size: 60px;
-		width: 50%;
 		float: left;
 		text-align: right;
 	}
 
 	&__right {
-		width: 50%;
+		width: 55%;
 		float: right;
 	}
 
 	&__logo {
-		width: 100%;
+		width: 200px;
 		height: auto;
 	}
 }
