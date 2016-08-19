@@ -1,5 +1,8 @@
 import React from 'react';
 
+var img = document.createElement('img');
+img.src = require('../assets/img/donot.jpg');
+
 require('../sass/footer.scss');
 
 
@@ -20,13 +23,17 @@ class FooterComponent extends React.Component {
     return (
       <div className="footer">
         <div className="footer__left">
-          <a href="{this.state.link}">link 1</a>
-          <a href="{this.state.link}">link 2</a>
+                <div className="footer__left">
+
+          <a href="{this.state.link}">link 11</a>
+          <a href="{this.state.link}">link 112</a>
         </div>
+                </div>
+
         <div className="footer__right">
           <a href="{this.state.link}">link 3</a>
           <a href="{this.state.link}">link 4</a>
-          <img className="footer__logo" src="./assets/img/donot.jpg"/>
+          <img className="footer__logo" src="./public/img/donot.jpg"/>
         </div>
       </div>
     );
