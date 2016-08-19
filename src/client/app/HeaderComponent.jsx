@@ -1,10 +1,6 @@
 import React from 'react';
 
-var img = document.createElement('img');
-img.src = require('../assets/img/image.gif');
-
 require('../sass/header-component.scss');
-
 
 
 class HeaderComponent extends React.Component {
@@ -12,7 +8,7 @@ class HeaderComponent extends React.Component {
   render() {
     return (
       <div className="header">
-        <img className="header-img" src="./public/img/image.gif" />
+        <img className="header-img" src="./assets/img/image.gif" />
       </div>
     );
   }

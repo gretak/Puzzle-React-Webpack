@@ -2,6 +2,8 @@ import React from 'react';
 import {render} from 'react-dom';
 import CounterComponent from './CounterComponent.jsx';
 import HeaderComponent from './HeaderComponent.jsx';
+import Footer from './Footer.jsx';
+
 
 require('../sass/base-style.scss');
 
@@ -12,6 +14,8 @@ class App extends React.Component {
       <div>
         <HeaderComponent />
         <CounterComponent defaultProperty="Likes"/>
+        <CounterComponent defaultProperty="Likes"/>
+        <Footer />
       </div>
     );
   }

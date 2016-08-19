@@ -1,0 +1,27 @@
+.footer {
+	color: #fff;
+	height: 150px;
+	width: 100%;
+	padding: 5%;
+	background-color: green;
+	text-align: center;
+	
+	&__left {
+		width: 50%;
+		float: left;
+		font-size: 60px;
+		width: 50%;
+		float: left;
+		text-align: right;
+	}
+
+	&__right {
+		width: 50%;
+		float: right;
+	}
+
+	&__logo {
+		width: 100%;
+		height: auto;
+	}
+}
