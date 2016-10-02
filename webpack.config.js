@@ -9,12 +9,19 @@ var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
 var APP_DIR = path.resolve(__dirname, 'src/client/app');
 
 var config = {
-  entry: APP_DIR + '/index.jsx',
-  output: {
-    path: BUILD_DIR,
-    filename: 'bundle.js',
-    publicPath: '/assets',
-  },
+   entry: [
+   APP_DIR + '/index.jsx'
+   ],
+   output: {
+     path: BUILD_DIR,
+     filename: 'bundle.js'
+   },
+   module: {
+     loader: [{
+       test: /\.jsx?$/,
+       loader: 'babel'
+     }]
+   },
   watch: true,
   module : {
     loaders : [
@@ -61,6 +68,7 @@ var config = {
 
 module.exports = 
   config;
+  
   //devServer: {
    // hot: true
   //}
