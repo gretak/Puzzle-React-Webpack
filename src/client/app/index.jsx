@@ -13,8 +13,8 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <HeaderComponent />
         <NavigationComponent />
+        <HeaderComponent />
         <CounterComponent defaultProperty="Likes"/>
         <CounterComponent defaultProperty="Likes"/>
         <Footer />

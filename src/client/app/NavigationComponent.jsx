@@ -5,6 +5,7 @@ require('../sass/navigation.scss');
 
 function myFunction() {
     var x = document.getElementById("myTopnav");
+    console.log(screen.width)
     if (x.className === "topnav") {
         x.className += " responsive";
     } else {
@@ -24,12 +25,12 @@ class NavigationComponent extends React.Component {
   render() {
     return (
       <ul className="topnav" id="myTopnav">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
-        <li className="icon">
-          <a href="javascript:void(0);" onClick={myFunction}>&#9776;</a>
+        <li className="topnav_item"><a className="topnav_link" href="#home">Home</a></li>
+        <li className="topnav_item"><a className="topnav_link" href="#news">News</a></li>
+        <li className="topnav_item"><a className="topnav_link" href="#contact">Contact</a></li>
+        <li className="topnav_item"><a className="topnav_link" href="#about">About</a></li>
+        <li className="topnav_icon">
+          <a className="topnav_link" href="javascript:void(0);" onClick={myFunction}>&#9776;</a>
         </li>
       </ul>
     );

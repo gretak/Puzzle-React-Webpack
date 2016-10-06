@@ -108,8 +108,8 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_HeaderComponent2.default, null),
 	        _react2.default.createElement(_NavigationComponent2.default, null),
+	        _react2.default.createElement(_HeaderComponent2.default, null),
 	        _react2.default.createElement(_CounterComponent2.default, { defaultProperty: 'Likes' }),
 	        _react2.default.createElement(_CounterComponent2.default, { defaultProperty: 'Likes' }),
 	        _react2.default.createElement(_Footer2.default, null)
@@ -21862,6 +21862,7 @@
 	
 	function myFunction() {
 	  var x = document.getElementById("myTopnav");
+	  console.log(screen.width);
 	  if (x.className === "topnav") {
 	    x.className += " responsive";
 	  } else {
@@ -21889,46 +21890,46 @@
 	        { className: 'topnav', id: 'myTopnav' },
 	        _react2.default.createElement(
 	          'li',
-	          null,
+	          { className: 'topnav_item' },
 	          _react2.default.createElement(
 	            'a',
-	            { href: '#home' },
+	            { className: 'topnav_link', href: '#home' },
 	            'Home'
 	          )
 	        ),
 	        _react2.default.createElement(
 	          'li',
-	          null,
+	          { className: 'topnav_item' },
 	          _react2.default.createElement(
 	            'a',
-	            { href: '#news' },
+	            { className: 'topnav_link', href: '#news' },
 	            'News'
 	          )
 	        ),
 	        _react2.default.createElement(
 	          'li',
-	          null,
+	          { className: 'topnav_item' },
 	          _react2.default.createElement(
 	            'a',
-	            { href: '#contact' },
+	            { className: 'topnav_link', href: '#contact' },
 	            'Contact'
 	          )
 	        ),
 	        _react2.default.createElement(
 	          'li',
-	          null,
+	          { className: 'topnav_item' },
 	          _react2.default.createElement(
 	            'a',
-	            { href: '#about' },
+	            { className: 'topnav_link', href: '#about' },
 	            'About'
 	          )
 	        ),
 	        _react2.default.createElement(
 	          'li',
-	          { className: 'icon' },
+	          { className: 'topnav_icon' },
 	          _react2.default.createElement(
 	            'a',
-	            { href: 'javascript:void(0);', onClick: myFunction },
+	            { className: 'topnav_link', href: 'javascript:void(0);', onClick: myFunction },
 	            '☰'
 	          )
 	        )

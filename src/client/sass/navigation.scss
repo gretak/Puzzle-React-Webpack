@@ -1,14 +1,24 @@
-ul.topnav {
+.topnav {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
-}
+    background-color: rgba(0, 0, 0, 0.8);
 
-ul.topnav li {float: left;}
+  &_item {
+    float: left;
 
-ul.topnav li a {
+    &:hover {
+      background-color: #555;
+      transition: background-color 0.5s ease;
+
+      .topnav_link {
+        font-size: 19px;
+      }
+    }
+  }
+
+  &_link {
     display: inline-block;
     color: #f2f2f2;
     text-align: center;
@@ -16,34 +26,46 @@ ul.topnav li a {
     text-decoration: none;
     transition: 0.3s;
     font-size: 17px;
-}
+  }
 
-ul.topnav li a:hover {background-color: #555;}
-
-ul.topnav li.icon {display: none;}
-
-@media screen and (max-width:680px) {
-  ul.topnav li:not(:first-child) {display: none;}
-  ul.topnav li.icon {
-    float: right;
-    display: inline-block;
+  &_icon {
+    display: none;
   }
 }
 
+
 @media screen and (max-width:680px) {
+  .topnav_item {
+    transition: opacity 2s ease-out;
+    opacity: 0; 
+    height: 0;
+    overflow: hidden;
+  }
+
+  .topnav_icon {
+    float: right;
+    display: inline-block;
+  }
+
   ul.topnav.responsive {position: relative;}
-  ul.topnav.responsive li.icon {
+  ul.topnav.responsive li.topnav_icon {
     position: absolute;
     right: 0;
     top: 0;
   }
+
   ul.topnav.responsive li {
     float: none;
-    display: inline;
+    opacity: 1;
+    height: auto;
   }
-  
+
   ul.topnav.responsive li a {
     display: block;
     text-align: left;
+  
+  &:hover {
+        font-size: 19px;
+      }
   }
 }
