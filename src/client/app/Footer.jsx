@@ -33,7 +33,7 @@ class FooterComponent extends React.Component {
         <div className="footer__right">
           <a href="{this.state.link}">link 3</a>
           <a href="{this.state.link}">link 4</a>
-          <img className="footer__logo" src="./public/img/donot.jpg"/>
+          <img className="footer__logo" src="/src/client/public/img/donot.jpg"/>
         </div>
       </div>
     );

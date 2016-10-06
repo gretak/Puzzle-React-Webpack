@@ -2,25 +2,25 @@ var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-var webpackDevServer = require("webpack-dev-server");
+
+ var HtmlWebpackPlugin = require('html-webpack-plugin');
+ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
+   template: __dirname + '/src/client/index.html',
+   filename: 'index.html',
+   inject: 'body'
+ });
 
 
 var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
 var APP_DIR = path.resolve(__dirname, 'src/client/app');
 
-var config = {
+module.exports = {
    entry: [
    APP_DIR + '/index.jsx'
    ],
    output: {
      path: BUILD_DIR,
      filename: 'bundle.js'
-   },
-   module: {
-     loader: [{
-       test: /\.jsx?$/,
-       loader: 'babel'
-     }]
    },
   watch: true,
   module : {
@@ -44,35 +44,13 @@ var config = {
   plugins: [
     new ExtractTextPlugin("styles.css"),
     new OptimizeCssAssetsPlugin(),
-    new webpack.HotModuleReplacementPlugin()
-  ]
+    HTMLWebpackPluginConfig
+  ],
+  devServer: {
+    host: "localhost",
+    port: 3000
+  }
 };
-
-// var server = new webpackDevServer(compiler, {
-//   quiet: false,
-//   stats: { colors: true },
-//   proxy: {
-//     "/api": {
-//       "target": {
-//         "host": "action-js.dev",
-//         "protocol": 'http:',
-//         "port": 80
-//       },
-//       ignorePath: true,
-//       changeOrigin: true,
-//       secure: false
-//     }
-//   }
-// });
-// server.listen(8080);
-
-module.exports = 
-  config;
-  
-  //devServer: {
-   // hot: true
-  //}
-//};
 
 
 

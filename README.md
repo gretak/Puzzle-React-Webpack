@@ -8,6 +8,7 @@ https://www.codementor.io/reactjs/tutorial/beginner-guide-setup-reactjs-environm
 ----
 npm run dev - watch task to start
 npm run build - to upadte bundle.js
+webpack-dev-server
 
 
 

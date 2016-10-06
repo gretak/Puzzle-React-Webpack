@@ -11,7 +11,7 @@ class HeaderComponent extends React.Component {
   render() {
     return (
       <div className="header">
-        <img className="header-img" src="./public/img/image.gif" />
+        <img className="header-img" src="/src/client/public/img/image.gif" />
       </div>
     );
   }
