@@ -34,6 +34,7 @@ module.exports = {
         test: /\.(scss|css)$/i,
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract("style", "css!sass")
+        //loader:"style?css?csslint?failOnWarning=false"
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
