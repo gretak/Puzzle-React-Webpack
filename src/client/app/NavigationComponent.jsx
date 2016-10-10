@@ -3,7 +3,7 @@ import React from 'react';
 require('../sass/navigation.scss');
 
 
-function myFunction() {
+function navFunction() {
     var x = document.getElementById("myTopnav");
     console.log(screen.width)
     if (x.className === "topnav") {
@@ -30,7 +30,7 @@ class NavigationComponent extends React.Component {
         <li className="topnav_item"><a className="topnav_link" href="#contact">Contact</a></li>
         <li className="topnav_item"><a className="topnav_link" href="#about">About</a></li>
         <li className="topnav_icon">
-          <a className="topnav_link" href="javascript:void(0);" onClick={myFunction}>&#9776;</a>
+          <a className="topnav_link" href="javascript:void(0);" onClick={navFunction}>&#9776;</a>
         </li>
       </ul>
     );
