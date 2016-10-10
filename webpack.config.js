@@ -13,6 +13,7 @@ var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
 var APP_DIR = path.resolve(__dirname, 'src/client/app');
+var SCSS_DIR = path.resolve(__dirname, 'src/client/sass');
 
 module.exports = {
    entry: [
@@ -29,6 +30,12 @@ module.exports = {
         test: /\.jsx?$/,
         loaders: ['eslint'],
         include: APP_DIR
+      },
+      {
+        test: /\.s(a|c)ss$/,
+        exclude: /node_modules/,
+        loader: 'stylelint',
+        include: SCSS_DIR
       }
     ],
     loaders : [
@@ -53,6 +60,9 @@ module.exports = {
     new OptimizeCssAssetsPlugin(),
     HTMLWebpackPluginConfig
   ],
+  stylelint: {
+    configFile: path.join(__dirname, './.stylelint.config.js')
+  },
   devServer: {
     host: "localhost",
     port: 3000,
