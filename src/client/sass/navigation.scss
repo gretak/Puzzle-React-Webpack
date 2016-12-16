@@ -1,9 +1,9 @@
 .topnav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.8);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
 
   &_item {
     float: left;
@@ -33,10 +33,11 @@
   }
 }
 
-@media screen and (max-width:680px) {
+@media screen and (max-width: 680px) {
+
   .topnav_item {
     transition: opacity 2s ease-out;
-    opacity: 0; 
+    opacity: 0;
     height: 0;
     overflow: hidden;
   }
@@ -46,7 +47,10 @@
     display: inline-block;
   }
 
-  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive {
+    position: relative;
+  }
+
   ul.topnav.responsive li.topnav_icon {
     position: absolute;
     right: 0;
@@ -62,9 +66,10 @@
   ul.topnav.responsive li a {
     display: block;
     text-align: left;
-  
-  &:hover {
-        font-size: 19px;
-      }
+
+    &:hover {
+      font-size: 19px;
+    }
   }
 }
+

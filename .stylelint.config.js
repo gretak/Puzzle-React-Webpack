@@ -3,8 +3,9 @@ module.exports = {
         'stylelint-config-suitcss'
     ],
     rules: {
-        'function-url-quotes': 'single',
-        'indentation': [ 4, { warn: true } ],
-        'string-quotes': 'single'
+        'function-url-quotes': 'always',
+        'indentation': 2,
+        'string-quotes': 'single',
+        'declaration-block-properties-order': []
     }
 };

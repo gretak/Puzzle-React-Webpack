@@ -10,20 +10,20 @@ class FooterComponent extends React.Component {
 
  constructor(props) {
    super(props);
-   this.state = {link : "http://www.linkedin.com" };
+   this.state = {link : 'http://www.linkedin.com' };
  }
 
 render() {
   return (
-    <div id="contact" className="footer">
-      <div className="footer__left">
+    <div id='contact' className='footer'>
+      <div className='footer__left'>
         <p>Address</p>
         <p>Phone number</p>
       </div>
 
-      <div className="footer__right">
+      <div className='footer__right'>
         <a href={this.state.link}>Find out more</a>
-        <img className="footer__logo" src="/src/client/public/img/donot.jpg"/>
+        <img className='footer__logo' src='/src/client/public/img/donot.jpg'/>
       </div>
     </div>
     );
