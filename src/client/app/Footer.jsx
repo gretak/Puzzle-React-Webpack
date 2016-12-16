@@ -8,36 +8,26 @@ require('../sass/footer.scss');
 
 class FooterComponent extends React.Component {
 
-   constructor(props) {
-     super(props);
-     this.state = {link : "www.linkedin.com" };
-  //   this.onLike = this.onLike.bind(this);
-   }
+ constructor(props) {
+   super(props);
+   this.state = {link : "http://www.linkedin.com" };
+ }
 
-  // onLike () {
-  //   let newLikesCount = this.state.likesCount + 1;
-  //   this.setState({likesCount: newLikesCount});
-  // }
-
-  render() {
-    return (
-      <div className="footer">
-        <div className="footer__left">
-                <div className="footer__left">
-
-          <a href="{this.state.link}">link 11</a>
-          <a href="{this.state.link}">link 112</a>
-        </div>
-                </div>
-
-        <div className="footer__right">
-          <a href="{this.state.link}">link 3</a>
-          <a href="{this.state.link}">link 4</a>
-          <img className="footer__logo" src="/src/client/public/img/donot.jpg"/>
-        </div>
+render() {
+  return (
+    <div id="contact" className="footer">
+      <div className="footer__left">
+        <p>Address</p>
+        <p>Phone number</p>
       </div>
+
+      <div className="footer__right">
+        <a href={this.state.link}>Find out more</a>
+        <img className="footer__logo" src="/src/client/public/img/donot.jpg"/>
+      </div>
+    </div>
     );
-  }
+}
 
 }
 

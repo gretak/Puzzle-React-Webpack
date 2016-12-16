@@ -19,7 +19,7 @@ class NavigationComponent extends React.Component {
 
    constructor(props) {
      super(props);
-     this.state = {link : "www.linkedin.com" };
+     //this.state = {link : "www.linkedin.com" };
    }
 
   render() {
