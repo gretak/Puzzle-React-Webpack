@@ -1,10 +1,5 @@
 import React from 'react';
 
-var img = document.createElement('img');
-img.src = require('../assets/img/donot.jpg');
-
-require('../sass/footer.scss');
-
 
 class FooterComponent extends React.Component {
 
@@ -17,13 +12,20 @@ render() {
   return (
     <div id='contact' className='footer'>
       <div className='footer__left'>
-        <p>Address</p>
+        <p>
+        <a href={this.state.link}>Address</a>
+        </p>
+        <p>Phone number</p>
         <p>Phone number</p>
       </div>
 
       <div className='footer__right'>
+        <p>
         <a href={this.state.link}>Find out more</a>
-        <img className='footer__logo' src='/src/client/public/img/donot.jpg'/>
+        </p>
+        <p>
+        <a href={this.state.link}>Find out more</a>
+        </p>
       </div>
     </div>
     );

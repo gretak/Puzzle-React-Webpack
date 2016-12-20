@@ -1,7 +1,5 @@
 import React from 'react';
 
-require('../sass/navigation.scss');
-
 
 function navFunction() {
     var x = document.getElementById('myTopnav');
@@ -14,9 +12,7 @@ function navFunction() {
 }
 
 
-
 class NavigationComponent extends React.Component {
-
 
   render() {
     return (

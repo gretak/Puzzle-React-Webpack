@@ -7,6 +7,10 @@ import NavigationComponent from './NavigationComponent.jsx';
 
 
 require('../sass/base-style.scss');
+require('../sass/header-component.scss');
+require('../sass/counter-component.scss');
+require('../sass/footer.scss');
+require('../sass/navigation.scss');
 
 
 class App extends React.Component {
@@ -15,7 +19,6 @@ class App extends React.Component {
       <div>
         <NavigationComponent />
         <HeaderComponent />
-        <CounterComponent defaultProperty="Likes"/>
         <CounterComponent defaultProperty="Likes"/>
         <Footer />
       </div>

@@ -1,7 +1,5 @@
 import React from 'react';
 
-require('../sass/counter-component.scss');
-
 
 class AwesomeComponent extends React.Component {
 

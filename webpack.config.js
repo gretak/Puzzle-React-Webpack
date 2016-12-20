@@ -3,6 +3,9 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+
+
  var HtmlWebpackPlugin = require('html-webpack-plugin');
  var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
    template: __dirname + '/src/client/index.html',
@@ -14,6 +17,8 @@ var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
 var APP_DIR = path.resolve(__dirname, 'src/client/app');
 var SCSS_DIR = path.resolve(__dirname, 'src/client/sass');
+var IMG_DIR = path.resolve(__dirname, 'src/client/assets/img');
+
 
 module.exports = {
    entry: [
@@ -21,6 +26,7 @@ module.exports = {
    ],
    output: {
      path: BUILD_DIR,
+     //publicPath: '/public/img/',
      filename: 'bundle.js'
    },
   watch: true,
@@ -48,16 +54,26 @@ module.exports = {
         test: /\.(scss|css)$/i,
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract("style", "css!sass")
-      },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: 'file-loader?name=/img/[name].[ext]'
       }
+      //{
+        //test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+        //include: IMG_DIR,
+        //loader: 'file?limit=1024&name=images/[name].[ext]'
+        //loader: "file"
+      //}
     ]
   },
   plugins: [
     new ExtractTextPlugin("styles.css"),
     new OptimizeCssAssetsPlugin(),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/client/assets/img',
+        to: 'src/client/public/img',
+        force: true
+      }
+    ]),
+
     HTMLWebpackPluginConfig
   ],
   stylelint: {

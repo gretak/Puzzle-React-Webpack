@@ -1,9 +1,8 @@
 import React from 'react';
 
-var img = document.createElement('img');
-img.src = require('../assets/img/image.gif');
+//var img = document.createElement('img');
+//img.src = require('../assets/img/image.gif');
 
-require('../sass/header-component.scss');
 
 class ImgComponent extends React.Component {
   constructor(props) {
@@ -28,9 +27,7 @@ class ImgComponent extends React.Component {
   render() {
 
     return (
-      <div>
-        <img onClick={this.handleClick} src={this.props.image[this.state.index]} className="header_img"/>
-      </div>
+        <img onClick={this.handleClick} src={this.props.image[this.state.index]} className="puzzle_img"/>
     )
   }
 }

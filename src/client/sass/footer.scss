@@ -3,7 +3,7 @@
   height: 150px;
   width: 100%;
   padding: 5%;
-  background-color: green;
+  background-color: rgba(0, 0, 0, 0.6);
   text-align: center;
 
   &__left {
@@ -17,10 +17,5 @@
   &__right {
     width: 55%;
     float: right;
-  }
-
-  &__logo {
-    width: 200px;
-    height: auto;
   }
 }
