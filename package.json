@@ -8,6 +8,7 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
+    "concurrently": "^3.1.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.23.1",
     "eslint": "^3.7.1",
@@ -50,8 +51,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
+    "server": "concurrently --kill-others \"webpack-dev-server --color\" \"webpack --color\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack -d --watch",
     "build": "webpack -p",
     "lint": "eslint . --ext .js --ext .jsx || true"
   },

@@ -1,8 +1,5 @@
 import React from 'react';
 
-//var img = document.createElement('img');
-//img.src = require('../assets/img/image.gif');
-
 
 class ImgComponent extends React.Component {
   constructor(props) {

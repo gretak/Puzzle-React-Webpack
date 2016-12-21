@@ -9,7 +9,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
  var HtmlWebpackPlugin = require('html-webpack-plugin');
  var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
    template: __dirname + '/src/client/index.html',
-   filename: 'index.html',
+   //filename: 'index.html',
    inject: 'body'
  });
 
@@ -26,7 +26,6 @@ module.exports = {
    ],
    output: {
      path: BUILD_DIR,
-     //publicPath: '/public/img/',
      filename: 'bundle.js'
    },
   watch: true,
@@ -55,12 +54,6 @@ module.exports = {
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract("style", "css!sass")
       }
-      //{
-        //test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-        //include: IMG_DIR,
-        //loader: 'file?limit=1024&name=images/[name].[ext]'
-        //loader: "file"
-      //}
     ]
   },
   plugins: [
@@ -69,11 +62,10 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: 'src/client/assets/img',
-        to: 'src/client/public/img',
+        to: 'img',
         force: true
       }
     ]),
-
     HTMLWebpackPluginConfig
   ],
   stylelint: {
