@@ -4,6 +4,8 @@ import CounterComponent from './CounterComponent.jsx';
 import HeaderComponent from './HeaderComponent.jsx';
 import FooterComponent from './Footer.jsx';
 import NavigationComponent from './NavigationComponent.jsx';
+import routes from './routes.js';
+
 
 
 require('../sass/base-style.scss');
@@ -15,10 +17,11 @@ require('../sass/navigation.scss');
 
 class App extends React.Component {
   render () {
-
-
+routes
     return (
       <div>
+        {routes}
+
         <NavigationComponent />
         <HeaderComponent />
         <CounterComponent defaultProperty="Likes"/>

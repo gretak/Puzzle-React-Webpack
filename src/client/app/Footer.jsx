@@ -1,5 +1,5 @@
 import React from 'react';
-import FooterItemComponent from './LinkComponent.jsx';
+import FooterItemComponent from './FooterItemComponent.jsx';
 
 
 class FooterComponent extends React.Component {

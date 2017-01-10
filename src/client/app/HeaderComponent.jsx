@@ -92,4 +92,5 @@ constructor(props) {
 
 }
 
-export default HeaderComponent;
+//export default HeaderComponent;
+module.exports = HeaderComponent;
