@@ -15,12 +15,16 @@ function navFunction() {
 class NavigationComponent extends React.Component {
 
   render() {
+
+    const topnav = ['Home', 'News', 'Contact', 'About']
+
+    const navigationMenu = topnav.map(function(topnavitem){
+      return <li className='topnav_item' key={topnavitem}><a className='topnav_link' href={'#'+topnavitem}>{topnavitem}</a></li>
+    });
+
     return (
       <ul className='topnav' id='myTopnav'>
-        <li className='topnav_item'><a className='topnav_link' href='#home'>Home</a></li>
-        <li className='topnav_item'><a className='topnav_link' href='#news'>News</a></li>
-        <li className='topnav_item'><a className='topnav_link' href='#contact'>Contact</a></li>
-        <li className='topnav_item'><a className='topnav_link' href='#about'>About</a></li>
+        {navigationMenu}
         <li className='topnav_icon'>
           <a className='topnav_link' href='javascript:void(0);' onClick={navFunction}>&#9776;</a>
         </li>

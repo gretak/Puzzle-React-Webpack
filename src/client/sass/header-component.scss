@@ -7,10 +7,20 @@
   text-align: center;
   vertical-align: middle;
   background-color: black;
+  opacity: 0;
+
+  &_fading {
+
+    @extend .puzzle;
+
+    opacity: 1;
+    transition: opacity 4s ease-out;
+  }
 
   &_img {
     width: 150px;
     height: 150px;
     text-align: center;
+    transition: opacity 4s ease-out;
   }
 }

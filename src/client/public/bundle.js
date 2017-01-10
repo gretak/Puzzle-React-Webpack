@@ -103,13 +103,14 @@
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
+
 	      return _react2.default.createElement(
 	        'div',
 	        null,
 	        _react2.default.createElement(_NavigationComponent2.default, null),
 	        _react2.default.createElement(_HeaderComponent2.default, null),
 	        _react2.default.createElement(_CounterComponent2.default, { defaultProperty: 'Likes' }),
-	        _react2.default.createElement(_Footer2.default, null)
+	        _react2.default.createElement(_Footer2.default, { number: '03308098788' })
 	      );
 	    }
 	  }]);
@@ -21133,6 +21134,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -21142,47 +21145,96 @@
 	var HeaderComponent = function (_React$Component) {
 	  _inherits(HeaderComponent, _React$Component);
 
-	  function HeaderComponent() {
+	  function HeaderComponent(props) {
 	    _classCallCheck(this, HeaderComponent);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(HeaderComponent).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(HeaderComponent).call(this, props));
+
+	    _this.state = { preloader: true };
+	    _this.handleResult = _this.handleResult.bind(_this);
+	    _this.arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+	    _this.puzzle = {
+	      1: ['/src/client/public/img/iceberg/iceberg_01.jpg', '/src/client/public/img/snow/snow_01.jpg', '/src/client/public/img/01.jpg'],
+	      2: ['/src/client/public/img/snow/snow_02.jpg', '/src/client/public/img/iceberg/iceberg_02.jpg', '/src/client/public/img/02.jpg'],
+	      3: ['/src/client/public/img/iceberg/iceberg_03.jpg', '/src/client/public/img/03.jpg', '/src/client/public/img/snow/snow_03.jpg'],
+	      4: ['/src/client/public/img/snow/snow_04.jpg', '/src/client/public/img/iceberg/iceberg_04.jpg', '/src/client/public/img/04.jpg'],
+	      5: ['/src/client/public/img/05.jpg', '/src/client/public/img/snow/snow_05.jpg', '/src/client/public/img/iceberg/iceberg_05.jpg'],
+	      6: ['/src/client/public/img/06.jpg', '/src/client/public/img/iceberg/iceberg_06.jpg', '/src/client/public/img/snow/snow_06.jpg'],
+	      7: ['/src/client/public/img/iceberg/iceberg_07.jpg', '/src/client/public/img/07.jpg', '/src/client/public/img/snow/snow_07.jpg'],
+	      8: ['/src/client/public/img/08.jpg', '/src/client/public/img/snow/snow_08.jpg', '/src/client/public/img/iceberg/iceberg_08.jpg'],
+	      9: ['/src/client/public/img/iceberg/iceberg_09.jpg', '/src/client/public/img/snow/snow_09.jpg', '/src/client/public/img/09.jpg'],
+	      10: ['/src/client/public/img/snow/snow_10.jpg', '/src/client/public/img/10.jpg', '/src/client/public/img/iceberg/iceberg_10.jpg'],
+	      11: ['/src/client/public/img/iceberg/iceberg_11.jpg', '/src/client/public/img/snow/snow_11.jpg', '/src/client/public/img/11.jpg'],
+	      12: ['/src/client/public/img/12.jpg', '/src/client/public/img/snow/snow_12.jpg', '/src/client/public/img/iceberg/iceberg_12.jpg'],
+	      13: ['/src/client/public/img/iceberg/iceberg_13.jpg', '/src/client/public/img/snow/snow_13.jpg', '/src/client/public/img/13.jpg'],
+	      14: ['/src/client/public/img/snow/snow_14.jpg', '/src/client/public/img/14.jpg', '/src/client/public/img/iceberg/iceberg_14.jpg'],
+	      15: ['/src/client/public/img/15.jpg', '/src/client/public/img/iceberg/iceberg_15.jpg', '/src/client/public/img/snow/snow_15.jpg'],
+	      16: ['/src/client/public/img/snow/snow_16.jpg', '/src/client/public/img/iceberg/iceberg_16.jpg', '/src/client/public/img/16.jpg'],
+	      17: ['/src/client/public/img/17.jpg', '/src/client/public/img/iceberg/iceberg_17.jpg', '/src/client/public/img/snow/snow_17.jpg'],
+	      18: ['/src/client/public/img/iceberg/iceberg_18.jpg', '/src/client/public/img/snow/snow_18.jpg', '/src/client/public/img/18.jpg'],
+	      19: ['/src/client/public/img/19.jpg', '/src/client/public/img/iceberg/iceberg_19.jpg', '/src/client/public/img/snow/snow_19.jpg'],
+	      20: ['/src/client/public/img/snow/snow_20.jpg', '/src/client/public/img/iceberg/iceberg_20.jpg', '/src/client/public/img/20.jpg']
+	    };
+	    return _this;
 	  }
 
 	  _createClass(HeaderComponent, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _this2 = this;
+
+	      setTimeout(function () {
+	        _this2.setState({
+	          preloader: false
+	        });
+	      }, 800);
+	    }
+	  }, {
+	    key: 'handleResult',
+	    value: function handleResult(key, val) {
+
+	      //should be key
+	      this.arr[key] = val;
+	      console.log(key, val, this.arr);
+	      //let greta = Object.values(this.puzzle)[0][0];
+	      //let greta1 = Object.values(this.puzzle)[1][1];
+	      //let greta2 = Object.values(this.puzzle)[2][0];
+	      //console.log(this.props.image[this.state.index])
+
+	      //if (greta && greta1 && greta2) {
+	      //  console.log('success')
+	      //alert('Success')
+	      // loop throw indexes and compare if they are matching the required ones
+	      //}
+	      //console.log(this.i);
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var puzzle = {
-	        1: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/01.jpg'],
-	        2: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/02.jpg'],
-	        3: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/03.jpg'],
-	        4: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/04.jpg'],
-	        5: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/05.jpg'],
-	        6: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/06.jpg'],
-	        7: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/07.jpg'],
-	        8: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/08.jpg'],
-	        9: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/09.jpg'],
-	        10: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/10.jpg'],
-	        11: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/11.jpg'],
-	        12: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/12.jpg'],
-	        13: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/13.jpg'],
-	        14: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/14.jpg'],
-	        15: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/15.jpg'],
-	        16: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/16.jpg'],
-	        17: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/17.jpg'],
-	        18: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/18.jpg'],
-	        19: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/19.jpg'],
-	        20: ['/src/client/public/img/image.giff', '/src/client/public/img/image.gif', '/src/client/public/img/20.jpg']
 
-	      };
+	      var preloader = this.state.preloader;
 
 	      var images = [];
+
 	      for (var i = 1; i <= 20; i++) {
-	        images.push(_react2.default.createElement(_ImgComponent2.default, { image: puzzle[i], key: i }));
+	        images.push(_react2.default.createElement(_ImgComponent2.default, { handleResult: this.handleResult, image: this.puzzle[i], index: i, key: i }));
 	      }
+	      console.log(images);
+
+	      //console.log(Object.values(images));
+	      // var Objectt = [];
+	      // for (var i=0; i<images.length; i++) {
+	      //   console.log(images.length)
+	      //   Object.values(images)
+	      //   Objectt.push(Object.values(images[0]))
+	      //   console.log(Object.values(images[i]))
+	      // console.log(Objectt)
+	      //}
 
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'puzzle' },
+	        _defineProperty({ onClick: this.handleResult, className: 'puzzle' }, 'className', preloader ? 'puzzle' : 'puzzle_fading'),
 	        images
 	      );
 	    }
@@ -21197,7 +21249,7 @@
 /* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -21227,11 +21279,12 @@
 
 	    _this.state = { index: 0 };
 	    _this.handleClick = _this.handleClick.bind(_this);
+	    //this.handleResult = this.handleResult.bind(this);
 	    return _this;
 	  }
 
 	  _createClass(ImgComponent, [{
-	    key: "handleClick",
+	    key: 'handleClick',
 	    value: function handleClick() {
 	      if (this.state.index === this.props.image.length - 1) {
 	        this.setState({
@@ -21243,12 +21296,25 @@
 	      this.setState({
 	        index: index
 	      });
+	      console.log(this.props.index, this.state.index);
+	      this.props.handleResult(this.props.index, this.state.index);
 	    }
 	  }, {
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
+	      //       var arr = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
-	      return _react2.default.createElement("img", { onClick: this.handleClick, src: this.props.image[this.state.index], className: "puzzle_img" });
+	      // //should be key
+	      //       arr[this.props.index] = this.state.index;
+
+	      //       console.log(arr);
+
+	      //icebergCorrectArray = [0,1,2,2,1,0,1,2,2,1,0,1,2,2,1,0,1,2,2,1];
+	      //if(arr == icebergCorrectArray) {
+	      //console.log("its an image")
+	      //}
+
+	      return _react2.default.createElement('img', { onClick: this.handleClick, src: this.props.image[this.state.index], className: 'puzzle_img' });
 	    }
 	  }]);
 
@@ -21272,6 +21338,10 @@
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _LinkComponent = __webpack_require__(188);
+
+	var _LinkComponent2 = _interopRequireDefault(_LinkComponent);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21305,21 +21375,18 @@
 	          _react2.default.createElement(
 	            'p',
 	            null,
-	            _react2.default.createElement(
-	              'a',
-	              { href: this.state.link },
-	              'Address'
-	            )
+	            _react2.default.createElement(_LinkComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link' })
 	          ),
 	          _react2.default.createElement(
 	            'p',
 	            null,
-	            'Phone number'
+	            _react2.default.createElement(_LinkComponent2.default, { linkDescription: 'I am the text' })
 	          ),
 	          _react2.default.createElement(
 	            'p',
 	            null,
-	            'Phone number'
+	            'Phone number ',
+	            this.props.number
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -21328,20 +21395,17 @@
 	          _react2.default.createElement(
 	            'p',
 	            null,
-	            _react2.default.createElement(
-	              'a',
-	              { href: this.state.link },
-	              'Find out more'
-	            )
+	            _react2.default.createElement(_LinkComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link' })
 	          ),
 	          _react2.default.createElement(
 	            'p',
 	            null,
-	            _react2.default.createElement(
-	              'a',
-	              { href: this.state.link },
-	              'Find out more'
-	            )
+	            _react2.default.createElement(_LinkComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link 2' })
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            _react2.default.createElement(_LinkComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link 3' })
 	          )
 	        )
 	      );
@@ -21399,45 +21463,25 @@
 	  _createClass(NavigationComponent, [{
 	    key: 'render',
 	    value: function render() {
+
+	      var topnav = ['Home', 'News', 'Contact', 'About'];
+
+	      var navigationMenu = topnav.map(function (topnavitem) {
+	        return _react2.default.createElement(
+	          'li',
+	          { className: 'topnav_item', key: topnavitem },
+	          _react2.default.createElement(
+	            'a',
+	            { className: 'topnav_link', href: '#' + topnavitem },
+	            topnavitem
+	          )
+	        );
+	      });
+
 	      return _react2.default.createElement(
 	        'ul',
 	        { className: 'topnav', id: 'myTopnav' },
-	        _react2.default.createElement(
-	          'li',
-	          { className: 'topnav_item' },
-	          _react2.default.createElement(
-	            'a',
-	            { className: 'topnav_link', href: '#home' },
-	            'Home'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'li',
-	          { className: 'topnav_item' },
-	          _react2.default.createElement(
-	            'a',
-	            { className: 'topnav_link', href: '#news' },
-	            'News'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'li',
-	          { className: 'topnav_item' },
-	          _react2.default.createElement(
-	            'a',
-	            { className: 'topnav_link', href: '#contact' },
-	            'Contact'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'li',
-	          { className: 'topnav_item' },
-	          _react2.default.createElement(
-	            'a',
-	            { className: 'topnav_link', href: '#about' },
-	            'About'
-	          )
-	        ),
+	        navigationMenu,
 	        _react2.default.createElement(
 	          'li',
 	          { className: 'topnav_icon' },
@@ -21491,6 +21535,69 @@
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 187 */,
+/* 188 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } //Component can be used as a link or plain text,
+	// has two properties linkDestination or linkDescription.
+
+
+	var FooterItemComponent = function (_React$Component) {
+	  _inherits(FooterItemComponent, _React$Component);
+
+	  function FooterItemComponent() {
+	    _classCallCheck(this, FooterItemComponent);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(FooterItemComponent).apply(this, arguments));
+	  }
+
+	  _createClass(FooterItemComponent, [{
+	    key: 'render',
+	    value: function render() {
+	      //if is the link
+	      if (this.props.linkDestination) {
+	        return _react2.default.createElement(
+	          'a',
+	          { href: this.props.linkDestination },
+	          this.props.linkDescription
+	        );
+	      }
+	      //if no link only text
+	      else {
+	          return _react2.default.createElement(
+	            'span',
+	            null,
+	            this.props.linkDescription
+	          );
+	        }
+	    }
+	  }]);
+
+	  return FooterItemComponent;
+	}(_react2.default.Component);
+
+	exports.default = FooterItemComponent;
 
 /***/ }
 /******/ ]);

@@ -52,7 +52,6 @@
   "scripts": {
     "start": "webpack-dev-server",
     "server": "concurrently --kill-others \"webpack-dev-server --color\" \"webpack --color\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -p",
     "lint": "eslint . --ext .js --ext .jsx || true"
   },

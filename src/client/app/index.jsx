@@ -2,7 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import CounterComponent from './CounterComponent.jsx';
 import HeaderComponent from './HeaderComponent.jsx';
-import Footer from './Footer.jsx';
+import FooterComponent from './Footer.jsx';
 import NavigationComponent from './NavigationComponent.jsx';
 
 
@@ -15,12 +15,14 @@ require('../sass/navigation.scss');
 
 class App extends React.Component {
   render () {
+
+
     return (
       <div>
         <NavigationComponent />
         <HeaderComponent />
         <CounterComponent defaultProperty="Likes"/>
-        <Footer />
+        <FooterComponent number="03308098788" />
       </div>
     );
   }

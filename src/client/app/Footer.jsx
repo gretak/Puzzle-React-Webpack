@@ -1,4 +1,5 @@
 import React from 'react';
+import FooterItemComponent from './LinkComponent.jsx';
 
 
 class FooterComponent extends React.Component {
@@ -13,18 +14,23 @@ render() {
     <div id='contact' className='footer'>
       <div className='footer__left'>
         <p>
-        <a href={this.state.link}>Address</a>
+          <FooterItemComponent linkDestination="http://www.cohaesus.co.uk" linkDescription="I am the link"/>
         </p>
-        <p>Phone number</p>
-        <p>Phone number</p>
+        <p>
+          <FooterItemComponent linkDescription="I am the text"/>
+        </p>
+        <p>Phone number {this.props.number}</p>
       </div>
 
       <div className='footer__right'>
         <p>
-        <a href={this.state.link}>Find out more</a>
+          <FooterItemComponent linkDestination="http://www.cohaesus.co.uk" linkDescription="I am the link"/>
         </p>
         <p>
-        <a href={this.state.link}>Find out more</a>
+          <FooterItemComponent linkDestination="http://www.cohaesus.co.uk" linkDescription="I am the link 2"/>
+        </p>
+        <p>
+          <FooterItemComponent linkDestination="http://www.cohaesus.co.uk" linkDescription="I am the link 3"/>
         </p>
       </div>
     </div>

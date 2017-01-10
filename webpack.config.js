@@ -9,7 +9,6 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
  var HtmlWebpackPlugin = require('html-webpack-plugin');
  var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
    template: __dirname + '/src/client/index.html',
-   //filename: 'index.html',
    inject: 'body'
  });
 
