@@ -11,7 +11,7 @@ class FooterComponent extends React.Component {
 
 render() {
   return (
-    <div id='contact' className='footer'>
+    <div id='Contact' className='footer'>
       <div className='footer__left'>
         <p>
           <FooterItemComponent linkDestination="http://www.cohaesus.co.uk" linkDescription="I am the link"/>
@@ -39,4 +39,4 @@ render() {
 
 }
 
-export default FooterComponent;
+module.exports = FooterComponent;

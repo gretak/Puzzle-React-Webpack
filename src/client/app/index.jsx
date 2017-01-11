@@ -17,18 +17,20 @@ require('../sass/navigation.scss');
 
 class App extends React.Component {
   render () {
-routes
+        const { main, sidebar } = this.props;
+
     return (
       <div>
         {routes}
-
-        <NavigationComponent />
-        <HeaderComponent />
-        <CounterComponent defaultProperty="Likes"/>
-        <FooterComponent number="03308098788" />
       </div>
     );
   }
 }
 
 render(<App/>, document.getElementById('app'));
+
+
+        // <NavigationComponent />
+        // <HeaderComponent />
+        // <CounterComponent defaultProperty="Likes"/>
+        // <FooterComponent number="03308098788" />

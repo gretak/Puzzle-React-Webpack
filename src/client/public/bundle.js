@@ -107,15 +107,15 @@
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
-	      _routes2.default;
+	      var _props = this.props;
+	      var main = _props.main;
+	      var sidebar = _props.sidebar;
+
+
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _routes2.default,
-	        _react2.default.createElement(_NavigationComponent2.default, null),
-	        _react2.default.createElement(_HeaderComponent2.default, null),
-	        _react2.default.createElement(_CounterComponent2.default, { defaultProperty: 'Likes' }),
-	        _react2.default.createElement(_Footer2.default, { number: '03308098788' })
+	        _routes2.default
 	      );
 	    }
 	  }]);
@@ -124,6 +124,11 @@
 	}(_react2.default.Component);
 
 	(0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById('app'));
+
+	// <NavigationComponent />
+	// <HeaderComponent />
+	// <CounterComponent defaultProperty="Likes"/>
+	// <FooterComponent number="03308098788" />
 
 /***/ },
 /* 2 */
@@ -21046,10 +21051,6 @@
 
 	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(2);
@@ -21115,7 +21116,7 @@
 	  return AwesomeComponent;
 	}(_react2.default.Component);
 
-	exports.default = AwesomeComponent;
+	module.exports = AwesomeComponent;
 
 /***/ },
 /* 172 */
@@ -21333,10 +21334,6 @@
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(2);
@@ -21372,7 +21369,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { id: 'contact', className: 'footer' },
+	        { id: 'Contact', className: 'footer' },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'footer__left' },
@@ -21419,7 +21416,7 @@
 	  return FooterComponent;
 	}(_react2.default.Component);
 
-	exports.default = FooterComponent;
+	module.exports = FooterComponent;
 
 /***/ },
 /* 175 */
@@ -21534,25 +21531,30 @@
 	          { className: 'topnav_item', key: topnavitem },
 	          _react2.default.createElement(
 	            'a',
-	            { className: 'topnav_link', href: '#' + topnavitem },
+	            { className: 'topnav_link', href: topnavitem == 'Home' ? '/' : '#' + topnavitem },
 	            topnavitem
 	          )
 	        );
 	      });
 
 	      return _react2.default.createElement(
-	        'ul',
-	        { className: 'topnav', id: 'myTopnav' },
-	        navigationMenu,
+	        'div',
+	        null,
 	        _react2.default.createElement(
-	          'li',
-	          { className: 'topnav_icon' },
+	          'ul',
+	          { className: 'topnav', id: 'myTopnav' },
+	          navigationMenu,
 	          _react2.default.createElement(
-	            'a',
-	            { className: 'topnav_link', href: 'javascript:void(0);', onClick: navFunction },
-	            '☰'
+	            'li',
+	            { className: 'topnav_icon' },
+	            _react2.default.createElement(
+	              'a',
+	              { className: 'topnav_link', href: 'javascript:void(0);', onClick: navFunction },
+	              '☰'
+	            )
 	          )
-	        )
+	        ),
+	        this.props.children
 	      );
 	    }
 	  }]);
@@ -21578,15 +21580,40 @@
 	var IndexRoute = ReactRouter.IndexRoute;
 	var Navigation = __webpack_require__(176);
 	var Header = __webpack_require__(172);
+	var Footer = __webpack_require__(174);
+	var Counter = __webpack_require__(171);
 
 	var routes = React.createElement(
 	  Router,
 	  null,
-	  React.createElement(
-	    Route,
-	    { path: '/', component: Navigation },
-	    React.createElement(Route, { path: '/home', component: Header })
-	  )
+	  React.createElement(Route, { path: '/', components: function components() {
+	      return React.createElement(
+	        'div',
+	        null,
+	        React.createElement(Navigation, null),
+	        React.createElement(Header, null),
+	        React.createElement(Footer, { number: '03308098788' })
+	      );
+	    } }),
+	  React.createElement(Route, { path: '/news', components: function components() {
+	      return React.createElement(
+	        'div',
+	        null,
+	        React.createElement(Navigation, null),
+	        React.createElement(Header, null),
+	        React.createElement(Counter, { defaultProperty: 'Likes' }),
+	        React.createElement(Footer, null)
+	      );
+	    } }),
+	  React.createElement(Route, { path: '/about', components: function components() {
+	      return React.createElement(
+	        'div',
+	        null,
+	        React.createElement(Navigation, null),
+	        React.createElement(Counter, { defaultProperty: 'Likes' }),
+	        React.createElement(Footer, null)
+	      );
+	    } })
 	);
 
 	module.exports = routes;
