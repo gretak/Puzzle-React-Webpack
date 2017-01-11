@@ -21065,20 +21065,20 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var AwesomeComponent = function (_React$Component) {
-	  _inherits(AwesomeComponent, _React$Component);
+	var CounterComponent = function (_React$Component) {
+	  _inherits(CounterComponent, _React$Component);
 
-	  function AwesomeComponent(props) {
-	    _classCallCheck(this, AwesomeComponent);
+	  function CounterComponent(props) {
+	    _classCallCheck(this, CounterComponent);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(AwesomeComponent).call(this, props));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CounterComponent).call(this, props));
 
 	    _this.state = { likesCount: 0 };
 	    _this.onLike = _this.onLike.bind(_this);
 	    return _this;
 	  }
 
-	  _createClass(AwesomeComponent, [{
+	  _createClass(CounterComponent, [{
 	    key: "onLike",
 	    value: function onLike() {
 	      var newLikesCount = this.state.likesCount + 1;
@@ -21113,10 +21113,10 @@
 	    }
 	  }]);
 
-	  return AwesomeComponent;
+	  return CounterComponent;
 	}(_react2.default.Component);
 
-	module.exports = AwesomeComponent;
+	module.exports = CounterComponent;
 
 /***/ },
 /* 172 */

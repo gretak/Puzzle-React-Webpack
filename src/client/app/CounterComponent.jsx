@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-class AwesomeComponent extends React.Component {
+class CounterComponent extends React.Component {
 
   constructor(props) {
     super(props);
@@ -30,4 +30,4 @@ class AwesomeComponent extends React.Component {
 
 }
 
-module.exports = AwesomeComponent;
+module.exports = CounterComponent;
