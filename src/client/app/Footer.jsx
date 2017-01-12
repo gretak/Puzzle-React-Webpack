@@ -17,7 +17,7 @@ render() {
           <FooterItemComponent linkDestination="http://www.cohaesus.co.uk" linkDescription="I am the link"/>
         </p>
         <p>
-          <FooterItemComponent linkDescription="I am the text"/>
+          <FooterItemComponent linkDescription="I am text"/>
         </p>
         <p>Phone number {this.props.number}</p>
       </div>

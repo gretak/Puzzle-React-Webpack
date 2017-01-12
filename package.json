@@ -60,7 +60,7 @@
     "type": "git",
     "url": "git+https://github.com/gretak/Webpack-react.git"
   },
-  "author": "",
+  "author": "Greta Kavaliauskaite",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gretak/Webpack-react/issues"

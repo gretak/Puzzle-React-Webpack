@@ -21157,7 +21157,7 @@
 	    _this.arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 	    _this.puzzle = {
-	      1: ['/src/client/public/img/iceberg/iceberg_01.jpg', '/src/client/public/img/snow/snow_01.jpg', '/src/client/public/img/01.jpg'],
+	      1: ['./src/client/public/img/iceberg/iceberg_01.jpg', './src/client/public/img/snow/snow_01.jpg', './src/client/public/img/01.jpg'],
 	      2: ['/src/client/public/img/snow/snow_02.jpg', '/src/client/public/img/iceberg/iceberg_02.jpg', '/src/client/public/img/02.jpg'],
 	      3: ['/src/client/public/img/iceberg/iceberg_03.jpg', '/src/client/public/img/03.jpg', '/src/client/public/img/snow/snow_03.jpg'],
 	      4: ['/src/client/public/img/snow/snow_04.jpg', '/src/client/public/img/iceberg/iceberg_04.jpg', '/src/client/public/img/04.jpg'],
@@ -21196,20 +21196,33 @@
 	    key: 'handleResult',
 	    value: function handleResult(key, val) {
 
-	      //should be key
 	      this.arr[key] = val;
-	      console.log(key, val, this.arr);
-	      //let greta = Object.values(this.puzzle)[0][0];
-	      //let greta1 = Object.values(this.puzzle)[1][1];
-	      //let greta2 = Object.values(this.puzzle)[2][0];
-	      //console.log(this.props.image[this.state.index])
 
-	      //if (greta && greta1 && greta2) {
-	      //  console.log('success')
-	      //alert('Success')
-	      // loop throw indexes and compare if they are matching the required ones
-	      //}
-	      //console.log(this.i);
+	      var icebergArray = [0, 1, 0, 1, 2, 1, 0, 2, 0, 2, 0, 2, 0, 2, 1, 1, 1, 0, 1, 1];
+	      var christmasArray = [2, 2, 1, 2, 0, 0, 1, 0, 2, 1, 2, 0, 2, 1, 0, 2, 0, 2, 0, 2];
+	      var snowArray = [1, 0, 2, 0, 1, 2, 2, 1, 1, 0, 1, 1, 1, 0, 2, 0, 2, 1, 2, 0];
+
+	      var Iceberg = arraysEqual(icebergArray, this.arr);
+	      var Christmas = arraysEqual(christmasArray, this.arr);
+	      var Snow = arraysEqual(snowArray, this.arr);
+
+	      console.log(this.arr);
+
+	      if (Iceberg || Snow || Christmas) {
+	        setTimeout(function () {
+	          alert('You got the image');
+	        }, 300);
+	        console.log('restart');
+	        console.log(this.arr);
+	      }
+
+	      //helper arraysEqual function
+	      function arraysEqual(a1, a2) {
+	        for (var i = a1.length; i--;) {
+	          if (a1[i] !== a2[i]) return false;
+	        }
+	        return true;
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -21220,23 +21233,12 @@
 	      var images = [];
 
 	      for (var i = 1; i <= 20; i++) {
-	        images.push(_react2.default.createElement(_ImgComponent2.default, { handleResult: this.handleResult, image: this.puzzle[i], index: i, key: i }));
+	        images.push(_react2.default.createElement(_ImgComponent2.default, { arraysEqual: this.arraysEqual, handleResult: this.handleResult, image: this.puzzle[i], index: i, key: i }));
 	      }
-	      console.log(images);
-
-	      //console.log(Object.values(images));
-	      // var Objectt = [];
-	      // for (var i=0; i<images.length; i++) {
-	      //   console.log(images.length)
-	      //   Object.values(images)
-	      //   Objectt.push(Object.values(images[0]))
-	      //   console.log(Object.values(images[i]))
-	      // console.log(Objectt)
-	      //}
 
 	      return _react2.default.createElement(
 	        'div',
-	        _defineProperty({ onClick: this.handleResult, className: 'puzzle' }, 'className', preloader ? 'puzzle' : 'puzzle_fading'),
+	        _defineProperty({ className: 'puzzle' }, 'className', preloader ? 'puzzle' : 'puzzle_fading'),
 	        images
 	      );
 	    }
@@ -21245,9 +21247,6 @@
 	  return HeaderComponent;
 	}(_react2.default.Component);
 
-	//export default HeaderComponent;
-
-
 	module.exports = HeaderComponent;
 
 /***/ },
@@ -21255,10 +21254,6 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -21284,14 +21279,13 @@
 
 	    _this.state = { index: 0 };
 	    _this.handleClick = _this.handleClick.bind(_this);
-	    //this.handleResult = this.handleResult.bind(this);
 	    return _this;
 	  }
 
 	  _createClass(ImgComponent, [{
 	    key: 'handleClick',
 	    value: function handleClick() {
-	      if (this.state.index === this.props.image.length - 1) {
+	      if (this.state.index == this.props.image.length - 1) {
 	        this.setState({
 	          index: 0
 	        });
@@ -21301,23 +21295,12 @@
 	      this.setState({
 	        index: index
 	      });
-	      console.log(this.props.index, this.state.index);
-	      this.props.handleResult(this.props.index, this.state.index);
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      //       var arr = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-
-	      // //should be key
-	      //       arr[this.props.index] = this.state.index;
-
-	      //       console.log(arr);
-
-	      //icebergCorrectArray = [0,1,2,2,1,0,1,2,2,1,0,1,2,2,1,0,1,2,2,1];
-	      //if(arr == icebergCorrectArray) {
-	      //console.log("its an image")
-	      //}
+	      //replacing index numbers in array
+	      this.props.handleResult(this.props.index - 1, this.state.index);
 
 	      return _react2.default.createElement('img', { onClick: this.handleClick, src: this.props.image[this.state.index], className: 'puzzle_img' });
 	    }
@@ -21326,7 +21309,7 @@
 	  return ImgComponent;
 	}(_react2.default.Component);
 
-	exports.default = ImgComponent;
+	module.exports = ImgComponent;
 
 /***/ },
 /* 174 */
@@ -21381,7 +21364,7 @@
 	          _react2.default.createElement(
 	            'p',
 	            null,
-	            _react2.default.createElement(_FooterItemComponent2.default, { linkDescription: 'I am the text' })
+	            _react2.default.createElement(_FooterItemComponent2.default, { linkDescription: 'I am text' })
 	          ),
 	          _react2.default.createElement(
 	            'p',
@@ -21441,7 +21424,7 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } //Component can be used as a link or plain text,
-	// has two properties linkDestination or linkDescription.
+	//has two properties linkDestination or linkDescription.
 
 
 	var FooterItemComponent = function (_React$Component) {
@@ -21461,7 +21444,11 @@
 	        return _react2.default.createElement(
 	          'a',
 	          { href: this.props.linkDestination },
-	          this.props.linkDescription
+	          _react2.default.createElement(
+	            'u',
+	            null,
+	            this.props.linkDescription
+	          )
 	        );
 	      }
 	      //if no link only text

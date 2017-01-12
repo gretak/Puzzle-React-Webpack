@@ -22,9 +22,10 @@ p {
 
 a {
   text-decoration: none;
+  color: white;
 
   &:hover {
-    color: green;
+    color: purple;
   }
 
   &:visited {

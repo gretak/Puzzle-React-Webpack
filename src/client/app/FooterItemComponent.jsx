@@ -1,5 +1,5 @@
 //Component can be used as a link or plain text,
-// has two properties linkDestination or linkDescription.
+//has two properties linkDestination or linkDescription.
 import React from 'react';
 
 class FooterItemComponent extends React.Component {
@@ -8,7 +8,7 @@ class FooterItemComponent extends React.Component {
     //if is the link
     if (this.props.linkDestination) {
     return (
-      <a href={this.props.linkDestination}>{this.props.linkDescription}</a>
+      <a href={this.props.linkDestination}><u>{this.props.linkDescription}</u></a>
       )
     } 
    //if no link only text

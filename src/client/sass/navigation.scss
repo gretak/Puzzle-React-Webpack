@@ -11,10 +11,6 @@
     &:hover {
       background-color: #555;
       transition: background-color 0.5s ease;
-
-      .topnav_link {
-        font-size: 19px;
-      }
     }
   }
 
@@ -66,10 +62,6 @@
   ul.topnav.responsive li a {
     display: block;
     text-align: left;
-
-    &:hover {
-      font-size: 19px;
-    }
   }
 }
 
