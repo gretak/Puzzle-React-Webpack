@@ -1,4 +1,6 @@
 import React from 'react';
+import HeaderComponent from './HeaderComponent.jsx';
+
 
 
 class ImgComponent extends React.Component {
@@ -26,8 +28,9 @@ class ImgComponent extends React.Component {
     //replacing index numbers in array
     this.props.handleResult(this.props.index-1, this.state.index);
 
+
     return (
-        <img onClick={this.handleClick} src={this.props.image[this.state.index]} className='puzzle_img'/>
+        <img onClick={this.handleClick} src={this.props.image[this.state.index]} className={this.props.ImgClass} />
     )
   }
 }

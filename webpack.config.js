@@ -60,7 +60,7 @@ module.exports = {
     new OptimizeCssAssetsPlugin(),
     new CopyWebpackPlugin([
       {
-        from: 'src/client/assets/img',
+        from: 'src/client/assets/img/',
         to: 'img',
         force: true
       }
@@ -72,7 +72,7 @@ module.exports = {
   },
   devServer: {
     host: "localhost",
-    port: 3000,
+    port: 5005,
     inline: true
   }
 };

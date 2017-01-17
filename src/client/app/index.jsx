@@ -7,7 +7,6 @@ import NavigationComponent from './NavigationComponent.jsx';
 import routes from './routes.js';
 
 
-
 require('../sass/base-style.scss');
 require('../sass/header-component.scss');
 require('../sass/counter-component.scss');
@@ -17,18 +16,19 @@ require('../sass/navigation.scss');
 
 class App extends React.Component {
   render () {
-        const { main, sidebar } = this.props;
-
     return (
       <div>
+      <NavigationComponent/>
         {routes}
+      <FooterComponent/>
       </div>
     );
   }
 }
 
-render(<App/>, document.getElementById('app'));
-
+render(<App/>,
+  document.getElementById('app')
+);
 
         // <NavigationComponent />
         // <HeaderComponent />

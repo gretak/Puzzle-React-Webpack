@@ -1,13 +1,12 @@
 .footer {
   color: #fff;
   height: 150px;
-  width: 100%;
   padding: 5%;
   background-color: rgba(0, 0, 0, 0.6);
   text-align: center;
 
   &__left {
-    width: 45%;
+    width: 50%;
     float: left;
     font-size: 60px;
     float: left;
@@ -15,7 +14,7 @@
   }
 
   &__right {
-    width: 45%;
+    width: 50%;
     float: left;
   }
 }

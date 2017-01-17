@@ -107,15 +107,12 @@
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
-	      var _props = this.props;
-	      var main = _props.main;
-	      var sidebar = _props.sidebar;
-
-
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _routes2.default
+	        _react2.default.createElement(_NavigationComponent2.default, null),
+	        _routes2.default,
+	        _react2.default.createElement(_Footer2.default, null)
 	      );
 	    }
 	  }]);
@@ -21144,6 +21141,8 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	//import routes from './routes.js';
+
 	var HeaderComponent = function (_React$Component) {
 	  _inherits(HeaderComponent, _React$Component);
 
@@ -21152,48 +21151,108 @@
 
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(HeaderComponent).call(this, props));
 
-	    _this.state = { preloader: true };
+	    _this.state = {
+	      preloader: true
+	    };
 	    _this.handleResult = _this.handleResult.bind(_this);
 	    _this.arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+	    _this.puzzleLevelOne = {
+	      1: ['./img/iceberg/iceberg_01.jpg', './img/snow/snow_01.jpg', './img/01.jpg'],
+	      2: ['./img/snow/snow_02.jpg', './img/iceberg/iceberg_02.jpg', './img/02.jpg'],
+	      3: ['./img/iceberg/iceberg_03.jpg', './img/03.jpg', './img/snow/snow_03.jpg'],
+	      4: ['./img/snow/snow_04.jpg', './img/iceberg/iceberg_04.jpg', './img/04.jpg'],
+	      5: ['./img/05.jpg', './img/snow/snow_05.jpg', './img/iceberg/iceberg_05.jpg'],
+	      6: ['./img/06.jpg', './img/iceberg/iceberg_06.jpg', './img/snow/snow_06.jpg'],
+	      7: ['./img/iceberg/iceberg_07.jpg', './img/07.jpg', './img/snow/snow_07.jpg'],
+	      8: ['./img/08.jpg', './img/snow/snow_08.jpg', './img/iceberg/iceberg_08.jpg'],
+	      9: ['./img/iceberg/iceberg_09.jpg', './img/snow/snow_09.jpg', './img/09.jpg'],
+	      10: ['./img/snow/snow_10.jpg', './img/10.jpg', './img/iceberg/iceberg_10.jpg'],
+	      11: ['./img/iceberg/iceberg_11.jpg', './img/snow/snow_11.jpg', './img/11.jpg'],
+	      12: ['./img/12.jpg', './img/snow/snow_12.jpg', './img/iceberg/iceberg_12.jpg'],
+	      13: ['./img/iceberg/iceberg_13.jpg', './img/snow/snow_13.jpg', './img/13.jpg'],
+	      14: ['./img/snow/snow_14.jpg', './img/14.jpg', './img/iceberg/iceberg_14.jpg'],
+	      15: ['./img/15.jpg', './img/iceberg/iceberg_15.jpg', './img/snow/snow_15.jpg'],
+	      16: ['./img/snow/snow_16.jpg', './img/iceberg/iceberg_16.jpg', './img/16.jpg'],
+	      17: ['./img/17.jpg', './img/iceberg/iceberg_17.jpg', './img/snow/snow_17.jpg'],
+	      18: ['./img/iceberg/iceberg_18.jpg', './img/snow/snow_18.jpg', './img/18.jpg'],
+	      19: ['./img/19.jpg', './img/iceberg/iceberg_19.jpg', './img/snow/snow_19.jpg'],
+	      20: ['./img/snow/snow_20.jpg', './img/iceberg/iceberg_20.jpg', './img/20.jpg']
+	    };
 
-	    _this.puzzle = {
-	      1: ['./src/client/public/img/iceberg/iceberg_01.jpg', './src/client/public/img/snow/snow_01.jpg', './src/client/public/img/01.jpg'],
-	      2: ['/src/client/public/img/snow/snow_02.jpg', '/src/client/public/img/iceberg/iceberg_02.jpg', '/src/client/public/img/02.jpg'],
-	      3: ['/src/client/public/img/iceberg/iceberg_03.jpg', '/src/client/public/img/03.jpg', '/src/client/public/img/snow/snow_03.jpg'],
-	      4: ['/src/client/public/img/snow/snow_04.jpg', '/src/client/public/img/iceberg/iceberg_04.jpg', '/src/client/public/img/04.jpg'],
-	      5: ['/src/client/public/img/05.jpg', '/src/client/public/img/snow/snow_05.jpg', '/src/client/public/img/iceberg/iceberg_05.jpg'],
-	      6: ['/src/client/public/img/06.jpg', '/src/client/public/img/iceberg/iceberg_06.jpg', '/src/client/public/img/snow/snow_06.jpg'],
-	      7: ['/src/client/public/img/iceberg/iceberg_07.jpg', '/src/client/public/img/07.jpg', '/src/client/public/img/snow/snow_07.jpg'],
-	      8: ['/src/client/public/img/08.jpg', '/src/client/public/img/snow/snow_08.jpg', '/src/client/public/img/iceberg/iceberg_08.jpg'],
-	      9: ['/src/client/public/img/iceberg/iceberg_09.jpg', '/src/client/public/img/snow/snow_09.jpg', '/src/client/public/img/09.jpg'],
-	      10: ['/src/client/public/img/snow/snow_10.jpg', '/src/client/public/img/10.jpg', '/src/client/public/img/iceberg/iceberg_10.jpg'],
-	      11: ['/src/client/public/img/iceberg/iceberg_11.jpg', '/src/client/public/img/snow/snow_11.jpg', '/src/client/public/img/11.jpg'],
-	      12: ['/src/client/public/img/12.jpg', '/src/client/public/img/snow/snow_12.jpg', '/src/client/public/img/iceberg/iceberg_12.jpg'],
-	      13: ['/src/client/public/img/iceberg/iceberg_13.jpg', '/src/client/public/img/snow/snow_13.jpg', '/src/client/public/img/13.jpg'],
-	      14: ['/src/client/public/img/snow/snow_14.jpg', '/src/client/public/img/14.jpg', '/src/client/public/img/iceberg/iceberg_14.jpg'],
-	      15: ['/src/client/public/img/15.jpg', '/src/client/public/img/iceberg/iceberg_15.jpg', '/src/client/public/img/snow/snow_15.jpg'],
-	      16: ['/src/client/public/img/snow/snow_16.jpg', '/src/client/public/img/iceberg/iceberg_16.jpg', '/src/client/public/img/16.jpg'],
-	      17: ['/src/client/public/img/17.jpg', '/src/client/public/img/iceberg/iceberg_17.jpg', '/src/client/public/img/snow/snow_17.jpg'],
-	      18: ['/src/client/public/img/iceberg/iceberg_18.jpg', '/src/client/public/img/snow/snow_18.jpg', '/src/client/public/img/18.jpg'],
-	      19: ['/src/client/public/img/19.jpg', '/src/client/public/img/iceberg/iceberg_19.jpg', '/src/client/public/img/snow/snow_19.jpg'],
-	      20: ['/src/client/public/img/snow/snow_20.jpg', '/src/client/public/img/iceberg/iceberg_20.jpg', '/src/client/public/img/20.jpg']
+	    _this.puzzleLevelTwo = {
+	      1: ['./img/opt/opt_01.jpg', './img/panda/panda_01.jpg', './img/kitty/kitty_01.jpg'],
+	      2: ['./img/panda/panda_02.jpg', './img/opt/opt_02.jpg', './img/kitty/kitty_02.jpg'],
+	      3: ['./img/kitty/kitty_03.jpg', './img/panda/panda_03.jpg', './img/opt/opt_03.jpg'],
+	      4: ['./img/opt/opt_04.jpg', './img/panda/panda_04.jpg', './img/kitty/kitty_04.jpg'],
+	      5: ['./img/panda/panda_05.jpg', './img/opt/opt_05.jpg', './img/kitty/kitty_05.jpg'],
+	      6: ['./img/kitty/kitty_06.jpg', './img/panda/panda_06.jpg', './img/opt/opt_06.jpg'],
+	      7: ['./img/opt/opt_07.jpg', './img/panda/panda_07.jpg', './img/kitty/kitty_07.jpg'],
+	      8: ['./img/kitty/kitty_08.jpg', './img/opt/opt_08.jpg', './img/panda/panda_08.jpg'],
+	      9: ['./img/panda/panda_09.jpg', './img/opt/opt_09.jpg', './img/kitty/kitty_09.jpg'],
+	      10: ['./img/kitty/kitty_10.jpg', './img/opt/opt_10.jpg', './img/panda/panda_10.jpg'],
+	      11: ['./img/opt/opt_11.jpg', './img/panda/panda_11.jpg', './img/kitty/kitty_11.jpg'],
+	      12: ['./img/panda/panda_12.jpg', './img/kitty/kitty_12.jpg', './img/opt/opt_12.jpg'],
+	      13: ['./img/kitty/kitty_13.jpg', './img/opt/opt_13.jpg', './img/panda/panda_13.jpg'],
+	      14: ['./img/opt/opt_14.jpg', './img/panda/panda_14.jpg', './img/kitty/kitty_14.jpg'],
+	      15: ['./img/kitty/kitty_15.jpg', './img/opt/opt_15.jpg', './img/panda/panda_15.jpg'],
+	      16: ['./img/panda/panda_16.jpg', './img/kitty/kitty_16.jpg', './img/opt/opt_16.jpg'],
+	      17: ['./img/opt/opt_17.jpg', './img/panda/panda_17.jpg', './img/kitty/kitty_17.jpg'],
+	      18: ['./img/kitty/kitty_18.jpg', './img/opt/opt_18.jpg', './img/panda/panda_18.jpg'],
+	      19: ['./img/panda/panda_19.jpg', './img/kitty/kitty_19.jpg', './img/opt/opt_19.jpg'],
+	      20: ['./img/opt/opt_20.jpg', './img/kitty/kitty_20.jpg', './img/panda/panda_20.jpg'],
+	      21: ['./img/panda/panda_21.jpg', './img/opt/opt_21.jpg', './img/kitty/kitty_21.jpg'],
+	      22: ['./img/kitty/kitty_22.jpg', './img/panda/panda_22.jpg', './img/opt/opt_22.jpg'],
+	      23: ['./img/opt/opt_23.jpg', './img/kitty/kitty_23.jpg', './img/panda/panda_23.jpg'],
+	      24: ['./img/panda/panda_24.jpg', './img/opt/opt_24.jpg', './img/kitty/kitty_24.jpg'],
+	      25: ['./img/kitty/kitty_25.jpg', './img/panda/panda_25.jpg', './img/opt/opt_25.jpg'],
+	      26: ['./img/kitty/kitty_26.jpg', './img/opt/opt_26.jpg', './img/panda/panda_26.jpg'],
+	      27: ['./img/opt/opt_27.jpg', './img/panda/panda_27.jpg', './img/kitty/kitty_27.jpg'],
+	      28: ['./img/panda/panda_28.jpg', './img/opt/opt_28.jpg', './img/kitty/kitty_28.jpg'],
+	      29: ['./img/kitty/kitty_29.jpg', './img/panda/panda_29.jpg', './img/opt/opt_29.jpg'],
+	      30: ['./img/opt/opt_30.jpg', './img/kitty/kitty_30.jpg', './img/panda/panda_30.jpg'],
+	      31: ['./img/panda/panda_31.jpg', './img/opt/opt_31.jpg', './img/kitty/kitty_31.jpg'],
+	      32: ['./img/opt/opt_32.jpg', './img/panda/panda_32.jpg', './img/kitty/kitty_32.jpg'],
+	      33: ['./img/panda/panda_33.jpg', './img/kitty/kitty_33.jpg', './img/opt/opt_33.jpg'],
+	      34: ['./img/kitty/kitty_34.jpg', './img/opt/opt_34.jpg', './img/panda/panda_34.jpg'],
+	      35: ['./img/opt/opt_35.jpg', './img/panda/panda_35.jpg', './img/kitty/kitty_35.jpg'],
+	      36: ['./img/panda/panda_36.jpg', './img/kitty/kitty_36.jpg', './img/opt/opt_36.jpg'],
+	      37: ['./img/kitty/kitty_37.jpg', './img/opt/opt_37.jpg', './img/panda/panda_37.jpg'],
+	      38: ['./img/opt/opt_38.jpg', './img/panda/panda_38.jpg', './img/kitty/kitty_38.jpg'],
+	      39: ['./img/kitty/kitty_39.jpg', './img/opt/opt_39.jpg', './img/panda/panda_39.jpg'],
+	      40: ['./img/panda/panda_40.jpg', './img/kitty/kitty_40.jpg', './img/opt/opt_40.jpg'],
+	      41: ['./img/opt/opt_41.jpg', './img/panda/panda_41.jpg', './img/kitty/kitty_41.jpg'],
+	      42: ['./img/kitty/kitty_42.jpg', './img/opt/opt_42.jpg', './img/panda/panda_42.jpg'],
+	      43: ['./img/panda/panda_43.jpg', './img/kitty/kitty_43.jpg', './img/opt/opt_43.jpg'],
+	      44: ['./img/opt/opt_44.jpg', './img/kitty/kitty_44.jpg', './img/panda/panda_44.jpg'],
+	      45: ['./img/panda/panda_45.jpg', './img/opt/opt_45.jpg', './img/kitty/kitty_45.jpg'],
+	      46: ['./img/kitty/kitty_46.jpg', './img/panda/panda_46.jpg', './img/opt/opt_46.jpg'],
+	      47: ['./img/opt/opt_47.jpg', './img/panda/panda_47.jpg', './img/kitty/kitty_47.jpg'],
+	      48: ['./img/panda/panda_48.jpg', './img/opt/opt_48.jpg', './img/kitty/kitty_48.jpg']
 	    };
 	    return _this;
 	  }
 
 	  _createClass(HeaderComponent, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
 	      var _this2 = this;
 
 	      setTimeout(function () {
 	        _this2.setState({
 	          preloader: false
 	        });
-	      }, 800);
+	      }, 600);
 	    }
 	  }, {
 	    key: 'handleResult',
+
+
+	    //   handleSubmitUser () {
+	    //   this.context.router.push({
+	    //     pathname: '/news'
+	    //   });
+	    // }
+
 	    value: function handleResult(key, val) {
 
 	      this.arr[key] = val;
@@ -21210,10 +21269,13 @@
 
 	      if (Iceberg || Snow || Christmas) {
 	        setTimeout(function () {
-	          alert('You got the image');
+	          alert('You unlocked level 2');
 	        }, 300);
-	        console.log('restart');
-	        console.log(this.arr);
+	        console.log('unlock the next level');
+	        this.context.router.push({
+	          pathname: '/news'
+	        });
+	        //reshuffle the image or share on face book. --> new component to appear.
 	      }
 
 	      //helper arraysEqual function
@@ -21227,25 +21289,36 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var router = this.context.router;
 
 	      var preloader = this.state.preloader;
 
 	      var images = [];
 
-	      for (var i = 1; i <= 20; i++) {
-	        images.push(_react2.default.createElement(_ImgComponent2.default, { arraysEqual: this.arraysEqual, handleResult: this.handleResult, image: this.puzzle[i], index: i, key: i }));
+	      for (var i = 1; i <= this.props.imgNumber; i++) {
+	        images.push(_react2.default.createElement(_ImgComponent2.default, { handleResult: this.handleResult, image: this[this.props.puzzleLevel][i], index: i, key: i, ImgClass: this.props.puzzleClass }));
+	        console.log();
 	      }
 
 	      return _react2.default.createElement(
 	        'div',
-	        _defineProperty({ className: 'puzzle' }, 'className', preloader ? 'puzzle' : 'puzzle_fading'),
-	        images
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          _defineProperty({ className: 'puzzle' }, 'className', preloader ? 'puzzle' : 'puzzle_fading'),
+	          images
+	        )
 	      );
 	    }
 	  }]);
 
 	  return HeaderComponent;
 	}(_react2.default.Component);
+
+	HeaderComponent.contextTypes = {
+	  router: _react.PropTypes.object.isRequired
+	};
+
 
 	module.exports = HeaderComponent;
 
@@ -21260,6 +21333,10 @@
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _HeaderComponent = __webpack_require__(172);
+
+	var _HeaderComponent2 = _interopRequireDefault(_HeaderComponent);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21302,7 +21379,7 @@
 	      //replacing index numbers in array
 	      this.props.handleResult(this.props.index - 1, this.state.index);
 
-	      return _react2.default.createElement('img', { onClick: this.handleClick, src: this.props.image[this.state.index], className: 'puzzle_img' });
+	      return _react2.default.createElement('img', { onClick: this.handleClick, src: this.props.image[this.state.index], className: this.props.ImgClass });
 	    }
 	  }]);
 
@@ -21549,9 +21626,6 @@
 	  return NavigationComponent;
 	}(_react2.default.Component);
 
-	//export default NavigationComponent;
-
-
 	module.exports = NavigationComponent;
 
 /***/ },
@@ -21562,48 +21636,41 @@
 
 	var React = __webpack_require__(2);
 	var ReactRouter = __webpack_require__(178);
+	//import Router from 'react-router'
 	var Router = ReactRouter.Router;
 	var Route = ReactRouter.Route;
 	var IndexRoute = ReactRouter.IndexRoute;
 	var Navigation = __webpack_require__(176);
+	var hashHistory = ReactRouter.hashHistory;
 	var Header = __webpack_require__(172);
 	var Footer = __webpack_require__(174);
 	var Counter = __webpack_require__(171);
 
 	var routes = React.createElement(
 	  Router,
-	  null,
-	  React.createElement(Route, { path: '/', components: function components() {
+	  { history: hashHistory },
+	  React.createElement(Route, { path: '/', component: function component() {
 	      return React.createElement(
 	        'div',
 	        null,
-	        React.createElement(Navigation, null),
-	        React.createElement(Header, null),
-	        React.createElement(Footer, { number: '03308098788' })
+	        React.createElement(Header, { imgNumber: 20, puzzleLevel: 'puzzleLevelOne', puzzleClass: 'puzzle_img20' })
 	      );
 	    } }),
 	  React.createElement(Route, { path: '/news', components: function components() {
 	      return React.createElement(
 	        'div',
 	        null,
-	        React.createElement(Navigation, null),
-	        React.createElement(Header, null),
-	        React.createElement(Counter, { defaultProperty: 'Likes' }),
-	        React.createElement(Footer, null)
-	      );
-	    } }),
-	  React.createElement(Route, { path: '/about', components: function components() {
-	      return React.createElement(
-	        'div',
-	        null,
-	        React.createElement(Navigation, null),
-	        React.createElement(Counter, { defaultProperty: 'Likes' }),
-	        React.createElement(Footer, null)
+	        React.createElement(Header, { imgNumber: 48, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img48' }),
+	        React.createElement(Counter, { defaultProperty: 'Likes' })
 	      );
 	    } })
 	);
 
 	module.exports = routes;
+
+	//<Route path='/' component={()=>(<div><Navigation/><Header/><Footer/></div>)}/>
+	//<Route path="/news" components={()=>(<div><Navigation/><Header/><Counter defaultProperty="Likes"/><Footer/></div>)}/>
+	//<Route path="/about" components={()=>(<div><Navigation/><Counter defaultProperty="Likes"/><Footer/></div>)}/>
 
 /***/ },
 /* 178 */

@@ -37,5 +37,4 @@ class NavigationComponent extends React.Component {
 
 }
 
-//export default NavigationComponent;
 module.exports = NavigationComponent;
