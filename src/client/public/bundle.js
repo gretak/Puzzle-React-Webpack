@@ -21155,7 +21155,7 @@
 	      preloader: true
 	    };
 	    _this.handleResult = _this.handleResult.bind(_this);
-	    _this.arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+	    _this.arr = [];
 	    _this.puzzleLevelOne = {
 	      1: ['./img/iceberg/iceberg_01.jpg', './img/snow/snow_01.jpg', './img/01.jpg'],
 	      2: ['./img/snow/snow_02.jpg', './img/iceberg/iceberg_02.jpg', './img/02.jpg'],
@@ -21257,13 +21257,23 @@
 
 	      this.arr[key] = val;
 
+	      //level 1
 	      var icebergArray = [0, 1, 0, 1, 2, 1, 0, 2, 0, 2, 0, 2, 0, 2, 1, 1, 1, 0, 1, 1];
 	      var christmasArray = [2, 2, 1, 2, 0, 0, 1, 0, 2, 1, 2, 0, 2, 1, 0, 2, 0, 2, 0, 2];
 	      var snowArray = [1, 0, 2, 0, 1, 2, 2, 1, 1, 0, 1, 1, 1, 0, 2, 0, 2, 1, 2, 0];
 
+	      //level 2
+	      var kitty = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 2, 0, 1, 2, 2, 1, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 2, 2];
+	      var opt = [0, 1, 2, 0, 1, 2, 0, 0, 1, 1, 0, 2, 1, 0, 1, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1];
+	      var panda = [1, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 1, 0];
+
 	      var Iceberg = arraysEqual(icebergArray, this.arr);
 	      var Christmas = arraysEqual(christmasArray, this.arr);
 	      var Snow = arraysEqual(snowArray, this.arr);
+
+	      var Kitty = arraysEqual(kitty, this.arr);
+	      var Opt = arraysEqual(opt, this.arr);
+	      var Panda = arraysEqual(panda, this.arr);
 
 	      console.log(this.arr);
 
@@ -21275,7 +21285,11 @@
 	        this.context.router.push({
 	          pathname: '/news'
 	        });
-	        //reshuffle the image or share on face book. --> new component to appear.
+	      }
+	      if (Kitty || Opt || Panda) {
+	        setTimeout(function () {
+	          alert('You finished the game');
+	        }, 300);
 	      }
 
 	      //helper arraysEqual function

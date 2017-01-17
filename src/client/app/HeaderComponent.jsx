@@ -11,7 +11,7 @@ constructor(props) {
       preloader: true
     };
     this.handleResult = this.handleResult.bind(this);
-    this.arr = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    this.arr = [];
     this.puzzleLevelOne = {
       1 : [ './img/iceberg/iceberg_01.jpg', './img/snow/snow_01.jpg', './img/01.jpg'],
       2 : [ './img/snow/snow_02.jpg', './img/iceberg/iceberg_02.jpg', './img/02.jpg'],
@@ -100,7 +100,6 @@ constructor(props) {
   }
 
 
-
   //   handleSubmitUser () {
   //   this.context.router.push({
   //     pathname: '/news'
@@ -111,13 +110,24 @@ constructor(props) {
 
     this.arr[key] = val;
 
+//level 1
     const icebergArray = [0,1,0,1,2,1,0,2,0,2,0,2,0,2,1,1,1,0,1,1];
     const christmasArray = [2,2,1,2,0,0,1,0,2,1,2,0,2,1,0,2,0,2,0,2];
     const snowArray = [1,0,2,0,1,2,2,1,1,0,1,1,1,0,2,0,2,1,2,0];
 
+//level 2
+    const kitty = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 2, 0, 1, 2, 2, 1, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 2, 2];
+    const opt = [0, 1, 2, 0, 1, 2, 0, 0, 1, 1, 0, 2, 1, 0, 1, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1];
+    const panda = [1, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 1, 0];
+
     const Iceberg = arraysEqual(icebergArray,this.arr);
     const Christmas = arraysEqual(christmasArray,this.arr);
     const Snow = arraysEqual(snowArray,this.arr);
+
+    const Kitty = arraysEqual(kitty,this.arr);
+    const Opt = arraysEqual(opt,this.arr);
+    const Panda = arraysEqual(panda,this.arr);
+
 
     console.log(this.arr)
 
@@ -130,7 +140,12 @@ constructor(props) {
        this.context.router.push({
        pathname: '/news'
        })
-      //reshuffle the image or share on face book. --> new component to appear.
+    }
+    if (Kitty || Opt || Panda) {
+      setTimeout( function () 
+         {
+          alert( 'You finished the game' );
+         }, 300 );
     }
 
     //helper arraysEqual function
