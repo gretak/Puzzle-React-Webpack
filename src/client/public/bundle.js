@@ -21299,7 +21299,36 @@
 	      var Christmas = arraysEqual(christmasArray, this.arr);
 	      var Snow = arraysEqual(snowArray, this.arr);
 
-	      //level 2
+	      if (Iceberg || Snow || Christmas) {
+	        //alert should be like pop-up
+	        setTimeout(function () {
+	          alert('You unlocked level 2');
+	        }, 300);
+	        console.log('unlock the next level');
+	        this.context.router.push({
+	          pathname: '/leveltwo'
+	        });
+	      }
+
+	      //level2           
+	      var tigerArray = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 1, 0, 1];
+	      var ladybugArray = [0, 1, 2, 0, 1, 2, 0, 1, 1, 1, 0, 2, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0];
+	      var sunflowerArray = [1, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 1];
+
+	      var Tiger = arraysEqual(tigerArray, this.arr);
+	      var Ladybug = arraysEqual(ladybugArray, this.arr);
+	      var Sunflower = arraysEqual(sunflowerArray, this.arr);
+
+	      if (Tiger || Ladybug || Sunflower) {
+	        setTimeout(function () {
+	          alert('Move to level 3!');
+	        }, 300);
+	        //this.context.router.push({
+	        // pathname: '/congrats'
+	        // })
+	      }
+
+	      //level 3
 	      var kitty = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 2, 0, 1, 2, 2, 1, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 2, 2];
 	      var opt = [0, 1, 2, 0, 1, 2, 0, 0, 1, 1, 0, 2, 1, 0, 1, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1];
 	      var panda = [1, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 1, 0];
@@ -21308,22 +21337,17 @@
 	      var Opt = arraysEqual(opt, this.arr);
 	      var Panda = arraysEqual(panda, this.arr);
 
-	      console.log(this.arr);
-
-	      if (Iceberg || Snow || Christmas) {
+	      if (Kitty || Opt || Panda) {
+	        //alert should be like pop-up
 	        setTimeout(function () {
-	          alert('You unlocked level 2');
+	          alert('Congratulations component!');
 	        }, 300);
-	        console.log('unlock the next level');
 	        this.context.router.push({
-	          pathname: '/news'
+	          pathname: '/levelthree'
 	        });
 	      }
-	      if (Kitty || Opt || Panda) {
-	        setTimeout(function () {
-	          alert('You finished the game');
-	        }, 300);
-	      }
+
+	      console.log(this.arr);
 
 	      //helper arraysEqual function
 	      function arraysEqual(a1, a2) {
@@ -21336,8 +21360,7 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var router = this.context.router;
-
+	      //const router = this.context.router;
 	      var preloader = this.state.preloader;
 
 	      var images = [];
@@ -21634,7 +21657,7 @@
 	    key: 'render',
 	    value: function render() {
 
-	      var topnav = ['Home', 'News', 'Contact', 'About'];
+	      var topnav = ['Levelone', 'Leveltwo', 'Levelthree', 'Contact'];
 
 	      var navigationMenu = topnav.map(function (topnavitem) {
 	        return _react2.default.createElement(
@@ -21642,7 +21665,7 @@
 	          { className: 'topnav_item', key: topnavitem },
 	          _react2.default.createElement(
 	            'a',
-	            { className: 'topnav_link', href: topnavitem == 'Home' ? '/' : '#' + topnavitem },
+	            { className: 'topnav_link', href: topnavitem == 'Levelone' ? '/' : '#' + topnavitem },
 	            topnavitem
 	          )
 	        );
@@ -21703,7 +21726,7 @@
 	        React.createElement(Header, { imgNumber: 20, puzzleLevel: 'puzzleLevelOne', puzzleClass: 'puzzle_img20' })
 	      );
 	    } }),
-	  React.createElement(Route, { path: '/about', components: function components() {
+	  React.createElement(Route, { path: '/leveltwo', components: function components() {
 	      return React.createElement(
 	        'div',
 	        null,
@@ -21711,7 +21734,7 @@
 	        React.createElement(Counter, { defaultProperty: 'Likes' })
 	      );
 	    } }),
-	  React.createElement(Route, { path: '/news', components: function components() {
+	  React.createElement(Route, { path: '/levelthree', components: function components() {
 	      return React.createElement(
 	        'div',
 	        null,

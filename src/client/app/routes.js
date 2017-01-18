@@ -15,8 +15,8 @@ const Counter = require('./CounterComponent.jsx');
 const routes = (
  <Router history={hashHistory}>
   <Route path='/' component={()=>(<div><Header imgNumber={20}  puzzleLevel="puzzleLevelOne" puzzleClass="puzzle_img20"/></div>)}/>
-  <Route path="/about" components={()=>(<div><Header imgNumber={30} puzzleLevel="puzzleLevelTwo" puzzleClass="puzzle_img30"/><Counter defaultProperty="Likes"/></div>)}/>
-  <Route path="/news" components={()=>(<div><Header imgNumber={48} puzzleLevel="puzzleLevelThree" puzzleClass="puzzle_img48"/><Counter defaultProperty="Likes"/></div>)}/>
+  <Route path="/leveltwo" components={()=>(<div><Header imgNumber={30} puzzleLevel="puzzleLevelTwo" puzzleClass="puzzle_img30"/><Counter defaultProperty="Likes"/></div>)}/>
+  <Route path="/levelthree" components={()=>(<div><Header imgNumber={48} puzzleLevel="puzzleLevelThree" puzzleClass="puzzle_img48"/><Counter defaultProperty="Likes"/></div>)}/>
  </Router>
 );
 

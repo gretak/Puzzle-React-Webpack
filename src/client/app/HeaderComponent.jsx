@@ -143,7 +143,7 @@ constructor(props) {
 
     this.arr[key] = val;
 
-//level 1
+    //level 1
     const icebergArray = [0,1,0,1,2,1,0,2,0,2,0,2,0,2,1,1,1,0,1,1];
     const christmasArray = [2,2,1,2,0,0,1,0,2,1,2,0,2,1,0,2,0,2,0,2];
     const snowArray = [1,0,2,0,1,2,2,1,1,0,1,1,1,0,2,0,2,1,2,0];
@@ -152,7 +152,39 @@ constructor(props) {
     const Christmas = arraysEqual(christmasArray,this.arr);
     const Snow = arraysEqual(snowArray,this.arr);
 
-//level 2
+    if (Iceberg || Snow || Christmas) {
+    //alert should be like pop-up
+       setTimeout( function () 
+         {
+          alert( 'You unlocked level 2' );
+         }, 300 );
+      console.log('unlock the next level');
+       this.context.router.push({
+       pathname: '/leveltwo'
+       })
+    }
+
+    //level2            
+    const tigerArray = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 1, 0, 1];
+    const ladybugArray = [0, 1, 2, 0, 1, 2, 0, 1, 1, 1, 0, 2, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0];
+    const sunflowerArray = [1, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 1];
+
+    const Tiger = arraysEqual(tigerArray,this.arr);
+    const Ladybug = arraysEqual(ladybugArray,this.arr);
+    const Sunflower = arraysEqual(sunflowerArray,this.arr);
+
+    if (Tiger || Ladybug || Sunflower) {
+      setTimeout( function () 
+         {
+          alert( 'Move to level 3!' );
+         }, 300 );
+      //this.context.router.push({
+      // pathname: '/congrats'
+      // })
+    }
+  
+
+    //level 3
     const kitty = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 2, 0, 1, 2, 2, 1, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 2, 2];
     const opt = [0, 1, 2, 0, 1, 2, 0, 0, 1, 1, 0, 2, 1, 0, 1, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1];
     const panda = [1, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 1, 0];
@@ -161,25 +193,18 @@ constructor(props) {
     const Opt = arraysEqual(opt,this.arr);
     const Panda = arraysEqual(panda,this.arr);
 
-
-    console.log(this.arr)
-
-    if (Iceberg || Snow || Christmas) {
-       setTimeout( function () 
-         {
-          alert( 'You unlocked level 2' );
-         }, 300 );
-      console.log('unlock the next level');
-       this.context.router.push({
-       pathname: '/news'
-       })
-    }
     if (Kitty || Opt || Panda) {
+      //alert should be like pop-up
       setTimeout( function () 
          {
-          alert( 'You finished the game' );
+          alert( 'Congratulations component!' );
          }, 300 );
+      this.context.router.push({
+       pathname: '/levelthree'
+       })
     }
+
+    console.log(this.arr)
 
     //helper arraysEqual function
     function arraysEqual(a1, a2) {
@@ -193,8 +218,7 @@ constructor(props) {
 
 
   render() {
-  const router = this.context.router;
-
+  //const router = this.context.router;
   const preloader= this.state.preloader;
 
   const images = [];
