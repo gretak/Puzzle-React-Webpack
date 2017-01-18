@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react';
 import ImgComponent from './ImgComponent.jsx';
-//import routes from './routes.js';
 
 
 class HeaderComponent extends React.Component {
@@ -132,7 +131,6 @@ constructor(props) {
     router: PropTypes.object.isRequired
   }
 
-
   //   handleSubmitUser () {
   //   this.context.router.push({
   //     pathname: '/news'
@@ -174,13 +172,14 @@ constructor(props) {
     const Sunflower = arraysEqual(sunflowerArray,this.arr);
 
     if (Tiger || Ladybug || Sunflower) {
+    //alert should be like pop-up
       setTimeout( function () 
          {
           alert( 'Move to level 3!' );
          }, 300 );
-      //this.context.router.push({
-      // pathname: '/congrats'
-      // })
+      this.context.router.push({
+       pathname: '/levelthree'
+       })
     }
   
 
@@ -194,14 +193,14 @@ constructor(props) {
     const Panda = arraysEqual(panda,this.arr);
 
     if (Kitty || Opt || Panda) {
-      //alert should be like pop-up
+    //alert should be like pop-up
       setTimeout( function () 
          {
           alert( 'Congratulations component!' );
          }, 300 );
-      this.context.router.push({
-       pathname: '/levelthree'
-       })
+      //this.context.router.push({
+       //pathname: '/levelthree'
+       //})
     }
 
     console.log(this.arr)

@@ -21141,8 +21141,6 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	//import routes from './routes.js';
-
 	var HeaderComponent = function (_React$Component) {
 	  _inherits(HeaderComponent, _React$Component);
 
@@ -21320,12 +21318,13 @@
 	      var Sunflower = arraysEqual(sunflowerArray, this.arr);
 
 	      if (Tiger || Ladybug || Sunflower) {
+	        //alert should be like pop-up
 	        setTimeout(function () {
 	          alert('Move to level 3!');
 	        }, 300);
-	        //this.context.router.push({
-	        // pathname: '/congrats'
-	        // })
+	        this.context.router.push({
+	          pathname: '/levelthree'
+	        });
 	      }
 
 	      //level 3
@@ -21342,9 +21341,9 @@
 	        setTimeout(function () {
 	          alert('Congratulations component!');
 	        }, 300);
-	        this.context.router.push({
-	          pathname: '/levelthree'
-	        });
+	        //this.context.router.push({
+	        //pathname: '/levelthree'
+	        //})
 	      }
 
 	      console.log(this.arr);
