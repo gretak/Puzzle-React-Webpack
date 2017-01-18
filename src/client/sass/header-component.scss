@@ -9,9 +9,7 @@
   opacity: 0;
   max-width: 950px;
 
-
   &_fading {
-
 
     @extend .puzzle;
 
@@ -21,6 +19,13 @@
 
   &_img20 {
     width: 20%;
+    height: auto;
+    text-align: center;
+    transition: opacity 4s ease-out;
+  }
+
+  &_img30 {
+    width: 16.666666%;
     height: auto;
     text-align: center;
     transition: opacity 4s ease-out;

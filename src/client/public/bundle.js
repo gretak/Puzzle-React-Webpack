@@ -21180,6 +21180,39 @@
 	    };
 
 	    _this.puzzleLevelTwo = {
+	      1: ['./img/ladybug/ladybug_01.jpg', './img/sunflower/sunflower_01.jpg', './img/tiger/tiger_01.jpg'],
+	      2: ['./img/sunflower/sunflower_02.jpg', './img/ladybug/ladybug_02.jpg', './img/tiger/tiger_02.jpg'],
+	      3: ['./img/tiger/tiger_03.jpg', './img/sunflower/sunflower_03.jpg', './img/ladybug/ladybug_03.jpg'],
+	      4: ['./img/ladybug/ladybug_04.jpg', './img/sunflower/sunflower_04.jpg', './img/tiger/tiger_04.jpg'],
+	      5: ['./img/sunflower/sunflower_05.jpg', './img/ladybug/ladybug_05.jpg', './img/tiger/tiger_05.jpg'],
+	      6: ['./img/tiger/tiger_06.jpg', './img/sunflower/sunflower_06.jpg', './img/ladybug/ladybug_06.jpg'],
+	      7: ['./img/ladybug/ladybug_07.jpg', './img/sunflower/sunflower_07.jpg', './img/tiger/tiger_07.jpg'],
+	      8: ['./img/tiger/tiger_08.jpg', './img/ladybug/ladybug_08.jpg', './img/sunflower/sunflower_08.jpg'],
+	      9: ['./img/sunflower/sunflower_09.jpg', './img/ladybug/ladybug_09.jpg', './img/tiger/tiger_09.jpg'],
+	      10: ['./img/tiger/tiger_10.jpg', './img/ladybug/ladybug_10.jpg', './img/sunflower/sunflower_10.jpg'],
+	      11: ['./img/ladybug/ladybug_11.jpg', './img/sunflower/sunflower_11.jpg', './img/tiger/tiger_11.jpg'],
+	      12: ['./img/sunflower/sunflower_12.jpg', './img/tiger/tiger_12.jpg', './img/ladybug/ladybug_12.jpg'],
+	      13: ['./img/tiger/tiger_13.jpg', './img/ladybug/ladybug_13.jpg', './img/sunflower/sunflower_13.jpg'],
+	      14: ['./img/ladybug/ladybug_14.jpg', './img/sunflower/sunflower_14.jpg', './img/tiger/tiger_14.jpg'],
+	      15: ['./img/tiger/tiger_15.jpg', './img/ladybug/ladybug_15.jpg', './img/sunflower/sunflower_15.jpg'],
+	      16: ['./img/sunflower/sunflower_16.jpg', './img/tiger/tiger_16.jpg', './img/ladybug/ladybug_16.jpg'],
+	      17: ['./img/ladybug/ladybug_17.jpg', './img/sunflower/sunflower_17.jpg', './img/tiger/tiger_17.jpg'],
+	      18: ['./img/tiger/tiger_18.jpg', './img/ladybug/ladybug_18.jpg', './img/sunflower/sunflower_18.jpg'],
+	      19: ['./img/sunflower/sunflower_19.jpg', './img/tiger/tiger_19.jpg', './img/ladybug/ladybug_19.jpg'],
+	      20: ['./img/ladybug/ladybug_20.jpg', './img/tiger/tiger_20.jpg', './img/sunflower/sunflower_20.jpg'],
+	      21: ['./img/sunflower/sunflower_21.jpg', './img/ladybug/ladybug_21.jpg', './img/tiger/tiger_21.jpg'],
+	      22: ['./img/tiger/tiger_22.jpg', './img/sunflower/sunflower_22.jpg', './img/ladybug/ladybug_22.jpg'],
+	      23: ['./img/ladybug/ladybug_23.jpg', './img/tiger/tiger_23.jpg', './img/sunflower/sunflower_23.jpg'],
+	      24: ['./img/sunflower/sunflower_24.jpg', './img/ladybug/ladybug_24.jpg', './img/tiger/tiger_24.jpg'],
+	      25: ['./img/tiger/tiger_25.jpg', './img/sunflower/sunflower_25.jpg', './img/ladybug/ladybug_25.jpg'],
+	      26: ['./img/tiger/tiger_26.jpg', './img/ladybug/ladybug_26.jpg', './img/sunflower/sunflower_26.jpg'],
+	      27: ['./img/ladybug/ladybug_27.jpg', './img/sunflower/sunflower_27.jpg', './img/tiger/tiger_27.jpg'],
+	      28: ['./img/sunflower/sunflower_28.jpg', './img/ladybug/ladybug_28.jpg', './img/tiger/tiger_28.jpg'],
+	      29: ['./img/tiger/tiger_29.jpg', './img/sunflower/sunflower_29.jpg', './img/ladybug/ladybug_29.jpg'],
+	      30: ['./img/ladybug/ladybug_30.jpg', './img/tiger/tiger_30.jpg', './img/sunflower/sunflower_30.jpg']
+	    };
+
+	    _this.puzzleLevelThree = {
 	      1: ['./img/opt/opt_01.jpg', './img/panda/panda_01.jpg', './img/kitty/kitty_01.jpg'],
 	      2: ['./img/panda/panda_02.jpg', './img/opt/opt_02.jpg', './img/kitty/kitty_02.jpg'],
 	      3: ['./img/kitty/kitty_03.jpg', './img/panda/panda_03.jpg', './img/opt/opt_03.jpg'],
@@ -21262,14 +21295,14 @@
 	      var christmasArray = [2, 2, 1, 2, 0, 0, 1, 0, 2, 1, 2, 0, 2, 1, 0, 2, 0, 2, 0, 2];
 	      var snowArray = [1, 0, 2, 0, 1, 2, 2, 1, 1, 0, 1, 1, 1, 0, 2, 0, 2, 1, 2, 0];
 
+	      var Iceberg = arraysEqual(icebergArray, this.arr);
+	      var Christmas = arraysEqual(christmasArray, this.arr);
+	      var Snow = arraysEqual(snowArray, this.arr);
+
 	      //level 2
 	      var kitty = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 2, 0, 1, 2, 2, 1, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 2, 2];
 	      var opt = [0, 1, 2, 0, 1, 2, 0, 0, 1, 1, 0, 2, 1, 0, 1, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1];
 	      var panda = [1, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 1, 0];
-
-	      var Iceberg = arraysEqual(icebergArray, this.arr);
-	      var Christmas = arraysEqual(christmasArray, this.arr);
-	      var Snow = arraysEqual(snowArray, this.arr);
 
 	      var Kitty = arraysEqual(kitty, this.arr);
 	      var Opt = arraysEqual(opt, this.arr);
@@ -21670,11 +21703,19 @@
 	        React.createElement(Header, { imgNumber: 20, puzzleLevel: 'puzzleLevelOne', puzzleClass: 'puzzle_img20' })
 	      );
 	    } }),
+	  React.createElement(Route, { path: '/about', components: function components() {
+	      return React.createElement(
+	        'div',
+	        null,
+	        React.createElement(Header, { imgNumber: 30, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img30' }),
+	        React.createElement(Counter, { defaultProperty: 'Likes' })
+	      );
+	    } }),
 	  React.createElement(Route, { path: '/news', components: function components() {
 	      return React.createElement(
 	        'div',
 	        null,
-	        React.createElement(Header, { imgNumber: 48, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img48' }),
+	        React.createElement(Header, { imgNumber: 48, puzzleLevel: 'puzzleLevelThree', puzzleClass: 'puzzle_img48' }),
 	        React.createElement(Counter, { defaultProperty: 'Likes' })
 	      );
 	    } })
