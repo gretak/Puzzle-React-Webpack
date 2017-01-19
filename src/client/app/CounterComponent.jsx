@@ -19,9 +19,10 @@ class CounterComponent extends React.Component {
       <div className="clickCounter">
         <div className="clickCounter__numberOfLikes">
           <img src="http://www.louiseoneillauthor.com/wp-content/uploads/2014/05/Facebook_like_thumb.png"/>
-          <span>{this.state.likesCount}</span>
+          <span>{this.state.likesCount}Share on facebook "I got the Lion image right"</span>
         </div>
         <div className="clickCounter__button">
+        <span>Move to next level</span>
           <button className="clickCounter__button--inner" onClick={this.onLike}>Like Me</button>
         </div>
       </div>

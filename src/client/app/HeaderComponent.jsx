@@ -154,11 +154,11 @@ constructor(props) {
     //alert should be like pop-up
        setTimeout( function () 
          {
-          alert( 'You unlocked level 2' );
+          alert( 'You got the image!' );
          }, 300 );
       console.log('unlock the next level');
        this.context.router.push({
-       pathname: '/leveltwo'
+       pathname: '/levelone/success'
        })
     }
 
@@ -229,6 +229,10 @@ constructor(props) {
 
     return ( 
       <div>
+      <p className='puzzle-heading'>{this.props.imgNumber}
+        <img className ='welcome-item_icon' src='./img/puzzle-icon.png'/>
+        <a className='puzzle-heading-back' href={this.props.link}>&lt;&lt; back</a>
+      </p>
       <div className="puzzle" className = { preloader? 'puzzle' : 'puzzle_fading'}>
         {images}
       </div>

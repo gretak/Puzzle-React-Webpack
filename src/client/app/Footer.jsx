@@ -14,7 +14,7 @@ render() {
       <div className='footer__left'>
           <FooterItemComponent linkDestination="http://www.cohaesus.co.uk" linkDescription="I am the link"/>
           <FooterItemComponent linkDescription="I am text"/>
-          <p>Phone number {this.props.number}</p>
+          <p className='footer-item'>Phone number {this.props.number}</p>
       </div>
 
       <div className='footer__right'>

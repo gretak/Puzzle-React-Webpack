@@ -93,12 +93,12 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(236);
-	__webpack_require__(240);
-	__webpack_require__(242);
-	__webpack_require__(244);
-	__webpack_require__(246);
-	__webpack_require__(248);
+	__webpack_require__(237);
+	__webpack_require__(241);
+	__webpack_require__(243);
+	__webpack_require__(245);
+	__webpack_require__(247);
+	__webpack_require__(249);
 
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
@@ -21100,12 +21100,18 @@
 	          _react2.default.createElement(
 	            "span",
 	            null,
-	            this.state.likesCount
+	            this.state.likesCount,
+	            "Share on facebook \"I got the Lion image right\""
 	          )
 	        ),
 	        _react2.default.createElement(
 	          "div",
 	          { className: "clickCounter__button" },
+	          _react2.default.createElement(
+	            "span",
+	            null,
+	            "Move to next level"
+	          ),
 	          _react2.default.createElement(
 	            "button",
 	            { className: "clickCounter__button--inner", onClick: this.onLike },
@@ -21306,11 +21312,11 @@
 	      if (Iceberg || Snow || Christmas) {
 	        //alert should be like pop-up
 	        setTimeout(function () {
-	          alert('You unlocked level 2');
+	          alert('You got the image!');
 	        }, 300);
 	        console.log('unlock the next level');
 	        this.context.router.push({
-	          pathname: '/leveltwo'
+	          pathname: '/levelone/success'
 	        });
 	      }
 
@@ -21378,6 +21384,17 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'puzzle-heading' },
+	          this.props.imgNumber,
+	          _react2.default.createElement('img', { className: 'welcome-item_icon', src: './img/puzzle-icon.png' }),
+	          _react2.default.createElement(
+	            'a',
+	            { className: 'puzzle-heading-back', href: this.props.link },
+	            '<< back'
+	          )
+	        ),
 	        _react2.default.createElement(
 	          'div',
 	          _defineProperty({ className: 'puzzle' }, 'className', preloader ? 'puzzle' : 'puzzle_fading'),
@@ -21509,7 +21526,7 @@
 	          _react2.default.createElement(_FooterItemComponent2.default, { linkDescription: 'I am text' }),
 	          _react2.default.createElement(
 	            'p',
-	            null,
+	            { className: 'footer-item' },
 	            'Phone number ',
 	            this.props.number
 	          )
@@ -21717,8 +21734,7 @@
 	        'div',
 	        null,
 	        React.createElement(Navigation, null),
-	        React.createElement(Header, { imgNumber: 20, puzzleLevel: 'puzzleLevelOne', puzzleClass: 'puzzle_img20' }),
-	        React.createElement(Counter, { defaultProperty: 'Likes' })
+	        React.createElement(Header, { imgNumber: 20, puzzleLevel: 'puzzleLevelOne', puzzleClass: 'puzzle_img20', link: '/' })
 	      );
 	    } }),
 	  React.createElement(Route, { path: '/leveltwo', components: function components() {
@@ -21726,7 +21742,7 @@
 	        'div',
 	        null,
 	        React.createElement(Navigation, null),
-	        React.createElement(Header, { imgNumber: 30, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img30' }),
+	        React.createElement(Header, { imgNumber: 30, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img30', link: '/' }),
 	        React.createElement(Counter, { defaultProperty: 'Likes' })
 	      );
 	    } }),
@@ -21735,7 +21751,16 @@
 	        'div',
 	        null,
 	        React.createElement(Navigation, null),
-	        React.createElement(Header, { imgNumber: 48, puzzleLevel: 'puzzleLevelThree', puzzleClass: 'puzzle_img48' }),
+	        React.createElement(Header, { imgNumber: 48, puzzleLevel: 'puzzleLevelThree', puzzleClass: 'puzzle_img48', link: '/' }),
+	        React.createElement(Counter, { defaultProperty: 'Likes' })
+	      );
+	    } }),
+	  React.createElement(Route, { path: '/levelone/success', components: function components() {
+	      return React.createElement(
+	        'div',
+	        null,
+	        React.createElement(Navigation, null),
+	        React.createElement(Header, { imgNumber: 20, puzzleLevel: 'puzzleLevelOne', puzzleClass: 'puzzle_img20' }),
 	        React.createElement(Counter, { defaultProperty: 'Likes' })
 	      );
 	    } })
@@ -21744,7 +21769,6 @@
 	module.exports = routes;
 
 	//<Route path='/' component={()=>(<div><Header imgNumber={20}  puzzleLevel="puzzleLevelOne" puzzleClass="puzzle_img20"/></div>)}/>
-
 	//<Route path='/' component={()=>(<div><Navigation/><Header/><Footer/></div>)}/>
 	//<Route path="/news" components={()=>(<div><Navigation/><Header/><Counter defaultProperty="Likes"/><Footer/></div>)}/>
 	//<Route path="/about" components={()=>(<div><Navigation/><Counter defaultProperty="Likes"/><Footer/></div>)}/>
@@ -26754,7 +26778,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _WelcomeItemComponent = __webpack_require__(250);
+	var _WelcomeItemComponent = __webpack_require__(236);
 
 	var _WelcomeItemComponent2 = _interopRequireDefault(_WelcomeItemComponent);
 
@@ -26801,50 +26825,6 @@
 
 /***/ },
 /* 236 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 241 */,
-/* 242 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 243 */,
-/* 244 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 245 */,
-/* 246 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 247 */,
-/* 248 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 249 */,
-/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26897,6 +26877,49 @@
 	}(_react2.default.Component);
 
 	module.exports = WelcomeItemComponent;
+
+/***/ },
+/* 237 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 242 */,
+/* 243 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 244 */,
+/* 245 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 246 */,
+/* 247 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 248 */,
+/* 249 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
