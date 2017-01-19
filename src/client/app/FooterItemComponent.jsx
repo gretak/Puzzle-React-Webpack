@@ -8,13 +8,17 @@ class FooterItemComponent extends React.Component {
     //if is the link
     if (this.props.linkDestination) {
     return (
+      <p className='footer-item'>
       <a href={this.props.linkDestination}><u>{this.props.linkDescription}</u></a>
+      </p>
       )
     } 
    //if no link only text
     else {
     return (
-      <span>{this.props.linkDescription}</span>
+      <p className='footer-item'>
+      {this.props.linkDescription}
+      </p>
       )
     }
   }

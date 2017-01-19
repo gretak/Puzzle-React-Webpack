@@ -2,7 +2,7 @@
   color: #fff;
   height: 150px;
   padding: 5%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   text-align: center;
 
   &__left {
@@ -16,5 +16,9 @@
   &__right {
     width: 50%;
     float: left;
+  }
+
+  &-item {
+    margin: 5% 0;
   }
 }

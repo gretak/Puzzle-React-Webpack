@@ -81,6 +81,10 @@
 
 	var _routes2 = _interopRequireDefault(_routes);
 
+	var _WelcomeComponent = __webpack_require__(235);
+
+	var _WelcomeComponent2 = _interopRequireDefault(_WelcomeComponent);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -89,11 +93,12 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(235);
-	__webpack_require__(239);
-	__webpack_require__(241);
-	__webpack_require__(243);
-	__webpack_require__(245);
+	__webpack_require__(236);
+	__webpack_require__(240);
+	__webpack_require__(242);
+	__webpack_require__(244);
+	__webpack_require__(246);
+	__webpack_require__(248);
 
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
@@ -110,7 +115,6 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_NavigationComponent2.default, null),
 	        _routes2.default,
 	        _react2.default.createElement(_Footer2.default, null)
 	      );
@@ -122,10 +126,12 @@
 
 	(0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById('app'));
 
-	// <NavigationComponent />
-	// <HeaderComponent />
-	// <CounterComponent defaultProperty="Likes"/>
-	// <FooterComponent number="03308098788" />
+	//TODO:
+	//react-pop-up
+	//sharing-component
+	//start-component
+	//re-factor
+	//add containers instead of function in the router
 
 /***/ },
 /* 2 */
@@ -21487,10 +21493,7 @@
 	  function FooterComponent(props) {
 	    _classCallCheck(this, FooterComponent);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(FooterComponent).call(this, props));
-
-	    _this.state = { link: 'http://www.linkedin.com' };
-	    return _this;
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(FooterComponent).call(this, props));
 	  }
 
 	  _createClass(FooterComponent, [{
@@ -21502,16 +21505,8 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'footer__left' },
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link' })
-	          ),
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            _react2.default.createElement(_FooterItemComponent2.default, { linkDescription: 'I am text' })
-	          ),
+	          _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link' }),
+	          _react2.default.createElement(_FooterItemComponent2.default, { linkDescription: 'I am text' }),
 	          _react2.default.createElement(
 	            'p',
 	            null,
@@ -21522,21 +21517,9 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'footer__right' },
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link' })
-	          ),
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link 2' })
-	          ),
-	          _react2.default.createElement(
-	            'p',
-	            null,
-	            _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link 3' })
-	          )
+	          _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link' }),
+	          _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link 2' }),
+	          _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link 3' })
 	        )
 	      );
 	    }
@@ -21588,20 +21571,24 @@
 	      //if is the link
 	      if (this.props.linkDestination) {
 	        return _react2.default.createElement(
-	          'a',
-	          { href: this.props.linkDestination },
+	          'p',
+	          { className: 'footer-item' },
 	          _react2.default.createElement(
-	            'u',
-	            null,
-	            this.props.linkDescription
+	            'a',
+	            { href: this.props.linkDestination },
+	            _react2.default.createElement(
+	              'u',
+	              null,
+	              this.props.linkDescription
+	            )
 	          )
 	        );
 	      }
 	      //if no link only text
 	      else {
 	          return _react2.default.createElement(
-	            'span',
-	            null,
+	            'p',
+	            { className: 'footer-item' },
 	            this.props.linkDescription
 	          );
 	        }
@@ -21705,7 +21692,6 @@
 
 	var React = __webpack_require__(2);
 	var ReactRouter = __webpack_require__(178);
-	//import Router from 'react-router'
 	var Router = ReactRouter.Router;
 	var Route = ReactRouter.Route;
 	var IndexRoute = ReactRouter.IndexRoute;
@@ -21714,6 +21700,7 @@
 	var Header = __webpack_require__(172);
 	var Footer = __webpack_require__(174);
 	var Counter = __webpack_require__(171);
+	var Welcome = __webpack_require__(235);
 
 	var routes = React.createElement(
 	  Router,
@@ -21722,13 +21709,23 @@
 	      return React.createElement(
 	        'div',
 	        null,
-	        React.createElement(Header, { imgNumber: 20, puzzleLevel: 'puzzleLevelOne', puzzleClass: 'puzzle_img20' })
+	        React.createElement(Welcome, null)
+	      );
+	    } }),
+	  React.createElement(Route, { path: '/levelone', components: function components() {
+	      return React.createElement(
+	        'div',
+	        null,
+	        React.createElement(Navigation, null),
+	        React.createElement(Header, { imgNumber: 20, puzzleLevel: 'puzzleLevelOne', puzzleClass: 'puzzle_img20' }),
+	        React.createElement(Counter, { defaultProperty: 'Likes' })
 	      );
 	    } }),
 	  React.createElement(Route, { path: '/leveltwo', components: function components() {
 	      return React.createElement(
 	        'div',
 	        null,
+	        React.createElement(Navigation, null),
 	        React.createElement(Header, { imgNumber: 30, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img30' }),
 	        React.createElement(Counter, { defaultProperty: 'Likes' })
 	      );
@@ -21737,6 +21734,7 @@
 	      return React.createElement(
 	        'div',
 	        null,
+	        React.createElement(Navigation, null),
 	        React.createElement(Header, { imgNumber: 48, puzzleLevel: 'puzzleLevelThree', puzzleClass: 'puzzle_img48' }),
 	        React.createElement(Counter, { defaultProperty: 'Likes' })
 	      );
@@ -21744,6 +21742,8 @@
 	);
 
 	module.exports = routes;
+
+	//<Route path='/' component={()=>(<div><Header imgNumber={20}  puzzleLevel="puzzleLevelOne" puzzleClass="puzzle_img20"/></div>)}/>
 
 	//<Route path='/' component={()=>(<div><Navigation/><Header/><Footer/></div>)}/>
 	//<Route path="/news" components={()=>(<div><Navigation/><Header/><Counter defaultProperty="Likes"/><Footer/></div>)}/>
@@ -26744,39 +26744,159 @@
 
 /***/ },
 /* 235 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _WelcomeItemComponent = __webpack_require__(250);
+
+	var _WelcomeItemComponent2 = _interopRequireDefault(_WelcomeItemComponent);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var WelcomeComponent = function (_React$Component) {
+	  _inherits(WelcomeComponent, _React$Component);
+
+	  function WelcomeComponent(props) {
+	    _classCallCheck(this, WelcomeComponent);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(WelcomeComponent).call(this, props));
+	    //this.state = {link : 'http://www.linkedin.com' };
+	  }
+
+	  _createClass(WelcomeComponent, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'welcome' },
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'welcome-heading' },
+	          'Select your puzzle'
+	        ),
+	        _react2.default.createElement(_WelcomeItemComponent2.default, { puzzleNumber: 20, puzzleDestination: '#/levelone', puzzleImage: './img/puzzle-20.png' }),
+	        _react2.default.createElement(_WelcomeItemComponent2.default, { puzzleNumber: 30, puzzleDestination: '#/leveltwo', puzzleImage: './img/puzzle-30.png' }),
+	        _react2.default.createElement(_WelcomeItemComponent2.default, { puzzleNumber: 48, puzzleDestination: '#/levelthree', puzzleImage: './img/puzzle-48.png' })
+	      );
+	    }
+	  }]);
+
+	  return WelcomeComponent;
+	}(_react2.default.Component);
+
+	module.exports = WelcomeComponent;
+
+/***/ },
+/* 236 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 236 */,
 /* 237 */,
 /* 238 */,
-/* 239 */
+/* 239 */,
+/* 240 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 240 */,
-/* 241 */
+/* 241 */,
+/* 242 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 242 */,
-/* 243 */
+/* 243 */,
+/* 244 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 244 */,
-/* 245 */
+/* 245 */,
+/* 246 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 247 */,
+/* 248 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 249 */,
+/* 250 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var WelcomeItemComponent = function (_React$Component) {
+	  _inherits(WelcomeItemComponent, _React$Component);
+
+	  function WelcomeItemComponent(props) {
+	    _classCallCheck(this, WelcomeItemComponent);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(WelcomeItemComponent).call(this, props));
+	  }
+
+	  _createClass(WelcomeItemComponent, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'welcome-item' },
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          this.props.puzzleNumber,
+	          _react2.default.createElement('img', { className: 'welcome-item_icon', src: './img/puzzle-icon.png' })
+	        ),
+	        _react2.default.createElement(
+	          'a',
+	          { href: this.props.puzzleDestination },
+	          _react2.default.createElement('img', { className: 'welcome-img', src: this.props.puzzleImage })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return WelcomeItemComponent;
+	}(_react2.default.Component);
+
+	module.exports = WelcomeItemComponent;
 
 /***/ }
 /******/ ]);

@@ -1,0 +1,32 @@
+.welcome {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+
+
+  &-heading {
+    font-size: 50px;
+    padding: 5% 0;
+  }
+
+  &-item {
+    text-align: center;
+    padding: 5% 0;
+
+    p {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    &_icon {
+      width: 63px;
+      margin: 3px 0px -2px 5px;
+    }
+
+  }
+
+  &-img {
+    width: 60%;
+    height: auto;
+    max-width: 500px;
+  }
+}
