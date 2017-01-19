@@ -129,7 +129,6 @@
 	//TODO:
 	//react-pop-up
 	//sharing-component
-	//start-component
 	//re-factor
 	//add containers instead of function in the router
 
@@ -21052,7 +21051,7 @@
 /* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -21074,48 +21073,57 @@
 	  function CounterComponent(props) {
 	    _classCallCheck(this, CounterComponent);
 
+	    //this.state = {likesCount : 0};
+
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CounterComponent).call(this, props));
 
-	    _this.state = { likesCount: 0 };
-	    _this.onLike = _this.onLike.bind(_this);
+	    _this.onClickNextLevel = _this.onClickNextLevel.bind(_this);
 	    return _this;
 	  }
 
+	  //const router = this.context.router;
+
 	  _createClass(CounterComponent, [{
-	    key: "onLike",
-	    value: function onLike() {
-	      var newLikesCount = this.state.likesCount + 1;
-	      this.setState({ likesCount: newLikesCount });
+	    key: 'onClickNextLevel',
+	    value: function onClickNextLevel() {
+	      console.log('level 2');
+	      console.log(this.props.level);
+	      if (this.props.level == 20) {
+	        this.context.router.push({
+	          pathname: '/leveltwo/'
+	        });
+	      }
+	      if (this.props.level == 30) {
+	        this.context.router.push({
+	          pathname: '/levelthree/'
+	        });
+	      }
+
+	      //let newLikesCount = this.state.likesCount + 1;
+	      //this.setState({likesCount: newLikesCount});
 	    }
 	  }, {
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "div",
-	        { className: "clickCounter" },
+	        'div',
+	        { className: 'clickCounter' },
 	        _react2.default.createElement(
-	          "div",
-	          { className: "clickCounter__numberOfLikes" },
-	          _react2.default.createElement("img", { src: "http://www.louiseoneillauthor.com/wp-content/uploads/2014/05/Facebook_like_thumb.png" }),
+	          'div',
+	          { className: 'clickCounter__button' },
 	          _react2.default.createElement(
-	            "span",
-	            null,
-	            this.state.likesCount,
-	            "Share on facebook \"I got the Lion image right\""
+	            'button',
+	            { className: 'clickCounter__button--inner', onClick: this.onClickNextLevel },
+	            'Share'
 	          )
 	        ),
 	        _react2.default.createElement(
-	          "div",
-	          { className: "clickCounter__button" },
+	          'div',
+	          { className: 'clickCounter__button' },
 	          _react2.default.createElement(
-	            "span",
-	            null,
-	            "Move to next level"
-	          ),
-	          _react2.default.createElement(
-	            "button",
-	            { className: "clickCounter__button--inner", onClick: this.onLike },
-	            "Like Me"
+	            'button',
+	            { className: 'clickCounter__button--inner', onClick: this.onClickNextLevel },
+	            'Move to next level'
 	          )
 	        )
 	      );
@@ -21124,6 +21132,11 @@
 
 	  return CounterComponent;
 	}(_react2.default.Component);
+
+	CounterComponent.contextTypes = {
+	  router: _react.PropTypes.object.isRequired
+	};
+
 
 	module.exports = CounterComponent;
 
@@ -21742,8 +21755,7 @@
 	        'div',
 	        null,
 	        React.createElement(Navigation, null),
-	        React.createElement(Header, { imgNumber: 30, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img30', link: '/' }),
-	        React.createElement(Counter, { defaultProperty: 'Likes' })
+	        React.createElement(Header, { imgNumber: 30, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img30', link: '/' })
 	      );
 	    } }),
 	  React.createElement(Route, { path: '/levelthree', components: function components() {
@@ -21751,8 +21763,7 @@
 	        'div',
 	        null,
 	        React.createElement(Navigation, null),
-	        React.createElement(Header, { imgNumber: 48, puzzleLevel: 'puzzleLevelThree', puzzleClass: 'puzzle_img48', link: '/' }),
-	        React.createElement(Counter, { defaultProperty: 'Likes' })
+	        React.createElement(Header, { imgNumber: 48, puzzleLevel: 'puzzleLevelThree', puzzleClass: 'puzzle_img48', link: '/' })
 	      );
 	    } }),
 	  React.createElement(Route, { path: '/levelone/success', components: function components() {
@@ -21761,7 +21772,16 @@
 	        null,
 	        React.createElement(Navigation, null),
 	        React.createElement(Header, { imgNumber: 20, puzzleLevel: 'puzzleLevelOne', puzzleClass: 'puzzle_img20' }),
-	        React.createElement(Counter, { defaultProperty: 'Likes' })
+	        React.createElement(Counter, { level: '20' })
+	      );
+	    } }),
+	  React.createElement(Route, { path: '/levelone/success', components: function components() {
+	      return React.createElement(
+	        'div',
+	        null,
+	        React.createElement(Navigation, null),
+	        React.createElement(Header, { imgNumber: 30, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img30' }),
+	        React.createElement(Counter, { level: '30' })
 	      );
 	    } })
 	);

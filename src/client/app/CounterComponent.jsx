@@ -1,29 +1,49 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 
 class CounterComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {likesCount : 0};
-    this.onLike = this.onLike.bind(this);
+    //this.state = {likesCount : 0};
+    this.onClickNextLevel = this.onClickNextLevel.bind(this);
   }
 
-  onLike () {
-    let newLikesCount = this.state.likesCount + 1;
-    this.setState({likesCount: newLikesCount});
+    //const router = this.context.router;
+
+
+  onClickNextLevel () {
+    console.log('level 2');
+    console.log(this.props.level);
+      if (this.props.level == 20) {
+       this.context.router.push({
+       pathname: '/leveltwo/'
+       })
+      }
+      if (this.props.level == 30) {
+       this.context.router.push({
+       pathname: '/levelthree/'
+       })
+      }
+
+
+    //let newLikesCount = this.state.likesCount + 1;
+    //this.setState({likesCount: newLikesCount});
+
+  }
+
+  static contextTypes = {
+    router: PropTypes.object.isRequired
   }
 
   render() {
     return (
       <div className="clickCounter">
-        <div className="clickCounter__numberOfLikes">
-          <img src="http://www.louiseoneillauthor.com/wp-content/uploads/2014/05/Facebook_like_thumb.png"/>
-          <span>{this.state.likesCount}Share on facebook "I got the Lion image right"</span>
+        <div className="clickCounter__button">
+          <button className="clickCounter__button--inner" onClick={this.onClickNextLevel}>Share</button>
         </div>
         <div className="clickCounter__button">
-        <span>Move to next level</span>
-          <button className="clickCounter__button--inner" onClick={this.onLike}>Like Me</button>
+          <button className="clickCounter__button--inner" onClick={this.onClickNextLevel}>Move to next level</button>
         </div>
       </div>
     );

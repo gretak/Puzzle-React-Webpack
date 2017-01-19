@@ -34,6 +34,5 @@ render(<App/>,
 //TODO:
 //react-pop-up
 //sharing-component
-//start-component
 //re-factor 
 //add containers instead of function in the router
