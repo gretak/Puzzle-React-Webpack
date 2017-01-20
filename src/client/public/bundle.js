@@ -21775,7 +21775,7 @@
 	        React.createElement(Counter, { level: '20' })
 	      );
 	    } }),
-	  React.createElement(Route, { path: '/levelone/success', components: function components() {
+	  React.createElement(Route, { path: '/leveltwo/success', components: function components() {
 	      return React.createElement(
 	        'div',
 	        null,

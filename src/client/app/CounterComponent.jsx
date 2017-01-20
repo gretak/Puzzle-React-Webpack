@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react';
 
-
 class CounterComponent extends React.Component {
 
   constructor(props) {
