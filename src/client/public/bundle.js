@@ -21106,7 +21106,7 @@
 	    value: function render() {
 
 	      var url = "http://gretakava.6te.net/puzzle";
-	      var appId = 229484597460287; // get from facebook developers
+	      var appId = 229484597460287; // get from facebook developers account
 
 	      return _react2.default.createElement(
 	        'div',

@@ -37,7 +37,7 @@ class CounterComponent extends React.Component {
   render() {
 
     let url = "http://gretakava.6te.net/puzzle";
-    let appId = 229484597460287;// get from facebook developers
+    let appId = 229484597460287;// get from facebook developers account
 
     return (
       <div className="clickCounter">
