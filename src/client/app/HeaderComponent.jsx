@@ -178,7 +178,7 @@ constructor(props) {
           alert( 'Move to level 3!' );
          }, 300 );
       this.context.router.push({
-       pathname: '/levelthree'
+       pathname: '/leveltwo/success'
        })
     }
   
