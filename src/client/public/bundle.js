@@ -93,12 +93,12 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(238);
-	__webpack_require__(242);
-	__webpack_require__(244);
-	__webpack_require__(246);
-	__webpack_require__(248);
-	__webpack_require__(250);
+	__webpack_require__(241);
+	__webpack_require__(245);
+	__webpack_require__(247);
+	__webpack_require__(249);
+	__webpack_require__(251);
+	__webpack_require__(253);
 
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
@@ -130,7 +130,6 @@
 	//react-pop-up
 	//sharing-component
 	//re-factor
-	//add containers instead of function in the router
 
 /***/ },
 /* 2 */
@@ -21105,7 +21104,7 @@
 	    key: 'render',
 	    value: function render() {
 
-	      var url = "http://gretakava.6te.net/puzzle";
+	      var url = 'http://gretakava.6te.net/puzzle';
 	      var appId = 229484597460287; // get from facebook developers account
 
 	      return _react2.default.createElement(
@@ -21126,7 +21125,7 @@
 	          _react2.default.createElement(
 	            _reactSocial.FacebookButton,
 	            { className: 'clickCounter__button--inner', message: 'Check the puzzle game!', url: url, appId: appId },
-	            "Share"
+	            'Share'
 	          )
 	        )
 	      );
@@ -22272,40 +22271,18 @@
 	var Counter = __webpack_require__(171);
 	var Welcome = __webpack_require__(236);
 
+	//level containers
+	var levelonecontainer = __webpack_require__(238);
+	var leveltwocontainer = __webpack_require__(239);
+	var levelthreecontainer = __webpack_require__(240);
+
 	var routes = React.createElement(
 	  Router,
 	  { history: hashHistory },
-	  React.createElement(Route, { path: '/', component: function component() {
-	      return React.createElement(
-	        'div',
-	        null,
-	        React.createElement(Welcome, null)
-	      );
-	    } }),
-	  React.createElement(Route, { path: '/levelone', components: function components() {
-	      return React.createElement(
-	        'div',
-	        null,
-	        React.createElement(Navigation, null),
-	        React.createElement(Header, { imgNumber: 20, puzzleLevel: 'puzzleLevelOne', puzzleClass: 'puzzle_img20', link: '/' })
-	      );
-	    } }),
-	  React.createElement(Route, { path: '/leveltwo', components: function components() {
-	      return React.createElement(
-	        'div',
-	        null,
-	        React.createElement(Navigation, null),
-	        React.createElement(Header, { imgNumber: 30, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img30', link: '/' })
-	      );
-	    } }),
-	  React.createElement(Route, { path: '/levelthree', components: function components() {
-	      return React.createElement(
-	        'div',
-	        null,
-	        React.createElement(Navigation, null),
-	        React.createElement(Header, { imgNumber: 48, puzzleLevel: 'puzzleLevelThree', puzzleClass: 'puzzle_img48', link: '/' })
-	      );
-	    } }),
+	  React.createElement(Route, { path: '/', components: Welcome }),
+	  React.createElement(Route, { path: '/levelone', components: levelonecontainer }),
+	  React.createElement(Route, { path: '/leveltwo', components: leveltwocontainer }),
+	  React.createElement(Route, { path: '/levelthree', components: levelthreecontainer }),
 	  React.createElement(Route, { path: '/levelone/success', components: function components() {
 	      return React.createElement(
 	        'div',
@@ -22327,11 +22304,6 @@
 	);
 
 	module.exports = routes;
-
-	//<Route path='/' component={()=>(<div><Header imgNumber={20}  puzzleLevel="puzzleLevelOne" puzzleClass="puzzle_img20"/></div>)}/>
-	//<Route path='/' component={()=>(<div><Navigation/><Header/><Footer/></div>)}/>
-	//<Route path="/news" components={()=>(<div><Navigation/><Header/><Counter defaultProperty="Likes"/><Footer/></div>)}/>
-	//<Route path="/about" components={()=>(<div><Navigation/><Counter defaultProperty="Likes"/><Footer/></div>)}/>
 
 /***/ },
 /* 179 */
@@ -27356,11 +27328,21 @@
 	  function WelcomeComponent(props) {
 	    _classCallCheck(this, WelcomeComponent);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(WelcomeComponent).call(this, props));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(WelcomeComponent).call(this, props));
+
+	    _this.handleStartButtonClick = _this.handleStartButtonClick.bind(_this);
 	    //this.state = {link : 'http://www.linkedin.com' };
+	    return _this;
 	  }
 
 	  _createClass(WelcomeComponent, [{
+	    key: 'handleStartButtonClick',
+	    value: function handleStartButtonClick() {
+	      this.context.router.push({
+	        pathname: '/levelone/'
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -27371,15 +27353,25 @@
 	          { className: 'welcome-heading' },
 	          'Select your puzzle'
 	        ),
+	        _react2.default.createElement(
+	          'button',
+	          { className: 'welcome-button', onClick: this.handleStartButtonClick },
+	          'Start the game'
+	        ),
 	        _react2.default.createElement(_WelcomeItemComponent2.default, { puzzleNumber: 20, puzzleDestination: '#/levelone', puzzleImage: './img/puzzle-20.png' }),
-	        _react2.default.createElement(_WelcomeItemComponent2.default, { puzzleNumber: 30, puzzleDestination: '#/leveltwo', puzzleImage: './img/puzzle-30.png' }),
-	        _react2.default.createElement(_WelcomeItemComponent2.default, { puzzleNumber: 48, puzzleDestination: '#/levelthree', puzzleImage: './img/puzzle-48.png' })
+	        _react2.default.createElement(_WelcomeItemComponent2.default, { puzzleNumber: 30, puzzleImage: './img/puzzle-30.png' }),
+	        _react2.default.createElement(_WelcomeItemComponent2.default, { puzzleNumber: 48, puzzleImage: './img/puzzle-48.png' })
 	      );
 	    }
 	  }]);
 
 	  return WelcomeComponent;
 	}(_react2.default.Component);
+
+	WelcomeComponent.contextTypes = {
+	  router: _react.PropTypes.object.isRequired
+	};
+
 
 	module.exports = WelcomeComponent;
 
@@ -27440,43 +27432,220 @@
 
 /***/ },
 /* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _FooterItemComponent = __webpack_require__(176);
+
+	var _FooterItemComponent2 = _interopRequireDefault(_FooterItemComponent);
+
+	var _NavigationComponent = __webpack_require__(177);
+
+	var _NavigationComponent2 = _interopRequireDefault(_NavigationComponent);
+
+	var _HeaderComponent = __webpack_require__(173);
+
+	var _HeaderComponent2 = _interopRequireDefault(_HeaderComponent);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var leveloneContainer = function (_React$Component) {
+	  _inherits(leveloneContainer, _React$Component);
+
+	  function leveloneContainer() {
+	    _classCallCheck(this, leveloneContainer);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(leveloneContainer).apply(this, arguments));
+	  }
+
+	  _createClass(leveloneContainer, [{
+	    key: 'render',
+	    value: function render() {
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_NavigationComponent2.default, null),
+	        _react2.default.createElement(_HeaderComponent2.default, { imgNumber: 20, puzzleLevel: 'puzzleLevelOne', puzzleClass: 'puzzle_img20', link: '/' })
+	      );
+	    }
+	  }]);
+
+	  return leveloneContainer;
+	}(_react2.default.Component);
+
+	module.exports = leveloneContainer;
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _FooterItemComponent = __webpack_require__(176);
+
+	var _FooterItemComponent2 = _interopRequireDefault(_FooterItemComponent);
+
+	var _NavigationComponent = __webpack_require__(177);
+
+	var _NavigationComponent2 = _interopRequireDefault(_NavigationComponent);
+
+	var _HeaderComponent = __webpack_require__(173);
+
+	var _HeaderComponent2 = _interopRequireDefault(_HeaderComponent);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var leveltwoContainer = function (_React$Component) {
+	  _inherits(leveltwoContainer, _React$Component);
+
+	  function leveltwoContainer() {
+	    _classCallCheck(this, leveltwoContainer);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(leveltwoContainer).apply(this, arguments));
+	  }
+
+	  _createClass(leveltwoContainer, [{
+	    key: 'render',
+	    value: function render() {
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_NavigationComponent2.default, null),
+	        _react2.default.createElement(_HeaderComponent2.default, { imgNumber: 30, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img30', link: '/' })
+	      );
+	    }
+	  }]);
+
+	  return leveltwoContainer;
+	}(_react2.default.Component);
+
+	module.exports = leveltwoContainer;
+
+/***/ },
+/* 240 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _FooterItemComponent = __webpack_require__(176);
+
+	var _FooterItemComponent2 = _interopRequireDefault(_FooterItemComponent);
+
+	var _NavigationComponent = __webpack_require__(177);
+
+	var _NavigationComponent2 = _interopRequireDefault(_NavigationComponent);
+
+	var _HeaderComponent = __webpack_require__(173);
+
+	var _HeaderComponent2 = _interopRequireDefault(_HeaderComponent);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var levelthreeContainer = function (_React$Component) {
+	  _inherits(levelthreeContainer, _React$Component);
+
+	  function levelthreeContainer() {
+	    _classCallCheck(this, levelthreeContainer);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(levelthreeContainer).apply(this, arguments));
+	  }
+
+	  _createClass(levelthreeContainer, [{
+	    key: 'render',
+	    value: function render() {
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_NavigationComponent2.default, null),
+	        _react2.default.createElement(_HeaderComponent2.default, { imgNumber: 48, puzzleLevel: 'puzzleLevelThree', puzzleClass: 'puzzle_img48', link: '/' })
+	      );
+	    }
+	  }]);
+
+	  return levelthreeContainer;
+	}(_react2.default.Component);
+
+	module.exports = levelthreeContainer;
+
+/***/ },
+/* 241 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
+/* 242 */,
 /* 243 */,
-/* 244 */
+/* 244 */,
+/* 245 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 245 */,
-/* 246 */
+/* 246 */,
+/* 247 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 247 */,
-/* 248 */
+/* 248 */,
+/* 249 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 249 */,
-/* 250 */
+/* 250 */,
+/* 251 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 252 */,
+/* 253 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import WelcomeItemComponent from './WelcomeItemComponent.jsx';
 
 
@@ -6,16 +6,30 @@ class WelcomeComponent extends React.Component {
 
  constructor(props) {
    super(props);
+  this.handleStartButtonClick = this.handleStartButtonClick.bind(this);
    //this.state = {link : 'http://www.linkedin.com' };
  }
+
+ handleStartButtonClick() {
+  this.context.router.push({
+    pathname: '/levelone/'
+  })
+ }
+
+ static contextTypes = {
+  router: PropTypes.object.isRequired
+ }
+
+
 
 render() {
   return (
     <div className='welcome'>
       <p className='welcome-heading' >Select your puzzle</p>
+      <button className='welcome-button' onClick={this.handleStartButtonClick}>Start the game</button>
       <WelcomeItemComponent puzzleNumber={20} puzzleDestination="#/levelone" puzzleImage='./img/puzzle-20.png'/>
-      <WelcomeItemComponent puzzleNumber={30} puzzleDestination="#/leveltwo" puzzleImage='./img/puzzle-30.png'/>
-      <WelcomeItemComponent puzzleNumber={48} puzzleDestination="#/levelthree" puzzleImage='./img/puzzle-48.png'/>
+      <WelcomeItemComponent puzzleNumber={30} puzzleImage='./img/puzzle-30.png'/>
+      <WelcomeItemComponent puzzleNumber={48} puzzleImage='./img/puzzle-48.png'/>
     </div>
   );
 }

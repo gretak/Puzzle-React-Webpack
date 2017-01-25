@@ -1,6 +1,7 @@
 .welcome {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
+  text-align: center;
 
   &-heading {
     font-size: 50px;
@@ -13,7 +14,6 @@
 
     p {
       font-size: 45px;
-      margin-bottom: 15px;
     }
 
     &_icon {
@@ -24,8 +24,21 @@
   }
 
   &-img {
-    width: 60%;
+    width: 45%;
     height: auto;
     max-width: 600px;
+  }
+
+  &-button {
+    background-color: #e7e7e7;
+    color: black;
+    border: none;
+    padding: 18px 39px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 25px 2px;
+    cursor: pointer;
   }
 }

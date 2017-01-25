@@ -35,4 +35,3 @@ render(<App/>,
 //react-pop-up
 //sharing-component
 //re-factor 
-//add containers instead of function in the router
