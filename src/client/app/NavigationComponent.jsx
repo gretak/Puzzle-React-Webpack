@@ -17,7 +17,6 @@ class NavigationComponent extends React.Component {
   render() {
 
     const topnav = ['Levelone', 'Leveltwo', 'Levelthree', 'Contact']
-
     const navigationMenu = topnav.map(function(topnavitem){
       return <li className='topnav_item' key={topnavitem}><a className='topnav_link' href={topnavitem=='Levelone'?'/':'#'+topnavitem}>{topnavitem}</a></li>
     });
@@ -30,11 +29,10 @@ class NavigationComponent extends React.Component {
             <a className='topnav_link' href='javascript:void(0);' onClick={navFunction}>&#9776;</a>
           </li>
         </ul>
-        {this.props.children}
       </div>
     );
   }
 
 }
 
-module.exports = NavigationComponent;
+export default NavigationComponent;

@@ -35,4 +35,4 @@ class ImgComponent extends React.Component {
   }
 }
 
-module.exports = ImgComponent;
+export default ImgComponent;

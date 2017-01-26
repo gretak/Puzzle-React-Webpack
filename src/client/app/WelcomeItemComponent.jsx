@@ -22,4 +22,4 @@ render() {
 
 }
 
-module.exports = WelcomeItemComponent;
+export default WelcomeItemComponent;

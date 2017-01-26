@@ -30,8 +30,3 @@ class App extends React.Component {
 render(<App/>,
   document.getElementById('app')
 );
-
-//TODO:
-//react-pop-up
-//sharing-component
-//re-factor 

@@ -2,16 +2,12 @@ import React, {PropTypes} from 'react';
 import { FacebookButton, FacebookCount } from 'react-social';
 
 
-
 class CounterComponent extends React.Component {
 
   constructor(props) {
     super(props);
     this.onClickNextLevel = this.onClickNextLevel.bind(this);
   }
-
-    //const router = this.context.router;
-
 
   onClickNextLevel () {
     console.log('level 2');
@@ -26,13 +22,17 @@ class CounterComponent extends React.Component {
        pathname: '/levelthree/'
        })
       }
-    //let newLikesCount = this.state.likesCount + 1;
-    //this.setState({likesCount: newLikesCount});
+      if (this.props.level == 48) {
+       this.context.router.push({
+       pathname: '/'
+       })
+      }
   }
 
   static contextTypes = {
     router: PropTypes.object.isRequired
   }
+
 
   render() {
 
@@ -42,7 +42,7 @@ class CounterComponent extends React.Component {
     return (
       <div className='clickCounter'>
         <div className='clickCounter__button'>
-          <button className='clickCounter__button--inner' onClick={this.onClickNextLevel}>Move next</button>
+          <button className='clickCounter__button--inner' onClick={this.onClickNextLevel}>{this.props.buttonText}</button>
         </div>
         <div className='clickCounter__button'>
           <FacebookButton  className='clickCounter__button--inner' message='Check the puzzle game!' url={url} appId={appId}>
@@ -52,7 +52,6 @@ class CounterComponent extends React.Component {
       </div>
     );
   }
-
 }
 
-module.exports = CounterComponent;
+export default CounterComponent;

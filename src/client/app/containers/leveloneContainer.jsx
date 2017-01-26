@@ -17,6 +17,6 @@ class leveloneContainer extends React.Component {
     }
 }
 
-module.exports = leveloneContainer;
+export default leveloneContainer;
 
 

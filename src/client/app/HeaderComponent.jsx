@@ -124,21 +124,14 @@ constructor(props) {
       this.setState({
         preloader: false
       })
-    }, 600);
+    }, 500);
   }
 
   static contextTypes = {
     router: PropTypes.object.isRequired
   }
 
-  //   handleSubmitUser () {
-  //   this.context.router.push({
-  //     pathname: '/news'
-  //   });
-  // }
-
   handleResult(key, val) {
-
     this.arr[key] = val;
 
     //level 1
@@ -151,19 +144,17 @@ constructor(props) {
     const Snow = arraysEqual(snowArray,this.arr);
 
     if (Iceberg || Snow || Christmas) {
-    //alert should be like pop-up
        setTimeout( function () 
          {
           alert( 'You got the image!' );
          }, 300 );
-      console.log('unlock the next level');
        this.context.router.push({
        pathname: '/levelone/success'
        })
     }
 
     //level2            
-    const tigerArray = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 1, 0, 1];
+    const tigerArray = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 2, 0, 2];
     const ladybugArray = [0, 1, 2, 0, 1, 2, 0, 1, 1, 1, 0, 2, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0];
     const sunflowerArray = [1, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 1];
 
@@ -172,10 +163,9 @@ constructor(props) {
     const Sunflower = arraysEqual(sunflowerArray,this.arr);
 
     if (Tiger || Ladybug || Sunflower) {
-    //alert should be like pop-up
       setTimeout( function () 
          {
-          alert( 'Move to level 3!' );
+          alert( 'You got the image!' );
          }, 300 );
       this.context.router.push({
        pathname: '/leveltwo/success'
@@ -193,14 +183,13 @@ constructor(props) {
     const Panda = arraysEqual(panda,this.arr);
 
     if (Kitty || Opt || Panda) {
-    //alert should be like pop-up
       setTimeout( function () 
          {
-          alert( 'Congratulations component!' );
+          alert( 'Congratulations! you finished the game' );
          }, 300 );
       //this.context.router.push({
-       //pathname: '/levelthree'
-       //})
+      // pathname: '/levelthree/success'
+      // })
     }
 
     console.log(this.arr)
@@ -217,7 +206,6 @@ constructor(props) {
 
 
   render() {
-  //const router = this.context.router;
   const preloader= this.state.preloader;
 
   const images = [];
@@ -242,4 +230,4 @@ constructor(props) {
 
 }
 
-module.exports = HeaderComponent;
+export default HeaderComponent;

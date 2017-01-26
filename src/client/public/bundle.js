@@ -126,11 +126,6 @@
 
 	(0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById('app'));
 
-	//TODO:
-	//react-pop-up
-	//sharing-component
-	//re-factor
-
 /***/ },
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
@@ -21052,6 +21047,10 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(2);
@@ -21080,8 +21079,6 @@
 	    return _this;
 	  }
 
-	  //const router = this.context.router;
-
 	  _createClass(CounterComponent, [{
 	    key: 'onClickNextLevel',
 	    value: function onClickNextLevel() {
@@ -21097,8 +21094,11 @@
 	          pathname: '/levelthree/'
 	        });
 	      }
-	      //let newLikesCount = this.state.likesCount + 1;
-	      //this.setState({likesCount: newLikesCount});
+	      if (this.props.level == 48) {
+	        this.context.router.push({
+	          pathname: '/'
+	        });
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -21116,7 +21116,7 @@
 	          _react2.default.createElement(
 	            'button',
 	            { className: 'clickCounter__button--inner', onClick: this.onClickNextLevel },
-	            'Move next'
+	            this.props.buttonText
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -21138,9 +21138,7 @@
 	CounterComponent.contextTypes = {
 	  router: _react.PropTypes.object.isRequired
 	};
-
-
-	module.exports = CounterComponent;
+	exports.default = CounterComponent;
 
 /***/ },
 /* 172 */
@@ -21685,6 +21683,10 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(2);
@@ -21836,20 +21838,11 @@
 	        _this2.setState({
 	          preloader: false
 	        });
-	      }, 600);
+	      }, 500);
 	    }
 	  }, {
 	    key: 'handleResult',
-
-
-	    //   handleSubmitUser () {
-	    //   this.context.router.push({
-	    //     pathname: '/news'
-	    //   });
-	    // }
-
 	    value: function handleResult(key, val) {
-
 	      this.arr[key] = val;
 
 	      //level 1
@@ -21862,18 +21855,16 @@
 	      var Snow = arraysEqual(snowArray, this.arr);
 
 	      if (Iceberg || Snow || Christmas) {
-	        //alert should be like pop-up
 	        setTimeout(function () {
 	          alert('You got the image!');
 	        }, 300);
-	        console.log('unlock the next level');
 	        this.context.router.push({
 	          pathname: '/levelone/success'
 	        });
 	      }
 
 	      //level2           
-	      var tigerArray = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 1, 0, 1];
+	      var tigerArray = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 2, 0, 2];
 	      var ladybugArray = [0, 1, 2, 0, 1, 2, 0, 1, 1, 1, 0, 2, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0];
 	      var sunflowerArray = [1, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 1];
 
@@ -21882,9 +21873,8 @@
 	      var Sunflower = arraysEqual(sunflowerArray, this.arr);
 
 	      if (Tiger || Ladybug || Sunflower) {
-	        //alert should be like pop-up
 	        setTimeout(function () {
-	          alert('Move to level 3!');
+	          alert('You got the image!');
 	        }, 300);
 	        this.context.router.push({
 	          pathname: '/leveltwo/success'
@@ -21901,13 +21891,12 @@
 	      var Panda = arraysEqual(panda, this.arr);
 
 	      if (Kitty || Opt || Panda) {
-	        //alert should be like pop-up
 	        setTimeout(function () {
-	          alert('Congratulations component!');
+	          alert('Congratulations! you finished the game');
 	        }, 300);
 	        //this.context.router.push({
-	        //pathname: '/levelthree'
-	        //})
+	        // pathname: '/levelthree/success'
+	        // })
 	      }
 
 	      console.log(this.arr);
@@ -21923,7 +21912,6 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      //const router = this.context.router;
 	      var preloader = this.state.preloader;
 
 	      var images = [];
@@ -21962,15 +21950,17 @@
 	HeaderComponent.contextTypes = {
 	  router: _react.PropTypes.object.isRequired
 	};
-
-
-	module.exports = HeaderComponent;
+	exports.default = HeaderComponent;
 
 /***/ },
 /* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -22030,13 +22020,17 @@
 	  return ImgComponent;
 	}(_react2.default.Component);
 
-	module.exports = ImgComponent;
+	exports.default = ImgComponent;
 
 /***/ },
 /* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -22087,8 +22081,7 @@
 	          'div',
 	          { className: 'footer__right' },
 	          _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link' }),
-	          _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link 2' }),
-	          _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link 3' })
+	          _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link 2' })
 	        )
 	      );
 	    }
@@ -22097,7 +22090,7 @@
 	  return FooterComponent;
 	}(_react2.default.Component);
 
-	module.exports = FooterComponent;
+	exports.default = FooterComponent;
 
 /***/ },
 /* 176 */
@@ -22175,6 +22168,10 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(2);
@@ -22213,7 +22210,6 @@
 	    value: function render() {
 
 	      var topnav = ['Levelone', 'Leveltwo', 'Levelthree', 'Contact'];
-
 	      var navigationMenu = topnav.map(function (topnavitem) {
 	        return _react2.default.createElement(
 	          'li',
@@ -22242,8 +22238,7 @@
 	              '☰'
 	            )
 	          )
-	        ),
-	        this.props.children
+	        )
 	      );
 	    }
 	  }]);
@@ -22251,7 +22246,7 @@
 	  return NavigationComponent;
 	}(_react2.default.Component);
 
-	module.exports = NavigationComponent;
+	exports.default = NavigationComponent;
 
 /***/ },
 /* 178 */
@@ -22259,22 +22254,25 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	var React = __webpack_require__(2);
 	var ReactRouter = __webpack_require__(179);
 	var Router = ReactRouter.Router;
 	var Route = ReactRouter.Route;
 	var IndexRoute = ReactRouter.IndexRoute;
-	var Navigation = __webpack_require__(177);
+	var Navigation = __webpack_require__(177).default;
 	var hashHistory = ReactRouter.hashHistory;
-	var Header = __webpack_require__(173);
-	var Footer = __webpack_require__(175);
-	var Counter = __webpack_require__(171);
-	var Welcome = __webpack_require__(236);
+	var Header = __webpack_require__(173).default;
+	var Footer = __webpack_require__(175).default;
+	var Counter = __webpack_require__(171).default;
+	var Welcome = __webpack_require__(236).default;
 
 	//level containers
-	var levelonecontainer = __webpack_require__(238);
-	var leveltwocontainer = __webpack_require__(239);
-	var levelthreecontainer = __webpack_require__(240);
+	var levelonecontainer = __webpack_require__(238).default;
+	var leveltwocontainer = __webpack_require__(239).default;
+	var levelthreecontainer = __webpack_require__(240).default;
 
 	var routes = React.createElement(
 	  Router,
@@ -22288,8 +22286,8 @@
 	        'div',
 	        null,
 	        React.createElement(Navigation, null),
-	        React.createElement(Header, { imgNumber: 20, puzzleLevel: 'puzzleLevelOne', puzzleClass: 'puzzle_img20' }),
-	        React.createElement(Counter, { level: '20' })
+	        React.createElement(Header, { imgNumber: 20, puzzleLevel: 'puzzleLevelOne', puzzleClass: 'puzzle_img20', link: '/' }),
+	        React.createElement(Counter, { level: '20', buttonText: 'Next level' })
 	      );
 	    } }),
 	  React.createElement(Route, { path: '/leveltwo/success', components: function components() {
@@ -22297,13 +22295,22 @@
 	        'div',
 	        null,
 	        React.createElement(Navigation, null),
-	        React.createElement(Header, { imgNumber: 30, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img30' }),
-	        React.createElement(Counter, { level: '30' })
+	        React.createElement(Header, { imgNumber: 30, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img30', link: '/' }),
+	        React.createElement(Counter, { level: '30', buttonText: 'Next level' })
+	      );
+	    } }),
+	  React.createElement(Route, { path: '/levelthree/success', components: function components() {
+	      return React.createElement(
+	        'div',
+	        null,
+	        React.createElement(Navigation, null),
+	        React.createElement(Header, { imgNumber: 48, puzzleLevel: 'puzzleLevelThree', puzzleClass: 'puzzle_img48', link: '/' }),
+	        React.createElement(Counter, { level: '48', buttonText: 'Start again' })
 	      );
 	    } })
 	);
 
-	module.exports = routes;
+	exports.default = routes;
 
 /***/ },
 /* 179 */
@@ -27304,6 +27311,10 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(2);
@@ -27331,7 +27342,6 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(WelcomeComponent).call(this, props));
 
 	    _this.handleStartButtonClick = _this.handleStartButtonClick.bind(_this);
-	    //this.state = {link : 'http://www.linkedin.com' };
 	    return _this;
 	  }
 
@@ -27371,15 +27381,17 @@
 	WelcomeComponent.contextTypes = {
 	  router: _react.PropTypes.object.isRequired
 	};
-
-
-	module.exports = WelcomeComponent;
+	exports.default = WelcomeComponent;
 
 /***/ },
 /* 237 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -27428,13 +27440,17 @@
 	  return WelcomeItemComponent;
 	}(_react2.default.Component);
 
-	module.exports = WelcomeItemComponent;
+	exports.default = WelcomeItemComponent;
 
 /***/ },
 /* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -27487,13 +27503,17 @@
 	  return leveloneContainer;
 	}(_react2.default.Component);
 
-	module.exports = leveloneContainer;
+	exports.default = leveloneContainer;
 
 /***/ },
 /* 239 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -27546,13 +27566,17 @@
 	  return leveltwoContainer;
 	}(_react2.default.Component);
 
-	module.exports = leveltwoContainer;
+	exports.default = leveltwoContainer;
 
 /***/ },
 /* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -27605,7 +27629,7 @@
 	  return levelthreeContainer;
 	}(_react2.default.Component);
 
-	module.exports = levelthreeContainer;
+	exports.default = levelthreeContainer;
 
 /***/ },
 /* 241 */

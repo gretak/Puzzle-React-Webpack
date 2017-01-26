@@ -17,6 +17,6 @@ class levelthreeContainer extends React.Component {
     }
 }
 
-module.exports = levelthreeContainer;
+export default levelthreeContainer;
 
 

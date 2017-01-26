@@ -2,7 +2,7 @@
   color: #fff;
   height: 150px;
   width: 100%;
-  background-color: #808080;
+  background-color: rgba(0,0,0,0.6);
   text-align: center;
 
   &__numberOfLikes {
@@ -39,9 +39,9 @@
       width: 80%;
     }
 
-      &:hover {
-        background-color: #000;
-        color: white;
-      }
+    &:hover {
+      background-color: #000;
+      color: white;
+    }
   }
 }
