@@ -1,8 +1,10 @@
+@import "variables";
+
 .clickCounter {
-  color: #fff;
+  color: $white;
   height: 150px;
   width: 100%;
-  background-color: rgba(0,0,0,0.6);
+  background-color: $light-grey;
   text-align: center;
 
   &__numberOfLikes {
@@ -27,7 +29,7 @@
 
     &--inner {
       background-color: #e7e7e7;
-      color: black;
+      color: $black;
       border: none;
       padding: 18px 17px;
       text-align: center;
@@ -37,11 +39,6 @@
       margin: 25px 2px;
       cursor: pointer;
       width: 80%;
-    }
-
-    &:hover {
-      background-color: #000;
-      color: white;
     }
   }
 }

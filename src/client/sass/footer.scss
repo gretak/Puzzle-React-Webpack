@@ -1,19 +1,13 @@
+@import "variables";
+
 .footer {
   color: #fff;
   height: 150px;
   padding: 5%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: $dark-grey;
   text-align: center;
 
-  &__left {
-    width: 50%;
-    float: left;
-    font-size: 60px;
-    float: left;
-    text-align: right;
-  }
-
-  &__right {
+  &__left, &__right {
     width: 50%;
     float: left;
   }

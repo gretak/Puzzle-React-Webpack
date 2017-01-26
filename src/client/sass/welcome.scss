@@ -1,5 +1,7 @@
+@import "variables";
+
 .welcome {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: $light-grey;
   color: white;
   text-align: center;
 
@@ -20,7 +22,6 @@
       width: 63px;
       margin: 3px 0 -2px 5px;
     }
-
   }
 
   &-img {
@@ -30,8 +31,7 @@
   }
 
   &-button {
-    background-color: #e7e7e7;
-    color: black;
+    color: $black;
     border: none;
     padding: 18px 39px;
     text-align: center;
@@ -39,6 +39,5 @@
     display: inline-block;
     font-size: 20px;
     margin: 25px 2px;
-    cursor: pointer;
   }
 }

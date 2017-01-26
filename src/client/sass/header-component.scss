@@ -1,8 +1,10 @@
+@import "variables";
+
 .puzzle {
   width: 100%;
   height: auto;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
+  background-color: $dark-grey;
+  color: $black;
   margin: 0 auto;
   text-align: center;
   vertical-align: middle;
@@ -11,8 +13,8 @@
   max-width: 950px;
 
   &-heading {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+    background-color: $dark-grey;
+    color: $white;
     font-size: 45px;
     padding: 2%;
 
@@ -31,24 +33,21 @@
     transition: opacity 4s ease-out;
   }
 
-  &_img20 {
-    width: 20%;
+  &_img20, &_img30, &_img48 {
     height: auto;
     text-align: center;
     transition: opacity 4s ease-out;
+  }
+
+  &_img20 {
+    width: 20%;
   }
 
   &_img30 {
     width: 16.666666%;
-    height: auto;
-    text-align: center;
-    transition: opacity 4s ease-out;
   }
 
   &_img48 {
     width: 12.5%;
-    height: auto;
-    text-align: center;
-    transition: opacity 4s ease-out;
   }
 }
