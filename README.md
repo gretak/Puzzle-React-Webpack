@@ -1,4 +1,4 @@
-# Webpack-React-Puzzle
+# Puzzle-React-Webpack
 ### Segment for React, using Webpack
 
 
