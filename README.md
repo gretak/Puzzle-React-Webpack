@@ -1,36 +1,36 @@
-# Webpack-react
-segment for React, using Webpack
-
-........
-To start the project clone the repository and run npm install.
-........
-npm run server - will start webpack, localhost dev server with watch task and linting.
-........
-Go to http://localhost:5005 to see the server running
-
-...Github Link...
-https://github.com/gretak/React-Webpack.git
-
-...The structure...
-src/client is the main project folder, all configuration files are in the root. 
-src/client/public is the production folder, created with webpack command.
-src/client/app is the folder with all the components used for the project.
-src/client/assets/img is the folder with all the images used for the project.
-src/client/sass is the folder with all the sass files, named as relevant components.
+# Webpack-React-Puzzle
+### Segment for React, using Webpack
 
 
-...Webpack:...
+To start the project clone the repository and run ```npm install```.
+
+Run ```npm run server``` comand which will start the webpack, localhost dev server, watch task and linting.
+
+Go to ```http://localhost:5005``` to see the server running.
+
+## Github Link
+-[https://github.com/gretak/React-Webpack.git](https://github.com/gretak/React-Webpack.git)
+
+### The structure
+```src/client``` is the main project folder, all configuration files are in the root. 
+```src/client/public``` is the production folder, created with webpack command.
+```src/client/app``` is the folder with all the components used for the project.
+```src/client/assets/img``` is the folder with all the images used for the project.
+```src/client/sass``` is the folder with all the sass files, named as relevant components.
+
+
+### Webpack
  - routing + contex, PropTypes
  - plugins (CopyWebpackPlugin, ExtractTextPlugin, OptimiseAssetsPlugin,HTMLwebpackPlugin...)
 
-...
-this project was created using the following links for support:
-https://www.codementor.io/reactjs/tutorial/beginner-guide-setup-reactjs-environment-npm-babel-6-webpack
-https://facebook.github.io/react/docs/conditional-rendering.html
-https://online.reacttraining.com/courses/reactjsfundamentals/
-https://www.youtube.com/watch?v=PEXcg8xu2y0&index=2&list=PLLnpHn493BHFfs3Uj5tvx17mXk4B4ws4p
 
-and MANY many others
+##this project was created using the following links for support:
+- [https://www.codementor.io/reactjs/tutorial/](https://www.codementor.io/reactjs/tutorial/)
+- [beginner-guide-setup-reactjs-environment-npm-babel-6-webpack](beginner-guide-setup-reactjs-environment-npm-babel-6-webpack)
+- [https://facebook.github.io/react/docs/conditional-rendering.html](https://facebook.github.io/react/docs/conditional-rendering.html)
+- [https://online.reacttraining.com/courses/reactjsfundamentals/](https://online.reacttraining.com/courses/reactjsfundamentals/)
+- [https://www.youtube.com/watch?v=PEXcg8xu2y0&index=2&list=PLLnpHn493BHFfs3Uj5tvx17mXk4B4ws4p](https://www.youtube.com/watch?v=PEXcg8xu2y0&index=2&list=PLLnpHn493BHFfs3Uj5tvx17mXk4B4ws4p)
+
 
 Todo list:
 1.Refactor - ES6 and ES5 mix in the code
@@ -39,6 +39,12 @@ Todo list:
 4.Customise "back" button to go to the previous "level"
 5.Use lifecycle events in the app
 6.Update sahre button to have correct title and the image(facebook developers)
+
+From Matt:
+7.Add instructions
+8.rename github repo
+9.update readme with the commands
+10.DRY - with router components (containers)
 
 
 
