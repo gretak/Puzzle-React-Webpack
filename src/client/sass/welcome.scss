@@ -1,0 +1,43 @@
+@import 'variables';
+
+.welcome {
+  background-color: $light-grey;
+  color: white;
+  text-align: center;
+
+  &-heading {
+    font-size: 50px;
+    padding: 5% 0;
+  }
+
+  &-item {
+    text-align: center;
+    padding: 5% 0;
+
+    p {
+      font-size: 45px;
+    }
+
+    &_icon {
+      width: 63px;
+      margin: 3px 0 -2px 5px;
+    }
+  }
+
+  &-img {
+    width: 45%;
+    height: auto;
+    max-width: 600px;
+  }
+
+  &-button {
+    color: $black;
+    border: none;
+    padding: 18px 39px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 25px 2px;
+  }
+}

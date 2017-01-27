@@ -1,35 +1,57 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
+import { FacebookButton, FacebookCount } from 'react-social';
 
-require('../sass/counter-component.scss');
 
-
-class AwesomeComponent extends React.Component {
+class CounterComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {likesCount : 0};
-    this.onLike = this.onLike.bind(this);
+    this.onClickNextLevel = this.onClickNextLevel.bind(this);
   }
 
-  onLike () {
-    let newLikesCount = this.state.likesCount + 1;
-    this.setState({likesCount: newLikesCount});
+  onClickNextLevel () {
+    console.log('level 2');
+    console.log(this.props.level);
+      if (this.props.level == 20) {
+       this.context.router.push({
+       pathname: '/leveltwo/'
+       })
+      }
+      if (this.props.level == 30) {
+       this.context.router.push({
+       pathname: '/levelthree/'
+       })
+      }
+      if (this.props.level == 48) {
+       this.context.router.push({
+       pathname: '/'
+       })
+      }
   }
+
+  static contextTypes = {
+    router: PropTypes.object.isRequired
+  }
+
 
   render() {
+
+    let url = 'http://gretakava.6te.net/puzzle';
+    let appId = 229484597460287;// get from facebook developers account
+
     return (
-      <div className="clickCounter">
-        <div className="clickCounter__numberOfLikes">
-          <img src="http://www.louiseoneillauthor.com/wp-content/uploads/2014/05/Facebook_like_thumb.png"/>
-          <span>{this.state.likesCount}</span>
+      <div className='clickCounter'>
+        <div className='clickCounter__button'>
+          <button className='clickCounter__button--inner' onClick={this.onClickNextLevel}>{this.props.buttonText}</button>
         </div>
-        <div className="clickCounter__button">
-          <button className="clickCounter__button--inner" onClick={this.onLike}>Like Me</button>
+        <div className='clickCounter__button'>
+          <FacebookButton  className='clickCounter__button--inner' message='Check the puzzle game!' url={url} appId={appId}>
+            {'Share'}
+          </FacebookButton>
         </div>
       </div>
     );
   }
-
 }
 
-export default AwesomeComponent;
+export default CounterComponent;

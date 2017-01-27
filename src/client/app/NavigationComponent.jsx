@@ -1,37 +1,35 @@
 import React from 'react';
 
-require('../sass/navigation.scss');
 
-
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
+function navFunction() {
+    var x = document.getElementById('myTopnav');
+    console.log(screen.width)
+    if (x.className === 'topnav') {
+        x.className += ' responsive';
     } else {
-        x.className = "topnav";
+        x.className = 'topnav';
     }
 }
 
 
-
 class NavigationComponent extends React.Component {
 
-   constructor(props) {
-     super(props);
-     this.state = {link : "www.linkedin.com" };
-   }
-
   render() {
+
+    const topnav = ['Levelone', 'Leveltwo', 'Levelthree', 'Contact']
+    const navigationMenu = topnav.map(function(topnavitem){
+      return <li className='topnav_item' key={topnavitem}><a className='topnav_link' href={topnavitem=='Levelone'?'/':'#'+topnavitem}>{topnavitem}</a></li>
+    });
+
     return (
-      <ul className="topnav" id="myTopnav">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
-        <li className="icon">
-          <a href="javascript:void(0);" onClick={myFunction}>&#9776;</a>
-        </li>
-      </ul>
+      <div>
+        <ul className='topnav' id='myTopnav'>
+          {navigationMenu}
+          <li className='topnav_icon'>
+            <a className='topnav_link' href='javascript:void(0);' onClick={navFunction}>&#9776;</a>
+          </li>
+        </ul>
+      </div>
     );
   }
 

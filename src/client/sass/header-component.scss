@@ -1,11 +1,53 @@
-.header {
-	background-color: #000;
-	color: #fff;
-	font-size: 60px;
+@import 'variables';
 
-	&-img {
-		width: 30%;
-		height: auto;
-		text-align: center;
-	}
+.puzzle {
+  width: 100%;
+  height: auto;
+  background-color: $dark-grey;
+  color: $black;
+  margin: 0 auto;
+  text-align: center;
+  vertical-align: middle;
+  background-color: black;
+  opacity: 0;
+  max-width: 950px;
+
+  &-heading {
+    background-color: $dark-grey;
+    color: $white;
+    font-size: 45px;
+    padding: 2%;
+
+    &-back {
+      font-size: 30px;
+      margin-top: 6px;
+      float: right;
+    }
+  }
+
+  &_fading {
+
+    @extend .puzzle;
+
+    opacity: 1;
+    transition: opacity 4s ease-out;
+  }
+
+  &_img20, &_img30, &_img48 {
+    height: auto;
+    text-align: center;
+    transition: opacity 4s ease-out;
+  }
+
+  &_img20 {
+    width: 20%;
+  }
+
+  &_img30 {
+    width: 16.666666%;
+  }
+
+  &_img48 {
+    width: 12.5%;
+  }
 }
