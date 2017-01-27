@@ -6,7 +6,7 @@ To start the project clone the repository and run npm install.
 ........
 npm run server - will start webpack, localhost dev server with watch task and linting.
 ........
-Go to http://localhost:3000 to see the server running
+Go to http://localhost:5005 to see the server running
 
 ...Github Link...
 https://github.com/gretak/React-Webpack.git
@@ -20,7 +20,7 @@ src/client/sass is the folder with all the sass files, named as relevant compone
 
 
 ...Webpack:...
- - routing
+ - routing + contex, PropTypes
  - plugins (CopyWebpackPlugin, ExtractTextPlugin, OptimiseAssetsPlugin,HTMLwebpackPlugin...)
 
 ...
@@ -32,6 +32,13 @@ https://www.youtube.com/watch?v=PEXcg8xu2y0&index=2&list=PLLnpHn493BHFfs3Uj5tvx1
 
 and MANY many others
 
+Todo list:
+1.Refactor - ES6 and ES5 mix in the code
+2.Create containers in route.js instead of functions
+3.Change or get rid of the navigation
+4.Customise "back" button to go to the previous "level"
+5.Use lifecycle events in the app
+6.Update sahre button to have correct title and the image(facebook developers)
 
 
 
