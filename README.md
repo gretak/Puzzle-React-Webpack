@@ -42,9 +42,8 @@ Go to ```http://localhost:5005``` to see the server running.
 
 From Matt:
 7.Add instructions
-8.rename github repo
-9.update readme with the commands
 10.DRY - with router components (containers)
+11.customise alert box when the image is done
 
 
 

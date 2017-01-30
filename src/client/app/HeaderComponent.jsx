@@ -6,11 +6,14 @@ class HeaderComponent extends React.Component {
 
 constructor(props) {
     super(props);
+    this.greta = false;
     this.state = {
-      preloader: true
+      preloader: true,
+      display: false
     };
     this.handleResult = this.handleResult.bind(this);
     this.arr = [];
+  
     this.puzzleLevelOne = {
       1 : [ './img/iceberg/iceberg_01.jpg', './img/snow/snow_01.jpg', './img/01.jpg'],
       2 : [ './img/snow/snow_02.jpg', './img/iceberg/iceberg_02.jpg', './img/02.jpg'],
@@ -124,12 +127,13 @@ constructor(props) {
       this.setState({
         preloader: false
       })
-    }, 500);
+    }, 200);
   }
 
   static contextTypes = {
     router: PropTypes.object.isRequired
   }
+
 
   handleResult(key, val) {
     this.arr[key] = val;
@@ -138,58 +142,47 @@ constructor(props) {
     const icebergArray = [0,1,0,1,2,1,0,2,0,2,0,2,0,2,1,1,1,0,1,1];
     const christmasArray = [2,2,1,2,0,0,1,0,2,1,2,0,2,1,0,2,0,2,0,2];
     const snowArray = [1,0,2,0,1,2,2,1,1,0,1,1,1,0,2,0,2,1,2,0];
-
     const Iceberg = arraysEqual(icebergArray,this.arr);
     const Christmas = arraysEqual(christmasArray,this.arr);
     const Snow = arraysEqual(snowArray,this.arr);
 
     if (Iceberg || Snow || Christmas) {
-       setTimeout( function () 
-         {
-          alert( 'You got the image!' );
-         }, 300 );
-       this.context.router.push({
-       pathname: '/levelone/success'
-       })
+      //console.log("snow"+Snow)
+       // setTimeout( function () 
+       //   {
+       //    alert( 'You got the image!' );
+       //   }, 300 );
+        this.context.router.push({
+         pathname: '/levelone/success'
+        })
     }
 
-    //level2            
-    const tigerArray = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 2, 0, 2];
+    //level 2            
+    const tigerArray = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 2, 0, 1];
     const ladybugArray = [0, 1, 2, 0, 1, 2, 0, 1, 1, 1, 0, 2, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0];
-    const sunflowerArray = [1, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 1];
-
+    const sunflowerArray = [1, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2];
     const Tiger = arraysEqual(tigerArray,this.arr);
     const Ladybug = arraysEqual(ladybugArray,this.arr);
     const Sunflower = arraysEqual(sunflowerArray,this.arr);
 
     if (Tiger || Ladybug || Sunflower) {
-      setTimeout( function () 
-         {
-          alert( 'You got the image!' );
-         }, 300 );
       this.context.router.push({
        pathname: '/leveltwo/success'
        })
     }
-  
 
     //level 3
     const kitty = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 2, 0, 1, 2, 2, 1, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 2, 2];
     const opt = [0, 1, 2, 0, 1, 2, 0, 0, 1, 1, 0, 2, 1, 0, 1, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1];
     const panda = [1, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 1, 0];
-
     const Kitty = arraysEqual(kitty,this.arr);
     const Opt = arraysEqual(opt,this.arr);
     const Panda = arraysEqual(panda,this.arr);
 
     if (Kitty || Opt || Panda) {
-      setTimeout( function () 
-         {
-          alert( 'Congratulations! you finished the game' );
-         }, 300 );
-      //this.context.router.push({
-      // pathname: '/levelthree/success'
-      // })
+      this.context.router.push({
+       pathname: '/levelthree/success'
+       })
     }
 
     console.log(this.arr)
@@ -206,24 +199,27 @@ constructor(props) {
 
 
   render() {
-  const preloader= this.state.preloader;
-
-  const images = [];
+  let preloader= this.state.preloader;
+  let display= this.state.display;
+  let images = [];
 
   for (var i = 1; i <= this.props.imgNumber; i++) {
     images.push(<ImgComponent handleResult={this.handleResult} image={this[this.props.puzzleLevel][i]} index={i} key={i} ImgClass={this.props.puzzleClass}/>);
-  console.log()
+    console.log()
   }
 
     return ( 
-      <div>
+
+      <div >
       <p className='puzzle-heading'>{this.props.imgNumber}
         <img className ='welcome-item_icon' src='./img/puzzle-icon.png'/>
         <a className='puzzle-heading-back' href={this.props.link}>&lt;&lt; back</a>
       </p>
+      <p className="congratulation-text animated bounce">{this.props.congratsText}</p>
       <div className="puzzle" className = { preloader? 'puzzle' : 'puzzle_fading'}>
         {images}
       </div>
+      <p className={display? 'display': 'display-no'}>component to appear</p>
       </div>
     );
   }

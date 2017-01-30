@@ -93,12 +93,12 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(241);
-	__webpack_require__(245);
-	__webpack_require__(247);
-	__webpack_require__(249);
-	__webpack_require__(251);
-	__webpack_require__(253);
+	__webpack_require__(240);
+	__webpack_require__(244);
+	__webpack_require__(246);
+	__webpack_require__(248);
+	__webpack_require__(250);
+	__webpack_require__(252);
 
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
@@ -21715,11 +21715,14 @@
 
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(HeaderComponent).call(this, props));
 
+	    _this.greta = false;
 	    _this.state = {
-	      preloader: true
+	      preloader: true,
+	      display: false
 	    };
 	    _this.handleResult = _this.handleResult.bind(_this);
 	    _this.arr = [];
+
 	    _this.puzzleLevelOne = {
 	      1: ['./img/iceberg/iceberg_01.jpg', './img/snow/snow_01.jpg', './img/01.jpg'],
 	      2: ['./img/snow/snow_02.jpg', './img/iceberg/iceberg_02.jpg', './img/02.jpg'],
@@ -21838,7 +21841,7 @@
 	        _this2.setState({
 	          preloader: false
 	        });
-	      }, 500);
+	      }, 200);
 	    }
 	  }, {
 	    key: 'handleResult',
@@ -21849,33 +21852,30 @@
 	      var icebergArray = [0, 1, 0, 1, 2, 1, 0, 2, 0, 2, 0, 2, 0, 2, 1, 1, 1, 0, 1, 1];
 	      var christmasArray = [2, 2, 1, 2, 0, 0, 1, 0, 2, 1, 2, 0, 2, 1, 0, 2, 0, 2, 0, 2];
 	      var snowArray = [1, 0, 2, 0, 1, 2, 2, 1, 1, 0, 1, 1, 1, 0, 2, 0, 2, 1, 2, 0];
-
 	      var Iceberg = arraysEqual(icebergArray, this.arr);
 	      var Christmas = arraysEqual(christmasArray, this.arr);
 	      var Snow = arraysEqual(snowArray, this.arr);
 
 	      if (Iceberg || Snow || Christmas) {
-	        setTimeout(function () {
-	          alert('You got the image!');
-	        }, 300);
+	        //console.log("snow"+Snow)
+	        // setTimeout( function ()
+	        //   {
+	        //    alert( 'You got the image!' );
+	        //   }, 300 );
 	        this.context.router.push({
 	          pathname: '/levelone/success'
 	        });
 	      }
 
-	      //level2           
-	      var tigerArray = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 2, 0, 2];
+	      //level 2           
+	      var tigerArray = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 2, 0, 1];
 	      var ladybugArray = [0, 1, 2, 0, 1, 2, 0, 1, 1, 1, 0, 2, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0];
-	      var sunflowerArray = [1, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 1];
-
+	      var sunflowerArray = [1, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2];
 	      var Tiger = arraysEqual(tigerArray, this.arr);
 	      var Ladybug = arraysEqual(ladybugArray, this.arr);
 	      var Sunflower = arraysEqual(sunflowerArray, this.arr);
 
 	      if (Tiger || Ladybug || Sunflower) {
-	        setTimeout(function () {
-	          alert('You got the image!');
-	        }, 300);
 	        this.context.router.push({
 	          pathname: '/leveltwo/success'
 	        });
@@ -21885,18 +21885,14 @@
 	      var kitty = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 2, 0, 1, 2, 2, 1, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 2, 2];
 	      var opt = [0, 1, 2, 0, 1, 2, 0, 0, 1, 1, 0, 2, 1, 0, 1, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1];
 	      var panda = [1, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 1, 0];
-
 	      var Kitty = arraysEqual(kitty, this.arr);
 	      var Opt = arraysEqual(opt, this.arr);
 	      var Panda = arraysEqual(panda, this.arr);
 
 	      if (Kitty || Opt || Panda) {
-	        setTimeout(function () {
-	          alert('Congratulations! you finished the game');
-	        }, 300);
-	        //this.context.router.push({
-	        // pathname: '/levelthree/success'
-	        // })
+	        this.context.router.push({
+	          pathname: '/levelthree/success'
+	        });
 	      }
 
 	      console.log(this.arr);
@@ -21913,7 +21909,7 @@
 	    key: 'render',
 	    value: function render() {
 	      var preloader = this.state.preloader;
-
+	      var display = this.state.display;
 	      var images = [];
 
 	      for (var i = 1; i <= this.props.imgNumber; i++) {
@@ -21936,9 +21932,19 @@
 	          )
 	        ),
 	        _react2.default.createElement(
+	          'p',
+	          { className: 'congratulation-text animated bounce' },
+	          this.props.congratsText
+	        ),
+	        _react2.default.createElement(
 	          'div',
 	          _defineProperty({ className: 'puzzle' }, 'className', preloader ? 'puzzle' : 'puzzle_fading'),
 	          images
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          { className: display ? 'display' : 'display-no' },
+	          'component to appear'
 	        )
 	      );
 	    }
@@ -22064,24 +22070,28 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { id: 'Contact', className: 'footer' },
+	        null,
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'footer__left' },
-	          _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link' }),
-	          _react2.default.createElement(_FooterItemComponent2.default, { linkDescription: 'I am text' }),
+	          { id: 'Contact', className: 'footer' },
 	          _react2.default.createElement(
-	            'p',
-	            { className: 'footer-item' },
-	            'Phone number ',
-	            this.props.number
+	            'div',
+	            { className: 'footer__left' },
+	            _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link' }),
+	            _react2.default.createElement(_FooterItemComponent2.default, { linkDescription: 'I am text' }),
+	            _react2.default.createElement(
+	              'p',
+	              { className: 'footer-item' },
+	              'Phone number ',
+	              this.props.number
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'footer__right' },
+	            _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link' }),
+	            _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link 2' })
 	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'footer__right' },
-	          _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link' }),
-	          _react2.default.createElement(_FooterItemComponent2.default, { linkDestination: 'http://www.cohaesus.co.uk', linkDescription: 'I am the link 2' })
 	        )
 	      );
 	    }
@@ -22263,7 +22273,9 @@
 	var Route = ReactRouter.Route;
 	var hashHistory = ReactRouter.hashHistory;
 	var Welcome = __webpack_require__(236).default;
-	var levelcontainer = __webpack_require__(255).default;
+	var HeaderComponent = __webpack_require__(173).default;
+	var levelcontainer = __webpack_require__(238).default;
+	var levelcontainername = __webpack_require__(239).default;
 
 	var routes = React.createElement(
 	  Router,
@@ -22284,14 +22296,16 @@
 	    components: levelcontainer
 	  }),
 	  React.createElement(Route, { path: '/levelone/success',
-	    imgNumber: 20, puzzleLevel: 'puzzleLevelOne', puzzleClass: 'puzzle_img20', link: '/', level: '20', buttonText: 'Next level',
-	    components: levelcontainer
+	    imgNumber: 20, puzzleLevel: 'puzzleLevelOne', puzzleClass: 'puzzle_img20', link: '/', level: '20', buttonText: 'Next level', congratsText: 'You unlocked the next level!',
+	    components: levelcontainername
 	  }),
 	  React.createElement(Route, { path: '/leveltwo/success',
-	    imgNumber: 30, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img30', link: '#/levelone', level: '30', buttonText: 'Next level'
+	    imgNumber: 30, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img30', link: '#/levelone', level: '30', buttonText: 'Next level', congratsText: 'You unlocked the next level!',
+	    components: levelcontainername
 	  }),
 	  React.createElement(Route, { path: '/levelthree/success',
-	    imgNumber: 48, puzzleLevel: 'puzzleLevelThree', puzzleClass: 'puzzle_img48', link: '#/leveltwo', level: '48', buttonText: 'Next level'
+	    imgNumber: 48, puzzleLevel: 'puzzleLevelThree', puzzleClass: 'puzzle_img48', link: '#/leveltwo', level: '48', buttonText: 'Start again!', congratsText: 'You finished the game!',
+	    components: levelcontainername
 	  })
 	);
 
@@ -27428,54 +27442,7 @@
 	exports.default = WelcomeItemComponent;
 
 /***/ },
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 246 */,
-/* 247 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 248 */,
-/* 249 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 250 */,
-/* 251 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 252 */,
-/* 253 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 254 */,
-/* 255 */
+/* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27550,6 +27517,127 @@
 	}(_react2.default.Component);
 
 	exports.default = levelContainer;
+
+/***/ },
+/* 239 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _FooterItemComponent = __webpack_require__(176);
+
+	var _FooterItemComponent2 = _interopRequireDefault(_FooterItemComponent);
+
+	var _NavigationComponent = __webpack_require__(177);
+
+	var _NavigationComponent2 = _interopRequireDefault(_NavigationComponent);
+
+	var _HeaderComponent = __webpack_require__(173);
+
+	var _HeaderComponent2 = _interopRequireDefault(_HeaderComponent);
+
+	var _CounterComponent = __webpack_require__(171);
+
+	var _CounterComponent2 = _interopRequireDefault(_CounterComponent);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var levelContainer = function (_React$Component) {
+	  _inherits(levelContainer, _React$Component);
+
+	  function levelContainer() {
+	    _classCallCheck(this, levelContainer);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(levelContainer).apply(this, arguments));
+	  }
+
+	  _createClass(levelContainer, [{
+	    key: 'render',
+	    value: function render() {
+	      var routes = this.props.route;
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_NavigationComponent2.default, null),
+	        _react2.default.createElement(_HeaderComponent2.default, {
+	          imgNumber: routes.imgNumber,
+	          puzzleLevel: routes.puzzleLevel,
+	          puzzleClass: routes.puzzleClass,
+	          link: routes.link,
+	          congratsText: routes.congratsText
+	        }),
+	        routes.level && _react2.default.createElement(_CounterComponent2.default, {
+	          level: routes.level,
+	          buttonText: routes.buttonText
+	        })
+	      );
+	    }
+	  }]);
+
+	  return levelContainer;
+	}(_react2.default.Component);
+
+	exports.default = levelContainer;
+
+/***/ },
+/* 240 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 245 */,
+/* 246 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 247 */,
+/* 248 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 249 */,
+/* 250 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 251 */,
+/* 252 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);
