@@ -85,6 +85,10 @@
 
 	var _WelcomeComponent2 = _interopRequireDefault(_WelcomeComponent);
 
+	var _InfoComponent = __webpack_require__(254);
+
+	var _InfoComponent2 = _interopRequireDefault(_InfoComponent);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -99,6 +103,7 @@
 	__webpack_require__(248);
 	__webpack_require__(250);
 	__webpack_require__(252);
+	__webpack_require__(255);
 
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
@@ -21697,6 +21702,10 @@
 
 	var _ImgComponent2 = _interopRequireDefault(_ImgComponent);
 
+	var _InfoComponent = __webpack_require__(254);
+
+	var _InfoComponent2 = _interopRequireDefault(_InfoComponent);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -21931,6 +21940,7 @@
 	            '<< back'
 	          )
 	        ),
+	        _react2.default.createElement(_InfoComponent2.default, null),
 	        _react2.default.createElement(
 	          'p',
 	          { className: 'congratulation-text animated bounce' },
@@ -21940,11 +21950,6 @@
 	          'div',
 	          _defineProperty({ className: 'puzzle' }, 'className', preloader ? 'puzzle' : 'puzzle_fading'),
 	          images
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          { className: display ? 'display' : 'display-no' },
-	          'component to appear'
 	        )
 	      );
 	    }
@@ -22300,11 +22305,11 @@
 	    components: levelcontainername
 	  }),
 	  React.createElement(Route, { path: '/leveltwo/success',
-	    imgNumber: 30, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img30', link: '#/levelone', level: '30', buttonText: 'Next level', congratsText: 'You unlocked the next level!',
+	    imgNumber: 30, puzzleLevel: 'puzzleLevelTwo', puzzleClass: 'puzzle_img30', link: '#/levelone/success', level: '30', buttonText: 'Next level', congratsText: 'You unlocked the next level!',
 	    components: levelcontainername
 	  }),
 	  React.createElement(Route, { path: '/levelthree/success',
-	    imgNumber: 48, puzzleLevel: 'puzzleLevelThree', puzzleClass: 'puzzle_img48', link: '#/leveltwo', level: '48', buttonText: 'Start again!', congratsText: 'You finished the game!',
+	    imgNumber: 48, puzzleLevel: 'puzzleLevelThree', puzzleClass: 'puzzle_img48', link: '#/leveltwo/success', level: '48', buttonText: 'Start again!', congratsText: 'You finished the game!',
 	    components: levelcontainername
 	  })
 	);
@@ -27635,6 +27640,90 @@
 /***/ },
 /* 251 */,
 /* 252 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 253 */,
+/* 254 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var InfoComponent = function (_React$Component) {
+	  _inherits(InfoComponent, _React$Component);
+
+	  function InfoComponent(props) {
+	    _classCallCheck(this, InfoComponent);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(InfoComponent).call(this, props));
+
+	    _this.onClose = _this.onClose.bind(_this);
+	    _this.state = {
+	      display: true
+	    };
+	    return _this;
+	  }
+
+	  _createClass(InfoComponent, [{
+	    key: 'onClose',
+	    value: function onClose() {
+	      this.setState({
+	        display: false
+	      });
+	      console.log(this.state.display);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: this.state.display ? 'Infobox display' : 'Infobox no-display' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'InfoBox-text' },
+	          'Click the squares to show a single image'
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'InfoBox-button', onClick: this.onClose },
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            '❎'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return InfoComponent;
+	}(_react2.default.Component);
+
+	exports.default = InfoComponent;
+
+/***/ },
+/* 255 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

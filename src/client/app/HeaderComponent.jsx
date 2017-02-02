@@ -1,5 +1,7 @@
 import React, {PropTypes} from 'react';
 import ImgComponent from './ImgComponent.jsx';
+import InfoComponent from './InfoComponent.jsx';
+
 
 
 class HeaderComponent extends React.Component {
@@ -211,15 +213,15 @@ constructor(props) {
     return ( 
 
       <div >
-      <p className='puzzle-heading'>{this.props.imgNumber}
-        <img className ='welcome-item_icon' src='./img/puzzle-icon.png'/>
-        <a className='puzzle-heading-back' href={this.props.link}>&lt;&lt; back</a>
-      </p>
-      <p className="congratulation-text animated bounce">{this.props.congratsText}</p>
-      <div className="puzzle" className = { preloader? 'puzzle' : 'puzzle_fading'}>
+        <p className='puzzle-heading'>{this.props.imgNumber}
+          <img className ='welcome-item_icon' src='./img/puzzle-icon.png'/>
+          <a className='puzzle-heading-back' href={this.props.link}>&lt;&lt; back</a>
+        </p>
+        <InfoComponent/>
+        <p className="congratulation-text animated bounce">{this.props.congratsText}</p>
+        <div className="puzzle" className = { preloader? 'puzzle' : 'puzzle_fading'}>
         {images}
-      </div>
-      <p className={display? 'display': 'display-no'}>component to appear</p>
+        </div>
       </div>
     );
   }

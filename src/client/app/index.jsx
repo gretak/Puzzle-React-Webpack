@@ -6,6 +6,7 @@ import FooterComponent from './Footer.jsx';
 import NavigationComponent from './NavigationComponent.jsx';
 import routes from './routes.js';
 import WelcomeComponent from './WelcomeComponent.jsx';
+import InfoComponent from './InfoComponent.jsx';
 
 
 require('../sass/base-style.scss');
@@ -14,6 +15,7 @@ require('../sass/header-component.scss');
 require('../sass/counter-component.scss');
 require('../sass/footer.scss');
 require('../sass/navigation.scss');
+require('../sass/infobox.scss');
 
 
 class App extends React.Component {

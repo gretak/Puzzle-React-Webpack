@@ -20,7 +20,7 @@ Go to ```http://localhost:5005``` to see the server running.
 
 
 ### Webpack
- routing + contex, PropTypes
+ routing + contex, PropTypes, FaceboookButton
  plugins (CopyWebpackPlugin, ExtractTextPlugin, OptimiseAssetsPlugin,HTMLwebpackPlugin...)
 
 
@@ -34,16 +34,12 @@ Go to ```http://localhost:5005``` to see the server running.
 
 **TODO list:**
 - 1.Refactor - ES6 and ES5 mix in the code
-- 2.Create containers in route.js instead of functions
 - 3.Change or get rid of the navigation
-- 4.Customise "back" button to go to the previous "level"
 - 5.Use lifecycle events in the app
-- 6.Update sahre button to have correct title and the image(facebook developers)
+- 6.Update share button to have correct title and the image (facebook developers)
 
 From Matt:
 7.Add instructions
-10.DRY - with router components (containers)
-11.customise alert box when the image is done
-
+10.DRY - with router components (containers) - two containers created
 
 

@@ -47,6 +47,7 @@
     "react": "^15.2.0",
     "react-dom": "^15.2.0",
     "react-facebook": "^2.2.5",
+    "react-native-infobox": "^0.1.6",
     "react-router": "^2.0.0-rc5",
     "react-social": "^1.6.2",
     "webpack": "^1.13.1",
