@@ -3,6 +3,8 @@ import FooterItemComponent from '../FooterItemComponent.jsx';
 import NavigationComponent from '../NavigationComponent.jsx';
 import HeaderComponent from '../HeaderComponent.jsx';
 import Counter from '../CounterComponent.jsx';
+import InfoComponent from '../InfoComponent.jsx';
+
 
 
 class levelContainer extends React.Component {

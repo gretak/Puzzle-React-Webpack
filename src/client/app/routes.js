@@ -7,6 +7,7 @@ const Welcome = require('./WelcomeComponent.jsx').default;
 const HeaderComponent = require('./HeaderComponent.jsx').default;
 const levelcontainer = require('./containers/levelContainer.jsx').default;
 const levelcontainername = require('./containers/levelContainername.jsx').default;
+const InfoComponent = require ('./InfoComponent.jsx').default;
 
 
 

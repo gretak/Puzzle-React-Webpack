@@ -8,7 +8,6 @@ class HeaderComponent extends React.Component {
 
 constructor(props) {
     super(props);
-    this.greta = false;
     this.state = {
       preloader: true,
       display: false
@@ -210,6 +209,7 @@ constructor(props) {
     console.log()
   }
 
+
     return ( 
 
       <div >
@@ -217,7 +217,7 @@ constructor(props) {
           <img className ='welcome-item_icon' src='./img/puzzle-icon.png'/>
           <a className='puzzle-heading-back' href={this.props.link}>&lt;&lt; back</a>
         </p>
-        <InfoComponent/>
+        <InfoComponent imgNumber={this.props.imgNumber}/>
         <p className="congratulation-text animated bounce">{this.props.congratsText}</p>
         <div className="puzzle" className = { preloader? 'puzzle' : 'puzzle_fading'}>
         {images}

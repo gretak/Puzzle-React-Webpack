@@ -40,5 +40,19 @@
       cursor: pointer;
       width: 80%;
     }
+
+    &--inner-green {
+      background-color: #a7d6b2;
+      color: $black;
+      border: none;
+      padding: 18px 17px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      margin: 25px 2px;
+      cursor: pointer;
+      width: 80%;
+    }
   }
 }
