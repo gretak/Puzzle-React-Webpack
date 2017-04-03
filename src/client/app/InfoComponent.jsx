@@ -27,8 +27,7 @@ class InfoComponent extends React.Component {
     return (
       <div className = { this.state.display? 'Infobox display' : 'Infobox no-display'}>
         <div className ="InfoBox-text">
-        {this.props.imgNumber}
-          Click the squares to show a single image
+          Click{' '+this.props.imgNumber+' '}squares to show a single image
         </div>
         <div className ="InfoBox-button" onClick={this.onClose}>
           <span>
