@@ -33,13 +33,15 @@ Go to ```http://localhost:5005``` to see the server running.
 
 
 **TODO list:**
-- 1.Refactor - ES6 and ES5 mix in the code
-- 3.Change or get rid of the navigation
-- 5.Use lifecycle events in the app
+- 1.Refactor - ES6 and ES5 mix in the code -->kind a done
+- 3.Change or get rid of the navigation --> helps to skip to the next level without completing the puzzle (so let it be for now)
+- 5.Use lifecycle events in the app (used compoenentWillMount and constructor to set state)
 - 6.Update share button to have correct title and the image (facebook developers)
+- 7. Use propTypes through the app.
+- 8. React dev tools installed as an extension, explore how it can help to debug.
+- 9. Find out about Redux and introduce to this app.
+- 10. Update the server with the latest --> done.
+- 11. Instructions how to play, congratulation text and containers optimization (DRY) --> done.
 
-From Matt:
-7.Add instructions
-10.DRY - with router components (containers) - two containers created
 
 
