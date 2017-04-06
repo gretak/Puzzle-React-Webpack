@@ -11,14 +11,17 @@ class levelContainer extends React.Component {
 
   render () {
     const routes = this.props.route;
+            console.log("id"+this.props.params.id);
+            console.log(routes.imgNumber);
+
 
     return (
       <div>
         <NavigationComponent />
         <HeaderComponent 
-        imgNumber={routes.imgNumber}
-        puzzleLevel={routes.puzzleLevel}
-        puzzleClass={routes.puzzleClass}
+        imgNumber={this.props.params.id}
+        puzzleLevel={"puzzleLevel"+[this.props.params.id]}
+        puzzleClass={"puzzle_img"+[this.props.params.id]}
         link={routes.link}
         />
         {routes.level &&

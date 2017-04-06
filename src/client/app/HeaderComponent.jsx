@@ -15,7 +15,7 @@ constructor(props) {
     this.handleResult = this.handleResult.bind(this);
     this.arr = [];
   
-    this.puzzleLevelOne = {
+    this.puzzleLevel20 = {
       1 : [ './img/iceberg/iceberg_01.jpg', './img/snow/snow_01.jpg', './img/01.jpg'],
       2 : [ './img/snow/snow_02.jpg', './img/iceberg/iceberg_02.jpg', './img/02.jpg'],
       3 : [ './img/iceberg/iceberg_03.jpg', './img/03.jpg', './img/snow/snow_03.jpg'],
@@ -38,7 +38,7 @@ constructor(props) {
       20 : [ './img/snow/snow_20.jpg', './img/iceberg/iceberg_20.jpg', './img/20.jpg']
     };
 
-    this.puzzleLevelTwo= {
+    this.puzzleLevel30= {
       1 : [ './img/ladybug/ladybug_01.jpg', './img/sunflower/sunflower_01.jpg', './img/tiger/tiger_01.jpg'],
       2 : [ './img/sunflower/sunflower_02.jpg', './img/ladybug/ladybug_02.jpg', './img/tiger/tiger_02.jpg'],
       3 : [ './img/tiger/tiger_03.jpg', './img/sunflower/sunflower_03.jpg', './img/ladybug/ladybug_03.jpg'],
@@ -71,7 +71,10 @@ constructor(props) {
       30 : [ './img/ladybug/ladybug_30.jpg', './img/tiger/tiger_30.jpg', './img/sunflower/sunflower_30.jpg']
     };
 
-    this.puzzleLevelThree = {
+// for (var i = 1; i >= length; i++) {
+//   this.puzzleLevelThree[i] = [ './img/opt/opt_0'+ i +'.jpg', './img/panda/panda_01.jpg', './img/kitty/kitty_01.jpg'];
+// }
+    this.puzzleLevel48 = {
       1 : [ './img/opt/opt_01.jpg', './img/panda/panda_01.jpg', './img/kitty/kitty_01.jpg'],
       2 : [ './img/panda/panda_02.jpg', './img/opt/opt_02.jpg', './img/kitty/kitty_02.jpg'],
       3 : [ './img/kitty/kitty_03.jpg', './img/panda/panda_03.jpg', './img/opt/opt_03.jpg'],
@@ -154,7 +157,7 @@ constructor(props) {
        //    alert( 'You got the image!' );
        //   }, 300 );
         this.context.router.push({
-         pathname: '/levelone/success'
+         pathname: '/level/success/20'
         })
     }
 
