@@ -14,12 +14,12 @@ class CounterComponent extends React.Component {
     console.log(this.props.level);
       if (this.props.level == 20) {
        this.context.router.push({
-       pathname: '/leveltwo/'
+       pathname: '/level/30'
        })
       }
       if (this.props.level == 30) {
        this.context.router.push({
-       pathname: '/levelthree/'
+       pathname: '/level/48'
        })
       }
       if (this.props.level == 48) {
@@ -38,11 +38,19 @@ class CounterComponent extends React.Component {
 
     let url = 'http://gretakava.6te.net/puzzle';
     let appId = 229484597460287;// get from facebook developers account
+   let lastLevel = false;
+
+    // //check if the last level
+    // if (currentLevel == 48) {
+    //   lastLevel = true;
+    // }
+
+    //{ lastLevel? 'Next level' : 'Start again!' 
 
     return (
       <div className='clickCounter'>
         <div className='clickCounter__button'>
-          <button className='clickCounter__button--inner-green' onClick={this.onClickNextLevel}>{this.props.buttonText}</button>
+          <button className='clickCounter__button--inner-green' onClick={this.onClickNextLevel}>button</button>
         </div>
         <div className='clickCounter__button'>
           <FacebookButton  className='clickCounter__button--inner' message='Check the puzzle game!' url={url} appId={appId}>

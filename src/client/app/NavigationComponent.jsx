@@ -16,9 +16,9 @@ class NavigationComponent extends React.Component {
 
   render() {
 
-    const topnav = ['Levelone', 'Leveltwo', 'Levelthree', 'Contact']
+    const topnav = ['Level/20', 'Level/30', 'Level/48', 'Contact']
     const navigationMenu = topnav.map(function(topnavitem){
-      return <li className='topnav_item' key={topnavitem}><a className='topnav_link' href={topnavitem=='Levelone'?'/':'#'+topnavitem}>{topnavitem}</a></li>
+      return <li className='topnav_item' key={topnavitem}><a className='topnav_link' href={'#'+topnavitem}>{topnavitem}</a></li>
     });
 
     return (

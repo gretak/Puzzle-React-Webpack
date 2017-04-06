@@ -11,7 +11,6 @@ const InfoComponent = require ('./InfoComponent.jsx').default;
 const WelcomeItemComponent = require ('./WelcomeItemComponent.jsx').default;
 
 
-//console.log(this.state.number);
 
 
 const routes = (
@@ -20,22 +19,14 @@ const routes = (
     components={Welcome}
   />
   <Route path="/level/:id"
-    link="/"
     components={levelcontainer}
   />
-  <Route path="/level/30"
-    link="#/levelone"
-   components={levelcontainer}
-  />
-  <Route path="/level/48"
-    link="#/level"
-   components={levelcontainer}
-  />
-  <Route path="/levelone/success"
+
+  <Route path="/levelsuccess"
    imgNumber={20} puzzleLevel="puzzleLevelOne" puzzleClass="puzzle_img20" link="/" level="20" buttonText="Next level" congratsText="You unlocked the next level!"
    components={levelcontainername}
   />
-  <Route path="/leveltwo/success/:id"
+  <Route path="/levelsuccess/:id"
    imgNumber={30} puzzleLevel="puzzleLevelTwo" puzzleClass="puzzle_img30" link="#/levelone/success" level="30" buttonText="Next level" congratsText="You unlocked the next level!"
    components={levelcontainername}
   />

@@ -19,12 +19,12 @@ class levelContainer extends React.Component {
         puzzleLevel={routes.puzzleLevel}
         puzzleClass={routes.puzzleClass}
         link={routes.link}
-        congratsText={routes.congratsText}
+        //congratsText={routes.congratsText}
         />
         {routes.level &&
         <Counter 
         level={routes.level}
-        buttonText={routes.buttonText}
+        //buttonText={routes.buttonText}
         />
         }
       </div>

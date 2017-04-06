@@ -151,13 +151,8 @@ constructor(props) {
     const Snow = arraysEqual(snowArray,this.arr);
 
     if (Iceberg || Snow || Christmas) {
-      //console.log("snow"+Snow)
-       // setTimeout( function () 
-       //   {
-       //    alert( 'You got the image!' );
-       //   }, 300 );
         this.context.router.push({
-         pathname: '/level/success/20'
+         pathname: '/levelsuccess/20'
         })
     }
 
@@ -171,7 +166,7 @@ constructor(props) {
 
     if (Tiger || Ladybug || Sunflower) {
       this.context.router.push({
-       pathname: '/leveltwo/success'
+       pathname: '/levelsuccess/30'
        })
     }
 
@@ -185,7 +180,7 @@ constructor(props) {
 
     if (Kitty || Opt || Panda) {
       this.context.router.push({
-       pathname: '/levelthree/success'
+       pathname: '/levelsuccess/48'
        })
     }
 
@@ -206,22 +201,41 @@ constructor(props) {
   let preloader= this.state.preloader;
   let display= this.state.display;
   let images = [];
+  let firstLevel = false;
+  let lastLevel = false;
+  let otherLevel;
+  let currentLevel = this.props.imgNumber;
 
   for (var i = 1; i <= this.props.imgNumber; i++) {
     images.push(<ImgComponent handleResult={this.handleResult} image={this[this.props.puzzleLevel][i]} index={i} key={i} ImgClass={this.props.puzzleClass}/>);
-    console.log()
   }
 
+  // let levelsArray = ['20','30','48'];
+  // let currentLevelPosition = levelsArray.indexOf(currentLevel);
+
+  // //check if it is the first level
+  // if (currentLevel == 20) {
+  //   firstLevel = true;
+  // } else {
+  //   otherLevel = "/#/level/"+levelsArray[currentLevelPosition-1];
+  // }
+
+  // //check if the last level
+  // if (currentLevel == 48) {
+  //   lastLevel = true;
+  // }
+
+//{ lastLevel? 'You unlocked the next level!' : 'You finished the game!' }
+//{ firstLevel? '/' : otherLevel }
 
     return ( 
-
       <div >
         <p className='puzzle-heading'>{this.props.imgNumber}
           <img className ='welcome-item_icon' src='./img/puzzle-icon.png'/>
-          <a className='puzzle-heading-back' href={this.props.link}>&lt;&lt; back</a>
+          <a className='puzzle-heading-back' href="greta" >&lt;&lt; back</a>
         </p>
         <InfoComponent imgNumber={this.props.imgNumber}/>
-        <p className="congratulation-text animated bounce">{this.props.congratsText}</p>
+        <p className="congratulation-text animated bounce">gret</p>
         <div className="puzzle" className = { preloader? 'puzzle' : 'puzzle_fading'}>
         {images}
         </div>
