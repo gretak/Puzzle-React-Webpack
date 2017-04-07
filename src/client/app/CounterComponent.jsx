@@ -50,7 +50,7 @@ class CounterComponent extends React.Component {
     return (
       <div className='clickCounter'>
         <div className='clickCounter__button'>
-          <button className='clickCounter__button--inner-green' onClick={this.onClickNextLevel}>{ lastLevel? 'Next level' : 'Start again!'}</button>
+          <button className='clickCounter__button--inner-green' onClick={this.onClickNextLevel}>{ lastLevel? 'Start again!' : 'Next level'}</button>
         </div>
         <div className='clickCounter__button'>
           <FacebookButton  className='clickCounter__button--inner' message='Check the puzzle game!' url={url} appId={appId}>
