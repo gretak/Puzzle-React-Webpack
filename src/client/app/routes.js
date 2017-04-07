@@ -23,15 +23,15 @@ const routes = (
   />
 
   <Route path="/levelsuccess"
-   imgNumber={20} puzzleLevel="puzzleLevelOne" puzzleClass="puzzle_img20" link="/" level="20" buttonText="Next level" congratsText="You unlocked the next level!"
+   //imgNumber={20} puzzleLevel="puzzleLevelOne" puzzleClass="puzzle_img20" link="/" level="20" buttonText="Next level" congratsText="You unlocked the next level!"
    components={levelcontainername}
   />
   <Route path="/levelsuccess/:id"
-   imgNumber={30} puzzleLevel="puzzleLevelTwo" puzzleClass="puzzle_img30" link="#/levelone/success" level="30" buttonText="Next level" congratsText="You unlocked the next level!"
+   //imgNumber={30} puzzleLevel="puzzleLevelTwo" puzzleClass="puzzle_img30" link="#/levelone/success" level="30" buttonText="Next level" congratsText="You unlocked the next level!"
    components={levelcontainername}
   />
   <Route path="/levelthree/success"
-   imgNumber={48} puzzleLevel="puzzleLevelThree" puzzleClass="puzzle_img48" link="#/leveltwo/success" level="48" buttonText="Start again!" congratsText="You finished the game!"
+   //imgNumber={48} puzzleLevel="puzzleLevelThree" puzzleClass="puzzle_img48" link="#/leveltwo/success" level="48" buttonText="Start again!" congratsText="You finished the game!"
    components={levelcontainername}
   />
  </Router>

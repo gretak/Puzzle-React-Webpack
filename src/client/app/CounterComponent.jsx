@@ -38,19 +38,19 @@ class CounterComponent extends React.Component {
 
     let url = 'http://gretakava.6te.net/puzzle';
     let appId = 229484597460287;// get from facebook developers account
-   let lastLevel = false;
+    let lastLevel = false;
+    let currentLevel = this.props.imgNumber;
 
-    // //check if the last level
-    // if (currentLevel == 48) {
-    //   lastLevel = true;
-    // }
+     //check if the last level
+     if (currentLevel == 48) {
+       lastLevel = true;
+     }
 
-    //{ lastLevel? 'Next level' : 'Start again!' 
 
     return (
       <div className='clickCounter'>
         <div className='clickCounter__button'>
-          <button className='clickCounter__button--inner-green' onClick={this.onClickNextLevel}>button</button>
+          <button className='clickCounter__button--inner-green' onClick={this.onClickNextLevel}>{ lastLevel? 'Next level' : 'Start again!'}</button>
         </div>
         <div className='clickCounter__button'>
           <FacebookButton  className='clickCounter__button--inner' message='Check the puzzle game!' url={url} appId={appId}>

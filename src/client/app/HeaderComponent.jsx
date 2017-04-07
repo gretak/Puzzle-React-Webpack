@@ -202,7 +202,7 @@ constructor(props) {
   let display= this.state.display;
   let images = [];
   let firstLevel = false;
-  let lastLevel = false;
+  let lastLevel = true;
   let otherLevel;
   let currentLevel = this.props.imgNumber;
 
@@ -210,32 +210,30 @@ constructor(props) {
     images.push(<ImgComponent handleResult={this.handleResult} image={this[this.props.puzzleLevel][i]} index={i} key={i} ImgClass={this.props.puzzleClass}/>);
   }
 
-  // let levelsArray = ['20','30','48'];
-  // let currentLevelPosition = levelsArray.indexOf(currentLevel);
+  let levelsArray = ['20','30','48'];
+  let currentLevelPosition = levelsArray.indexOf(currentLevel);
 
-  // //check if it is the first level
-  // if (currentLevel == 20) {
-  //   firstLevel = true;
-  // } else {
-  //   otherLevel = "/#/level/"+levelsArray[currentLevelPosition-1];
-  // }
+  //check if it is the first level
+  if (currentLevel == 20) {
+    firstLevel = true;
+  } else {
+    otherLevel = "/#/level/"+levelsArray[currentLevelPosition-1];
+  }
 
-  // //check if the last level
-  // if (currentLevel == 48) {
-  //   lastLevel = true;
-  // }
+  //check if the last level
+  if (currentLevel == 48) {
+    lastLevel = false;
+  }
 
-//{ lastLevel? 'You unlocked the next level!' : 'You finished the game!' }
-//{ firstLevel? '/' : otherLevel }
 
     return ( 
       <div >
         <p className='puzzle-heading'>{this.props.imgNumber}
           <img className ='welcome-item_icon' src='./img/puzzle-icon.png'/>
-          <a className='puzzle-heading-back' href="greta" >&lt;&lt; back</a>
+          <a className='puzzle-heading-back' href={ firstLevel? '/' : otherLevel }>&lt;&lt; back</a>
         </p>
         <InfoComponent imgNumber={this.props.imgNumber}/>
-        <p className="congratulation-text animated bounce">gret</p>
+        <p className="congratulation-text animated bounce">{ lastLevel? 'You unlocked the next level!' : 'You finished the game!' }</p>
         <div className="puzzle" className = { preloader? 'puzzle' : 'puzzle_fading'}>
         {images}
         </div>

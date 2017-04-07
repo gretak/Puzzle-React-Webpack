@@ -9,24 +9,23 @@ import InfoComponent from '../InfoComponent.jsx';
 class levelContainer extends React.Component {
 
   render () {
-    const routes = this.props.route;
+    //const routes = this.props.route;
+    let puzzleID = this.props.params.id;
 
     return (
       <div>
         <NavigationComponent />
         <HeaderComponent 
-        imgNumber={routes.imgNumber}
-        puzzleLevel={routes.puzzleLevel}
-        puzzleClass={routes.puzzleClass}
-        link={routes.link}
+        imgNumber={puzzleID}
+        puzzleLevel={'puzzleLevel'+[puzzleID]}
+        puzzleClass={'puzzle_img'+[puzzleID]}
+        //link={routes.link}
         //congratsText={routes.congratsText}
         />
-        {routes.level &&
         <Counter 
-        level={routes.level}
+        level={puzzleID}
         //buttonText={routes.buttonText}
         />
-        }
       </div>
     )
   }
