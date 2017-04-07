@@ -10,8 +10,6 @@ class CounterComponent extends React.Component {
   }
 
   onClickNextLevel () {
-    console.log('level 2');
-    console.log(this.props.level);
       if (this.props.level == 20) {
        this.context.router.push({
        pathname: '/level/30'
@@ -39,7 +37,7 @@ class CounterComponent extends React.Component {
     let url = 'http://gretakava.6te.net/puzzle';
     let appId = 229484597460287;// get from facebook developers account
     let lastLevel = false;
-    let currentLevel = this.props.imgNumber;
+    let currentLevel = this.props.level;
 
      //check if the last level
      if (currentLevel == 48) {
@@ -49,6 +47,7 @@ class CounterComponent extends React.Component {
 
     return (
       <div className='clickCounter'>
+        <p className="congratulation-text animated bounce">{ lastLevel? 'You finished the game!' : 'You unlocked the next level!' }</p>
         <div className='clickCounter__button'>
           <button className='clickCounter__button--inner-green' onClick={this.onClickNextLevel}>{ lastLevel? 'Start again!' : 'Next level'}</button>
         </div>

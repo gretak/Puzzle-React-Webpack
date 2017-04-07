@@ -68,6 +68,7 @@
   animation-delay: 1.9s;
   text-align: center;
   width: 100%;
+  top: 150px;
 }
 
 @keyframes bounce {
@@ -78,12 +79,12 @@
   }
 
   50% {
-    transform: translateY(85%);
+    transform: translateY(55%);
     opacity: 0.9;
   }
 
   51% {
-    transform: translateY(87%);
+    transform: translateY(56%);
     opacity: 1;
   }
 

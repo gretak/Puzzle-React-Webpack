@@ -75,7 +75,7 @@ constructor(props) {
 //   this.puzzleLevelThree[i] = [ './img/opt/opt_0'+ i +'.jpg', './img/panda/panda_01.jpg', './img/kitty/kitty_01.jpg'];
 // }
     this.puzzleLevel48 = {
-      1 : [ './img/opt/opt_01.jpg', './img/panda/panda_01.jpg', './img/kitty/kitty_01.jpg'],
+      1 : [ './img/kitty/kitty_01.jpg', './img/opt/opt_01.jpg', './img/panda/panda_01.jpg'],
       2 : [ './img/panda/panda_02.jpg', './img/opt/opt_02.jpg', './img/kitty/kitty_02.jpg'],
       3 : [ './img/kitty/kitty_03.jpg', './img/panda/panda_03.jpg', './img/opt/opt_03.jpg'],
       4 : [ './img/opt/opt_04.jpg', './img/panda/panda_04.jpg', './img/kitty/kitty_04.jpg'],
@@ -171,9 +171,9 @@ constructor(props) {
     }
 
     //level 3
-    const kitty = [2, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 2, 0, 1, 2, 2, 1, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 2, 2];
-    const opt = [0, 1, 2, 0, 1, 2, 0, 0, 1, 1, 0, 2, 1, 0, 1, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1];
-    const panda = [1, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 1, 0];
+    const kitty = [0, 2, 0, 2, 2, 0, 2, 0, 2, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 1, 2, 0, 0, 2, 2, 0, 1, 2, 2, 1, 0, 2, 1, 0, 2, 0, 1, 2, 0, 1, 1, 2, 0, 2, 2];
+    const opt = [1, 1, 2, 0, 1, 2, 0, 0, 1, 1, 0, 2, 1, 0, 1, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1];
+    const panda = [2, 0, 1, 1, 0, 1, 1, 2, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 2, 0, 1, 2, 1, 0, 1, 2, 0, 1, 0, 2, 1, 0, 2, 1, 2, 0, 1, 2, 0, 2, 0, 1, 1, 0];
     const Kitty = arraysEqual(kitty,this.arr);
     const Opt = arraysEqual(opt,this.arr);
     const Panda = arraysEqual(panda,this.arr);
@@ -217,14 +217,13 @@ constructor(props) {
   if (currentLevel == 20) {
     firstLevel = true;
   } else {
-    otherLevel = "/#/level/"+levelsArray[currentLevelPosition-1];
+    otherLevel = '/#/level/'+levelsArray[currentLevelPosition-1];
   }
 
-  //check if the last level
+
   if (currentLevel == 48) {
     lastLevel = false;
   }
-
 
     return ( 
       <div >
@@ -233,7 +232,6 @@ constructor(props) {
           <a className='puzzle-heading-back' href={ firstLevel? '/' : otherLevel }>&lt;&lt; back</a>
         </p>
         <InfoComponent imgNumber={this.props.imgNumber}/>
-        <p className="congratulation-text animated bounce">{ lastLevel? 'You unlocked the next level!' : 'You finished the game!' }</p>
         <div className="puzzle" className = { preloader? 'puzzle' : 'puzzle_fading'}>
         {images}
         </div>
