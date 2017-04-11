@@ -21,8 +21,6 @@ class InfoComponent extends React.Component {
  
 
   render() {
-    //console.log(this.props.imgNumber);
-
 
     return (
       <div className = { this.state.display? 'Infobox display' : 'Infobox no-display'}>

@@ -4,8 +4,28 @@ import React from 'react';
 
 class FooterItemComponent extends React.Component {
 
+    constructor(props) {
+      super(props);
+      this.state = {
+        value: 1
+      };
+    }
+
+    //componentDidMount() {
+      // this.setState({
+      //   value: this.state.value + 1
+      // });
+    //}
+
+    _addByOne() {
+      this.setState ({
+        value : this.state.value + 1
+      });
+    }
+
+
   render () {
-    //if is the link
+    // if is the link
     if (this.props.linkDestination) {
     return (
       <p className='footer-item'>
@@ -13,12 +33,16 @@ class FooterItemComponent extends React.Component {
       </p>
       )
     } 
-   //if no link only text
+    // if no link only text
     else {
     return (
+      <div>
+      <p>{this.state.value}</p>
       <p className='footer-item'>
       {this.props.linkDescription}
       </p>
+      <button onClick={this._addByOne}>Click me</button>
+      </div>
       )
     }
   }
