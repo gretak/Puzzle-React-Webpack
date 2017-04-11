@@ -19,7 +19,7 @@ var SCSS_DIR = path.resolve(__dirname, 'src/client/sass');
 var IMG_DIR = path.resolve(__dirname, 'src/client/assets/img');
 
 
-module.exports = {
+var config = {
    entry: [
    APP_DIR + '/index.jsx'
    ],
@@ -76,6 +76,20 @@ module.exports = {
     inline: true
   }
 };
+
+if (process.env.NODE_ENV === 'production') {
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      'process.env' : {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin()
+  )
+
+}
+
+module.exports = config;
 
 
 
