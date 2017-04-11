@@ -217,7 +217,7 @@ constructor(props) {
   if (currentLevel == 20) {
     firstLevel = true;
   } else {
-    otherLevel = '/#/level/'+levelsArray[currentLevelPosition-1];
+    otherLevel = '/puzzle/#/level/'+levelsArray[currentLevelPosition-1];
   }
 
 
@@ -229,7 +229,7 @@ constructor(props) {
       <div >
         <p className='puzzle-heading'>{this.props.imgNumber}
           <img className ='welcome-item_icon' src='./img/puzzle-icon.png'/>
-          <a className='puzzle-heading-back' href={ firstLevel? '/' : otherLevel }>&lt;&lt; back</a>
+          <a className='puzzle-heading-back' href={ firstLevel? '/puzzle/' : otherLevel }>&lt;&lt; back</a>
         </p>
         <InfoComponent imgNumber={this.props.imgNumber}/>
         <div className="puzzle" className = { preloader? 'puzzle' : 'puzzle_fading'}>
