@@ -7,6 +7,13 @@ import NavigationComponent from './NavigationComponent.jsx';
 import routes from './routes.js';
 import WelcomeComponent from './WelcomeComponent.jsx';
 import InfoComponent from './InfoComponent.jsx';
+import { Provider } from "react-redux";
+
+//redux
+import store from './store';
+import AppComponent from "./components/App.js";
+
+
 
 
 require('../sass/base-style.scss');
@@ -29,6 +36,11 @@ class App extends React.Component {
   }
 }
 
-render(<App/>,
+render(<Provider store={store}>
+  <div>
+  <App/>
+  <AppComponent />
+  </div>
+  </Provider>,
   document.getElementById('app')
 );

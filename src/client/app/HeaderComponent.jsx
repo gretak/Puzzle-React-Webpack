@@ -2,6 +2,81 @@ import React, {PropTypes} from 'react';
 import ImgComponent from './ImgComponent.jsx';
 import InfoComponent from './InfoComponent.jsx';
 
+//redux code
+//import { combineReducers, createStore } from "redux";
+//import { connect } from "react-redux"
+
+// const userReducer = (state={
+//   preloader: true
+// }, action) => {
+//   switch(action.type) {
+//     case "CHANGE_NAME": {
+//       state = {...state, name: action.payload}
+//       break;
+//     }
+//     case "CHANGE_AGE": {
+//       state = {...state, age: action.payload}
+//       break;
+//     }
+//   }
+//   return state;
+// };
+
+// const tweetsReducer = (state=[], action) => {
+//   return state;
+// };
+
+
+// const preloader = (state, action) => {
+//    if (state === undefined) {
+//      state = true;
+//    }
+
+//   if (action.type === 'preloader') {
+//     return action.bulean
+//   }
+//   return state
+
+  // switch(action.type) {
+
+  //   case "preloader": 
+  //     //state = {...state, preloader: action.bulean}
+  //     //state = {...state, preloader: action.bulean}
+  //     return action.bulean
+
+  //     //return state = {...state, preloader: action.bulean}
+
+  //   default:
+  //     return state
+  //   }
+
+  //};
+
+  //return state;
+//};
+
+//const reducers = combineReducers({
+//   user: userReducer,
+//   //tweets: tweetsReducer,
+//   preloader: preloader,
+// })
+
+// const store = createStore(reducers);
+
+// store.subscribe(() => {
+//   console.log("store changed", store.getState())
+// })
+
+//  store.dispatch({type: "CHANGE_NAME", payload: "Will"})
+//  store.dispatch({type: "CHANGE_AGE", payload: 35})
+
+//  store.dispatch({type: "preloader", bulean: false})
+
+//  store.dispatch({type: "INC", payload: 11})
+//  store.dispatch({type: "INC", payload: 10})
+//  store.dispatch({type: "DEC", payload: 1})
+
+
 
 
 class HeaderComponent extends React.Component {
@@ -126,12 +201,15 @@ constructor(props) {
     };
   }
 
-  componentWillMount () {
+  componentDidMount () {
     setTimeout( () => {
-      this.setState({
-        preloader: false
-      })
-    }, 200);
+        this.setState({
+          preloader: false
+        })
+      //store.dispatch({type: "preloader", bulean: false, preloader: false})
+      //console.log(this.state.preloader)
+
+    }, 400);
   }
 
   static contextTypes = {
@@ -224,6 +302,8 @@ constructor(props) {
   if (currentLevel == 48) {
     lastLevel = false;
   }
+
+  this.props.user
 
     return ( 
       <div >

@@ -9,13 +9,8 @@ class FooterItemComponent extends React.Component {
       this.state = {
         value: 1
       };
+    this._addByOne = this._addByOne.bind(this);
     }
-
-    //componentDidMount() {
-      // this.setState({
-      //   value: this.state.value + 1
-      // });
-    //}
 
     _addByOne() {
       this.setState ({
