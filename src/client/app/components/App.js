@@ -1,9 +1,9 @@
-import React from "react";
-import {connect} from "react-redux";
+import React from 'react';
+import {connect} from 'react-redux';
 
-import UserList from "./UserList";
+import UserList from './UserList';
 
-import {fetchUsers} from "../actions/userActions";
+import {fetchUsers} from '../actions/userActions';
 
 @connect((store) => {
   return {

@@ -5,13 +5,13 @@ export default function reducer(state ={
   error: null
 }, action){
   switch(action.type){
-    case 'FETCH_USERS':{
+    case "FETCH_USERS":{
       return {...state, fetching: true}
     }
-    case 'FETCH_USERS_FULFILLED':{
+    case "FETCH_USERS_FULFILLED":{
       return {...state, fetching: false, fetched: action.greta, users: action.payload}
     }
-    case 'FETCH_USERS_REJECTED':{
+    case "FETCH_USERS_REJECTED":{
       return {...state, fetching: false, error: action.payload}
     }
   }

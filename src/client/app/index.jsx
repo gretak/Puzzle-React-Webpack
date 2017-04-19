@@ -7,11 +7,11 @@ import NavigationComponent from './NavigationComponent.jsx';
 import routes from './routes.js';
 import WelcomeComponent from './WelcomeComponent.jsx';
 import InfoComponent from './InfoComponent.jsx';
-import { Provider } from "react-redux";
+import { Provider } from 'react-redux';
 
 //redux
 import store from './store';
-import AppComponent from "./components/App.js";
+import AppComponent from './components/App.js';
 
 
 
